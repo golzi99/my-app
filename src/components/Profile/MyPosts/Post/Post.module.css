@@ -1,0 +1,13 @@
+.item {
+    color: red;
+}
+
+.item img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.item span {
+    color: black;
+}
