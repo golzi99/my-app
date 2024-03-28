@@ -9,11 +9,8 @@ export function MyPosts() {
                 <button>Add post</button>
             </div>
             <div className={Posts.postList}>
-                <Post></Post>
-                <Post></Post>
-                <Post></Post>
-                <Post></Post>
-                <Post></Post>
+                <Post message='Мой первый пост за все время!' likesCount={15}></Post>
+                <Post message='Я смогу добавить props в посты' likesCount={27}></Post>
             </div>
         </div>);
 }
