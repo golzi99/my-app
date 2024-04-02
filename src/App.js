@@ -5,16 +5,17 @@ import {Profile} from './components/Profile/Profile.jsx';
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-function App() {
+function App(props) {
     return (
         <BrowserRouter>
             <div className="App">
                 <Header></Header>
-                <NavBar></NavBar>
+                <NavBar sideBar={props.appState.sideBar}></NavBar>
                 <div className="app-content">
                     <Routes>
-                        <Route path="/Profile" element={<Profile/>}/>
-                        <Route path="/Dialogs" element={<Dialogs/>}/>
+                        <Route path="/ProfileInfo" element={<Profile posts={props.appState.profilePage}/>}/>
+                        <Route path="/Dialogs/*"
+                               element={<Dialogs dialogs={props.appState.dialogsPage}/>}/>
                     </Routes>
                 </div>
             </div>

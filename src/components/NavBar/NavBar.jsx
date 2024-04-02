@@ -1,34 +1,38 @@
-import NavBarClasses from "./NavBar.module.css"
+import NavBarCss from "./NavBar.module.css"
 import {NavLink} from "react-router-dom";
+import {SideBar} from "./SideBar/SideBar";
 
-export function NavBar() {
+export function NavBar(props) {
     return (
-        <nav className={NavBarClasses.nav}>
-            <div className={NavBarClasses.item}>
-                <NavLink to="/Profile"
-                         className={SelectedLink()}>Profile</NavLink>
-            </div>
-            <div className={NavBarClasses.item}>
-                <NavLink to="/Dialogs"
-                         className={SelectedLink()}>Messages</NavLink>
-            </div>
-            <div className={NavBarClasses.item}>
-                <NavLink to="/News"
-                         className={SelectedLink()}>News</NavLink>
-            </div>
-            <div className={NavBarClasses.item}>
-                <NavLink to="/Music"
-                         className={SelectedLink()}>Music</NavLink>
-            </div>
-            <div className={NavBarClasses.item}>
-                <NavLink to="/Settings"
-                         className={SelectedLink()}>Settings</NavLink>
-            </div>
-        </nav>);
+        <div className={NavBarCss.navBar}>
+            <nav className={NavBarCss.nav}>
+                <div className={NavBarCss.item}>
+                    <NavLink to="/ProfileInfo"
+                             className={SelectedLink()}>ProfileInfo</NavLink>
+                </div>
+                <div className={NavBarCss.item}>
+                    <NavLink to="/Dialogs"
+                             className={SelectedLink()}>Messages</NavLink>
+                </div>
+                <div className={NavBarCss.item}>
+                    <NavLink to="/News"
+                             className={SelectedLink()}>News</NavLink>
+                </div>
+                <div className={NavBarCss.item}>
+                    <NavLink to="/Music"
+                             className={SelectedLink()}>Music</NavLink>
+                </div>
+                <div className={NavBarCss.item}>
+                    <NavLink to="/Settings"
+                             className={SelectedLink()}>Settings</NavLink>
+                </div>
+            </nav>
+            <SideBar sideBarData={props.sideBar}></SideBar>
+        </div>);
 }
 
 const SelectedLink = () => {
     return (
-        select => select.isActive ? NavBarClasses.active: NavBarClasses.item
+        select => select.isActive ? NavBarCss.active : NavBarCss.item
     );
 }
