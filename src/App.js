@@ -13,7 +13,8 @@ function App(props) {
                 <NavBar sideBar={props.appState.sideBar}></NavBar>
                 <div className="app-content">
                     <Routes>
-                        <Route path="/ProfileInfo" element={<Profile posts={props.appState.profilePage}/>}/>
+                        <Route path="/ProfileInfo"
+                               element={<Profile posts={props.appState.profilePage} addPost={props.addPost}/>}/>
                         <Route path="/Dialogs/*"
                                element={<Dialogs dialogs={props.appState.dialogsPage}/>}/>
                     </Routes>

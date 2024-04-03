@@ -5,6 +5,6 @@ export function Profile(props) {
     return (
         <div>
             <ProfileInfo></ProfileInfo>
-            <MyPosts postsData={props.posts.postsData} avatar={props.posts.avatar}></MyPosts>
+            <MyPosts postsData={props.posts.postsData} avatar={props.posts.avatar} addPost={props.addPost}></MyPosts>
         </div>);
 }
