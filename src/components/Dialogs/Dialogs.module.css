@@ -20,17 +20,13 @@
     color: gold;
 }
 
-.messages {
-    padding: 20px;
-}
-
-.messages .message {
-    color: white;
-}
-
 .item img {
     border-radius: 50%;
     height: 50px;
     width: 50px;
     padding: 5px;
+}
+
+.messages {
+    padding: 20px;
 }

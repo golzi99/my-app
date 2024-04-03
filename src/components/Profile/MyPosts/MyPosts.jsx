@@ -1,5 +1,6 @@
 import Posts from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
+import React from 'react';
 
 export function MyPosts(props) {
     const avatar = props.avatar;
@@ -8,21 +9,27 @@ export function MyPosts(props) {
         return (<Post message={p.message} likesCount={p.likesCount} id={p.id} avatar={avatar}></Post>)
     })
 
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = '';
+    }
+
     return (
         <div className={Posts.postsBlock}>
             <h3>My posts</h3>
             <div>New Post
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPost}>Add post</button>
                 </div>
             </div>
             <div className={Posts.postList}>
                 {postsElements}
-                {/*<Post message='Мой первый пост за все время!' likesCount={15}></Post>*/}
-                {/*<Post message='Я смогу добавить props в посты' likesCount={27}></Post>*/}
             </div>
         </div>);
 }
