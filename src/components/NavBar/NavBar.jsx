@@ -27,7 +27,7 @@ export function NavBar(props) {
                              className={SelectedLink()}>Settings</NavLink>
                 </div>
             </nav>
-            <SideBar sideBarData={props.sideBar}></SideBar>
+            <SideBar sideBarData={props.sideBar} avatars={props.avatars}></SideBar>
         </div>);
 }
 
