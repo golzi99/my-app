@@ -10,13 +10,16 @@ function App(props) {
         <BrowserRouter>
             <div className="App">
                 <Header></Header>
-                <NavBar sideBar={props.appState.sideBar}></NavBar>
+                <NavBar sideBar={props.state.sideBar} avatars={props.state.avatars}></NavBar>
                 <div className="app-content">
                     <Routes>
                         <Route path="/ProfileInfo"
-                               element={<Profile posts={props.appState.profilePage} addPost={props.addPost}/>}/>
+                               element={<Profile profilePage={props.state.profilePage}
+                                                 dispatch={props.dispatch}
+                                                 avatars={props.state.avatars}/>}/>
                         <Route path="/Dialogs/*"
-                               element={<Dialogs dialogs={props.appState.dialogsPage}/>}/>
+                               element={<Dialogs dialogsPage={props.state.dialogsPage}
+                                                 avatars={props.state.avatars}/>}/>
                     </Routes>
                 </div>
             </div>
