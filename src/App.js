@@ -19,6 +19,7 @@ function App(props) {
                                                  avatars={props.state.avatars}/>}/>
                         <Route path="/Dialogs/*"
                                element={<Dialogs dialogsPage={props.state.dialogsPage}
+                                                 dispatch={props.dispatch}
                                                  avatars={props.state.avatars}/>}/>
                     </Routes>
                 </div>

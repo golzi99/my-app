@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let store = {
     _state: {
@@ -15,12 +17,12 @@ let store = {
         dialogsPage: {
             messagesData: [
                 {id: 1, message: "Hi"},
-                {id: 1, message: "How Are You"},
-                {id: 1, message: "Where are You!!!"},
+                {id: 0, message: "How Are You"},
+                {id: 0, message: "Where are You!!!"},
                 {id: 1, message: "dont show it for him"},
-                {id: 0, message: "doubi doubi"},
+                {id: 1, message: "doubi doubi"},
                 {id: 0, message: "WAZZZAAA"},
-                {id: 0, message: "Welcome"}
+                {id: 1, message: "Welcome"}
             ],
             dialogsData: [
                 {id: 1, name: "Paul"},
@@ -31,6 +33,7 @@ let store = {
                 {id: 6, name: "Semen"},
                 {id: 7, name: "Cumpot"}
             ],
+            newMessageBody: '',
         },
         sideBar: {
             topFriends: [
@@ -50,7 +53,7 @@ let store = {
             {id: 7, avatar: `${process.env.PUBLIC_URL}/img/avatar3.png`}
         ]
     },
-    _rendWeb() {
+    _callSubscriber() {
 
     },
 
@@ -58,7 +61,7 @@ let store = {
         return this._state;
     },
     subscribe(observer) {
-        this._rendWeb = observer;
+        this._callSubscriber = observer;
     },
 
     // _addPost() {
@@ -77,7 +80,7 @@ let store = {
     // },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             // this._addPost();
             let newPost = {
                 id: this._state.profilePage.postsData.length + 1,
@@ -86,11 +89,22 @@ let store = {
             };
             this._state.profilePage.postsData.push(newPost);
             this._state.profilePage.newPostText = "";
-            this._rendWeb(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._callSubscriber(this._state);
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText;
-            this._rendWeb(this._state);
+            this._callSubscriber(this._state);
             // this._updateNewPostText(action.newText);
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+        } else if (action.type === SEND_MESSAGE) {
+            let newMessage = {
+                id: 0,
+                message: this._state.dialogsPage.newMessageBody
+            };
+            this._state.dialogsPage.messagesData.push(newMessage);
+            this._state.dialogsPage.newMessageBody = '';
+            this._callSubscriber(this._state);
         }
     }
 };
@@ -101,7 +115,16 @@ export const addPostActionCreator = () => ({
 
 export const updateNewPostActionCreator = (text) => ({
     type: UPDATE_NEW_POST_TEXT,
-    newText: text,
+    newText: text
+});
+
+export const updateNewMessageActionCreator = (body) => ({
+    type: UPDATE_NEW_MESSAGE_BODY,
+    body: body
+});
+
+export const sendMessageActionCreator = () => ({
+    type: SEND_MESSAGE
 });
 
 export default store;
