@@ -5,10 +5,10 @@ export function SideBar(props) {
 
     let friendsElements = props.sideBarData.topFriends.map(
         (f) => {
-            let avatar = props.avatars.find((value, index, array) => {
+            let avatar = props.avatars.find((value) => {
                 return value.id === f.id;
-            })
-            return (<FriendIcon name={f.name} avatar={avatar.avatar}></FriendIcon>);
+            });
+            return (<FriendIcon name={f.name} avatar={avatar.avatar} id={f.id}></FriendIcon>);
         }
     );
 

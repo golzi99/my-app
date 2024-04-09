@@ -10,17 +10,17 @@ function App(props) {
         <BrowserRouter>
             <div className="App">
                 <Header></Header>
-                <NavBar sideBar={props.state.sideBar} avatars={props.state.avatars}></NavBar>
+                <NavBar sideBar={props.state.sideBar} avatars={props.avatars}></NavBar>
                 <div className="app-content">
                     <Routes>
                         <Route path="/ProfileInfo"
                                element={<Profile profilePage={props.state.profilePage}
                                                  dispatch={props.dispatch}
-                                                 avatars={props.state.avatars}/>}/>
+                                                 avatars={props.avatars}/>}/>
                         <Route path="/Dialogs/*"
                                element={<Dialogs dialogsPage={props.state.dialogsPage}
                                                  dispatch={props.dispatch}
-                                                 avatars={props.state.avatars}/>}/>
+                                                 avatars={props.avatars}/>}/>
                     </Routes>
                 </div>
             </div>

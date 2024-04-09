@@ -4,7 +4,7 @@ import {MyMessage} from "./Message/MyMessage";
 import {OtherMessage} from "./Message/OtherMessage";
 import {useLocation} from 'react-router-dom';
 import React from "react";
-import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../redux/store";
+import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogs-reducer";
 
 
 export function Dialogs(props) {
