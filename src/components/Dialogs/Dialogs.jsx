@@ -4,11 +4,9 @@ import {MyMessage} from "./Message/MyMessage";
 import {OtherMessage} from "./Message/OtherMessage";
 import {useLocation} from 'react-router-dom';
 import React from "react";
-import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogs-reducer";
 
 
 export function Dialogs(props) {
-
     let newMessageElement = React.createRef();
 
     const splitLoc = useLocation().pathname.substring(1).split('/');
@@ -19,7 +17,7 @@ export function Dialogs(props) {
         dialogRef = "0";
 
 
-    let dialogsElemets = props.dialogsPage.dialogsData.map(
+    let dialogsElemets = props.dialogData.map(
         (d) => {
             let avatar = props.avatars.find((value) => {
                 return value.id === d.id;
@@ -28,9 +26,8 @@ export function Dialogs(props) {
         }
     );
 
-    let messagesElements = props.dialogsPage.messagesData.map(
+    let messagesElements = props.messageData.map(
         (m) => {
-
             if (m.id === 0) {
                 const messageAvatar = props.avatars.find(object => object.id === 0).avatar;
                 return (<MyMessage textMessage={m.message} avatar={messageAvatar}></MyMessage>);
@@ -41,15 +38,13 @@ export function Dialogs(props) {
         }
     );
 
-    let newMessageBody = props.dialogsPage.newMessageBody;
-
-    let addMessage = () => {
-        props.dispatch(sendMessageActionCreator());
+    let onAddMessage = () => {
+        props.addMessage();
     }
 
-    let onMessageChange = () => {
-        let body = newMessageElement.current.value;
-        props.dispatch(updateNewMessageActionCreator(body));
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.updateNewMessageBody(body);
     }
 
     return (
@@ -60,9 +55,9 @@ export function Dialogs(props) {
             <div className={DialogsCss.messages}>
                 {messagesElements}
                 <div className={DialogsCss.sendMessageBox}>
-                    <textarea onChange={onMessageChange} ref={newMessageElement}
-                              value={newMessageBody} placeholder="Enter your message"></textarea>
-                    <button onClick={addMessage}>Send message</button>
+                    <textarea onChange={onNewMessageChange} ref={newMessageElement}
+                              value={props.newMessageBody} placeholder="Enter your message"></textarea>
+                    <button onClick={onAddMessage}>Send message</button>
                 </div>
             </div>
         </div>);

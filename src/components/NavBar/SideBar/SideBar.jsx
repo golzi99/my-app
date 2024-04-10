@@ -2,7 +2,6 @@ import SideBarCss from "./SideBar.module.css";
 import {FriendIcon} from "./FriendIcon/FriendIcon";
 
 export function SideBar(props) {
-
     let friendsElements = props.sideBarData.topFriends.map(
         (f) => {
             let avatar = props.avatars.find((value) => {
