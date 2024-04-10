@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import store, {avatars} from "./redux/redux-store";
+import store from "./redux/redux-store";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -7,17 +7,17 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export function rendApp(state) {
+export function rendApp(store) {
     root.render(
         <React.StrictMode>
-            <App state={state} avatars={avatars} dispatch={store.dispatch.bind(store)}/>
+            <App store={store} dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>
     );
 }
 
-rendApp(store.getState());
+rendApp(store);
 store.subscribe(() => {
-    rendApp(store.getState());
+    rendApp(store);
 });
 
 // If you want to start measuring performance in your app, pass a function

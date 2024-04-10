@@ -3,6 +3,8 @@ import {NavLink} from "react-router-dom";
 import {SideBar} from "./SideBar/SideBar";
 
 export function NavBar(props) {
+    let state = props.store.getState().sideBar;
+
     return (
         <div className={NavBarCss.navBar}>
             <nav className={NavBarCss.nav}>
@@ -27,7 +29,7 @@ export function NavBar(props) {
                              className={SelectedLink()}>Settings</NavLink>
                 </div>
             </nav>
-            <SideBar sideBarData={props.sideBar} avatars={props.avatars}></SideBar>
+            <SideBar sideBarData={state} avatars={props.store.getState().avatars.avatarsStore}></SideBar>
         </div>);
 }
 
