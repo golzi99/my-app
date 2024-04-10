@@ -1,6 +1,6 @@
 import NavBarCss from "./NavBar.module.css"
 import {NavLink} from "react-router-dom";
-import {SideBar} from "./SideBar/SideBar";
+import {SideBarContainer} from "./SideBar/SideBarContainer";
 
 export function NavBar(props) {
     return (
@@ -27,8 +27,9 @@ export function NavBar(props) {
                              className={SelectedLink()}>Settings</NavLink>
                 </div>
             </nav>
-            <SideBar sideBarData={props.sideBar} avatars={props.avatars}></SideBar>
-        </div>);
+            <SideBarContainer></SideBarContainer>
+        </div>
+    );
 }
 
 const SelectedLink = () => {

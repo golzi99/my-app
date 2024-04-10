@@ -1,0 +1,28 @@
+.myMessage {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.otherMessage {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.myMessage img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
+.otherMessage img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
