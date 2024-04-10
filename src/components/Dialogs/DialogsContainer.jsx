@@ -1,55 +1,26 @@
-import React from "react";
 import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogs-reducer";
 import {Dialogs} from "./Dialogs";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
-
-export function DialogsContainer(props) {
-    // let state = props.store.getState().dialogsPage;
-    //
-    // let newMessageBody = state.newMessageBody;
-    // let messagesData = state.messagesData;
-    // let dialogsData = state.dialogsData;
-    // let avatars = props.store.getState().avatars.avatarsStore;
-    //
-    // let addMessage = () => {
-    //     props.store.dispatch(sendMessageActionCreator());
-    // }
-    //
-    // let messageChange = (body) => {
-    //     let action = updateNewMessageActionCreator(body);
-    //     props.store.dispatch(action);
-    // }
-
-    return (
-        <StoreContext.Consumer>
-            {
-                (store) => {
-
-                    let state = store.getState().dialogsPage;
-
-                    let newMessageBody = state.newMessageBody;
-                    let messagesData = state.messagesData;
-                    let dialogsData = state.dialogsData;
-                    let avatars = store.getState().avatars.avatarsStore;
-
-                    let addMessage = () => {
-                        store.dispatch(sendMessageActionCreator());
-                    }
-
-                    let messageChange = (body) => {
-                        let action = updateNewMessageActionCreator(body);
-                        store.dispatch(action);
-                    }
-
-                    return (
-                        <Dialogs addMessage={addMessage} updateNewMessageBody={messageChange}
-                                 newMessageBody={newMessageBody} dialogsData={dialogsData}
-                                 messagesData={messagesData} avatars={avatars}/>
-                    );
-                }
-            }
-        </StoreContext.Consumer>
-
-    );
+let mapStateToProps = (state) => {
+    return {
+        avatars: state.avatars.avatarsStore,
+        newMessageBody: state.dialogsPage.newMessageBody,
+        dialogsData: state.dialogsPage.dialogsData,
+        messagesData: state.dialogsPage.messagesData,
+    };
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateNewMessageBody: (body) => {
+            let action = updateNewMessageActionCreator(body);
+            dispatch(action);
+        },
+        sendNewMessage: () => {
+            dispatch(sendMessageActionCreator());
+        },
+    };
+}
+
+export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);

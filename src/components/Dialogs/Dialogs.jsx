@@ -37,7 +37,7 @@ export function Dialogs(props) {
     );
 
     let onAddMessage = () => {
-        props.addMessage();
+        props.sendNewMessage();
     }
 
     let onNewMessageChange = (e) => {
