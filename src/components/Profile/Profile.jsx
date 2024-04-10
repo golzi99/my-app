@@ -5,6 +5,6 @@ export function Profile(props) {
     return (
         <div>
             <ProfileInfo></ProfileInfo>
-            <MyPostsContainer store={props.store}></MyPostsContainer>
+            <MyPostsContainer></MyPostsContainer>
         </div>);
 }
