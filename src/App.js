@@ -4,6 +4,7 @@ import {NavBar} from './components/NavBar/NavBar.jsx';
 import {Profile} from './components/Profile/Profile.jsx';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
+import {UsersContainer} from "./components/Users/UsersContainer";
 
 function App(props) {
     return (
@@ -13,10 +14,9 @@ function App(props) {
                 <NavBar></NavBar>
                 <div className="app-content">
                     <Routes>
-                        <Route path="/ProfileInfo"
-                               element={<Profile/>}/>
-                        <Route path="/Dialogs/*"
-                               element={<DialogsContainer/>}/>
+                        <Route path="/ProfileInfo" element={<Profile/>}/>
+                        <Route path="/Dialogs/*" element={<DialogsContainer/>}/>
+                        <Route path="/Users" element={<UsersContainer/>}/>
                     </Routes>
                 </div>
             </div>
