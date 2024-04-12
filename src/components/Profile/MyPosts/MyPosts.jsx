@@ -7,7 +7,7 @@ export function MyPosts(props) {
         let avatar = props.avatars.find((value) => {
             return value.id === 0;
         })
-        return (<Post message={p.message} likesCount={p.likesCount} avatar={avatar.avatar}></Post>)
+        return (<Post key={p.id} message={p.message} likesCount={p.likesCount} avatar={avatar.avatar}></Post>)
     })
 
     let newPostElement = React.createRef();

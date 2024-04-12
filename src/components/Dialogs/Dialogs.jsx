@@ -14,24 +14,26 @@ export function Dialogs(props) {
     } else
         dialogRef = "0";
 
+    let id = 0;
 
     let dialogsElements = props.dialogsData.map(
         (d) => {
             let avatar = props.avatars.find((value) => {
                 return value.id === d.id;
             })
-            return <DialogItem name={d.name} id={d.id} avatar={avatar.avatar}></DialogItem>;
+            return <DialogItem key={d.id} name={d.name} id={d.id} avatar={avatar.avatar}></DialogItem>;
         }
     );
 
     let messagesElements = props.messagesData.map(
         (m) => {
+            id++;
             if (m.id === 0) {
                 const messageAvatar = props.avatars.find(object => object.id === 0).avatar;
-                return (<MyMessage textMessage={m.message} avatar={messageAvatar}></MyMessage>);
+                return (<MyMessage key={id} textMessage={m.message} avatar={messageAvatar}></MyMessage>);
             } else {
                 const messageAvatar = props.avatars.find(object => object.id.toString() === dialogRef).avatar;
-                return (<OtherMessage textMessage={m.message} avatar={messageAvatar}></OtherMessage>);
+                return (<OtherMessage key={id} textMessage={m.message} avatar={messageAvatar}></OtherMessage>);
             }
         }
     );

@@ -15,6 +15,10 @@ export function NavBar(props) {
                              className={SelectedLink()}>Messages</NavLink>
                 </div>
                 <div className={NavBarCss.item}>
+                    <NavLink to="/Users"
+                             className={SelectedLink()}>Users</NavLink>
+                </div>
+                <div className={NavBarCss.item}>
                     <NavLink to="/News"
                              className={SelectedLink()}>News</NavLink>
                 </div>
