@@ -4,7 +4,7 @@ import {NavBar} from './components/NavBar/NavBar.jsx';
 import {Profile} from './components/Profile/Profile.jsx';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
-import {UsersContainer} from "./components/Users/UsersContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
     return (

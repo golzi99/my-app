@@ -7,7 +7,9 @@ let initState = {
         {id: 4, avatar: `${process.env.PUBLIC_URL}/img/avatar2.png`},
         {id: 5, avatar: `${process.env.PUBLIC_URL}/img/avatar4.png`},
         {id: 6, avatar: `${process.env.PUBLIC_URL}/img/avatar1.png`},
-        {id: 7, avatar: `${process.env.PUBLIC_URL}/img/avatar3.png`}
+        {id: 7, avatar: `${process.env.PUBLIC_URL}/img/avatar3.png`},
+        {id: 8, avatar: `${process.env.PUBLIC_URL}/img/avatar3.png`},
+        {id: 9, avatar: `${process.env.PUBLIC_URL}/img/avatar1.png`},
     ]
 };
 

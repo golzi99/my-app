@@ -1,37 +1,31 @@
 import UsersCss from "./UsersCss.module.css"
-import React from "react";
+import axios from "axios";
 
-function Users(props) {
+export function UsersBAK(props) {
 
-    let pages = [];
-    for (let i = 1; i <= props.pagesCount(); i++) {
-        pages.push(i);
-    }
+    let getUsers = () => {
+        if (props.users.length === 0){
 
-    let slicedPages;
-    let curPage = props.currentPage;
-    if (curPage - 3 < 0) {
-        slicedPages = pages.slice(0, 5);
-    } else {
-        slicedPages = pages.slice(curPage - 3, curPage + 2);
-    }
+            axios.get(`https://social-network.samuraijs.com/api/1.0/users`).then(r => {
+                props.setUsers(r.data.items);
+            });
+        }
+    };
+
+    const lastDigit = (num) => {
+        return num % 10;
+    };
 
     return (
         <div>
-            <div className={UsersCss.pageString}>
-                {slicedPages.map((p) => {
-                    return (<span className={props.currentPage === p ? UsersCss.selectedPage : UsersCss.page}
-                                  onClick={() => {
-                                      props.onPageChanged(p)
-                                  }}>{p}</span>);
-                })}
-            </div>
+            <button onClick={getUsers}>GET USERS</button>
             {
                 props.users.map(u => {
                     let avatar = props.avatars.find((value) => {
                         if (u.photos.small === null) {
-                            return value.id === props.lastDigit(u.id);
-                        } else {
+                            return value.id === lastDigit(u.id);
+                        }
+                        else{
                             return u.photos.small; // check it in the further
                         }
 
@@ -42,14 +36,14 @@ function Users(props) {
                             <div>
                                 <img alt="avatar" src={avatar.avatar}/>
                             </div>
-                            <div>
+                            <dix>
                                 {u.followed ? <button onClick={() => {
                                         props.unFollowOnUser(u.id);
                                     }}>Unfollow</button> :
                                     <button onClick={() => {
                                         props.followOnUser(u.id);
                                     }}>Follow</button>}
-                            </div>
+                            </dix>
                         </span>
                         <span>
                             <span>
@@ -67,5 +61,3 @@ function Users(props) {
         </div>
     );
 }
-
-export default Users;
