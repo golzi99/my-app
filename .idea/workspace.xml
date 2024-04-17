@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="12.04.2024 fix bugs">
-      <change afterPath="$PROJECT_DIR$/src/components/Users/UsersBAK.jsx" afterDir="false" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="12.04.2024 realise upgrades in UsersContainer and upgrade usersPage">
+      <change afterPath="$PROJECT_DIR$/src/components/common/preLoader/preloader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersBAK.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersCss.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersCss.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/avatars-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/avatars-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +96,7 @@
       <workItem from="1712037664069" duration="14946000" />
       <workItem from="1713158414590" duration="7496000" />
       <workItem from="1713246678508" duration="9234000" />
-      <workItem from="1713334166377" duration="3840000" />
+      <workItem from="1713334166377" duration="11977000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -131,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712908515606</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="12.04.2024 realise upgrades in UsersContainer and upgrade usersPage">
+      <created>1713339548286</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713339548286</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,17 +213,7 @@
     <MESSAGE value="28.03.2024 Rebuild NavBar and add Dialog" />
     <MESSAGE value="01.04.2024 Refactor project, make first outer res, add new img" />
     <MESSAGE value="12.04.2024 fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="12.04.2024 fix bugs" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Users/UsersContainer.jsx</url>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="12.04.2024 realise upgrades in UsersContainer and upgrade usersPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="12.04.2024 realise upgrades in UsersContainer and upgrade usersPage" />
   </component>
 </project>
