@@ -2,6 +2,11 @@
     padding: 10px;
 }
 
-.profileHeader img{
+.descriptionBlock img {
+    height: 250px;
+    width: 250px;
+}
+
+.backgroundProfile img{
     width: 100%;
 }

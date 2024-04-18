@@ -2,7 +2,7 @@ import NavBarCss from "./NavBar.module.css"
 import {NavLink} from "react-router-dom";
 import {SideBarContainer} from "./SideBar/SideBarContainer";
 
-export function NavBar(props) {
+function NavBar(props) {
     return (
         <div className={NavBarCss.navBar}>
             <nav className={NavBarCss.nav}>
@@ -41,3 +41,5 @@ const SelectedLink = () => {
         select => select.isActive ? NavBarCss.active : NavBarCss.item
     );
 }
+
+export default NavBar;

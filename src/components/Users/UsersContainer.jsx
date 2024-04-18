@@ -13,10 +13,6 @@ import Preloader from "../common/preLoader/preloader";
 
 class UsersContainer extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.toggleIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
@@ -61,16 +57,14 @@ class UsersContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => {
-    return {
+let mapStateToProps = (state) => ({
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         avatars: state.avatars.avatarsStore,
         isFetching: state.usersPage.isFetching
-    };
-}
+});
 
 export default connect(mapStateToProps, {
     followOnUser,

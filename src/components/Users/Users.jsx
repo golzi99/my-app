@@ -1,5 +1,6 @@
 import UsersCss from "./UsersCss.module.css"
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 function Users(props) {
 
@@ -40,7 +41,9 @@ function Users(props) {
                     return (<div key={u.id} className={UsersCss.userList}>
                         <span>
                             <div>
-                                <img alt="avatar" src={avatar.avatar}/>
+                                <NavLink to={`/ProfileInfo/${u.id}`}>
+                                    <img alt="avatar" src={avatar.avatar}/>
+                                </NavLink>
                             </div>
                             <div>
                                 {u.followed ? <button onClick={() => {
