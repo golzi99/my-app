@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="18.04.2024 Try to rebuild all components withRouter to insert right img">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-    </list>
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="19.04.2024 add authReducer and etc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +91,8 @@
       <workItem from="1713158414590" duration="7496000" />
       <workItem from="1713246678508" duration="9234000" />
       <workItem from="1713334166377" duration="12442000" />
-      <workItem from="1713419802528" duration="16423000" />
+      <workItem from="1713419802528" duration="16487000" />
+      <workItem from="1713506757947" duration="9289000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -145,7 +143,21 @@
       <option name="project" value="LOCAL" />
       <updated>1713447039017</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="18.04.2024 Try to rebuild all components withRouter to insert right img 2">
+      <created>1713447468095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713447468095</updated>
+    </task>
+    <task id="LOCAL-00009" summary="19.04.2024 add authReducer and etc">
+      <created>1713526291695</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713526291695</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +240,8 @@
     <MESSAGE value="12.04.2024 realise upgrades in UsersContainer and upgrade usersPage" />
     <MESSAGE value="17.04.2024 add preloader and optimize usersContainer" />
     <MESSAGE value="18.04.2024 Try to rebuild all components withRouter to insert right img" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.04.2024 Try to rebuild all components withRouter to insert right img" />
+    <MESSAGE value="18.04.2024 Try to rebuild all components withRouter to insert right img 2" />
+    <MESSAGE value="19.04.2024 add authReducer and etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.04.2024 add authReducer and etc" />
   </component>
 </project>

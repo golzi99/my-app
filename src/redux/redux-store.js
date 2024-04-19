@@ -4,6 +4,7 @@ import dialogsReducer from "./dialogs-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import avatarsReducer from "./avatars-reducer";
 import usersReducer from "./users-reducer";
+import authReducer from "./auth-reducer";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -11,6 +12,7 @@ let reducers = combineReducers({
     sideBar: sidebarReducer,
     avatars: avatarsReducer,
     usersPage: usersReducer,
+    auth: authReducer,
 });
 
 let store = createStore(reducers);
