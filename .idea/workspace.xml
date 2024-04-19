@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="18.04.2024 Try to rebuild all components withRouter to insert right img">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="18.04.2024 Try to rebuild all components withRouter to insert right img 2">
+      <change afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +101,8 @@
       <workItem from="1713158414590" duration="7496000" />
       <workItem from="1713246678508" duration="9234000" />
       <workItem from="1713334166377" duration="12442000" />
-      <workItem from="1713419802528" duration="16423000" />
+      <workItem from="1713419802528" duration="16487000" />
+      <workItem from="1713506757947" duration="8596000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -145,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713447039017</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="18.04.2024 Try to rebuild all components withRouter to insert right img 2">
+      <created>1713447468095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713447468095</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +243,7 @@
     <MESSAGE value="12.04.2024 realise upgrades in UsersContainer and upgrade usersPage" />
     <MESSAGE value="17.04.2024 add preloader and optimize usersContainer" />
     <MESSAGE value="18.04.2024 Try to rebuild all components withRouter to insert right img" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.04.2024 Try to rebuild all components withRouter to insert right img" />
+    <MESSAGE value="18.04.2024 Try to rebuild all components withRouter to insert right img 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.04.2024 Try to rebuild all components withRouter to insert right img 2" />
   </component>
 </project>

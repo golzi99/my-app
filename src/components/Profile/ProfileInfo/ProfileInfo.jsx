@@ -1,6 +1,11 @@
 import ProfileInfoCss from "./ProfileInfo.module.css";
+import Preloader from "../../common/preLoader/preloader";
 
 export function ProfileInfo(props) {
+    if (!props.profile) {
+        return (<Preloader></Preloader>);
+    }
+
     return (
         <div>
             <div className={ProfileInfoCss.backgroundProfile}>
@@ -9,8 +14,7 @@ export function ProfileInfo(props) {
                     src='https://ik.imagekit.io/ikmedia/backlit.jpg'></img>
             </div>
             <div className={ProfileInfoCss.descriptionBlock}>
-                {props.profile === null ? <img alt="avatarProfile" src={`${process.env.PUBLIC_URL}/img/avatar3.png`}/> :
-                    <img alt="avatarProfile" src={props.profile.photos.large}/>}
+                <img alt="avatarProfile" src={props.profile.photos.large}/>
             </div>
         </div>);
 }
