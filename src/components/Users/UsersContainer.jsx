@@ -7,20 +7,21 @@ import {
     unFollowOnUser
 } from "../../redux/users-reducer";
 import React from "react";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/preLoader/preloader";
+import {usersAPI} from "../../API/api";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-            .then(r => {
+
+        usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
                 this.props.toggleIsFetching(false);
-                this.props.setUsers(r.data.items);
-                this.props.setTotalUsersCount(r.data.totalCount);
-            });
+                this.props.setUsers(data.items);
+                this.props.setTotalUsersCount(data.totalCount);
+            }
+        );
     }
 
     _lastDigit = (num) => {
@@ -34,12 +35,17 @@ class UsersContainer extends React.Component {
     _onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-            .then(r => {
+
+        usersAPI.getUsers(pageNumber, this.props.pageSize)
+            .then(data => {
                 this.props.toggleIsFetching(false);
-                this.props.setUsers(r.data.items);
+                this.props.setUsers(data.items);
             });
     };
+
+    _followOnUserAPI = usersAPI.followOnUserAPI;
+
+    _unFollowOnUserAPI = usersAPI.unFollowOnUserAPI;
 
     render() {
         return (
@@ -47,6 +53,8 @@ class UsersContainer extends React.Component {
                 {this.props.isFetching ? <Preloader></Preloader> : null}
                 <Users lastDigit={this._lastDigit} pagesCount={this._pagesCount}
                        onPageChanged={this._onPageChanged}
+                       followOnUserAPI = {this._followOnUserAPI}
+                       unFollowOnUserAPI = {this._unFollowOnUserAPI}
                        unFollowOnUser={this.props.unFollowOnUser}
                        followOnUser={this.props.followOnUser}
                        users={this.props.users}
@@ -58,12 +66,12 @@ class UsersContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-        users: state.usersPage.users,
-        pageSize: state.usersPage.pageSize,
-        totalUsersCount: state.usersPage.totalUsersCount,
-        currentPage: state.usersPage.currentPage,
-        avatars: state.avatars.avatarsStore,
-        isFetching: state.usersPage.isFetching
+    users: state.usersPage.users,
+    pageSize: state.usersPage.pageSize,
+    totalUsersCount: state.usersPage.totalUsersCount,
+    currentPage: state.usersPage.currentPage,
+    avatars: state.avatars.avatarsStore,
+    isFetching: state.usersPage.isFetching
 });
 
 export default connect(mapStateToProps, {

@@ -40,7 +40,8 @@ const usersReducer = (state = initState, action) => {
             // if(state.users.length > 0) {
             //     return state
             // }
-            return { ...state,
+            return {
+                ...state,
                 users: action.users,
 
             }

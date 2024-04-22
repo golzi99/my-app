@@ -47,10 +47,19 @@ function Users(props) {
                             </div>
                             <div>
                                 {u.followed ? <button onClick={() => {
-                                        props.unFollowOnUser(u.id);
+                                        props.unFollowOnUserAPI(u.id).then((data) => {
+                                            if (data.resultCode === 0) {
+                                                props.unFollowOnUser(u.id);
+                                            }
+                                        })
+
                                     }}>Unfollow</button> :
                                     <button onClick={() => {
-                                        props.followOnUser(u.id);
+                                        props.followOnUserAPI(u.id).then((data) => {
+                                            if (data.resultCode === 0) {
+                                                props.followOnUser(u.id);
+                                            }
+                                        })
                                     }}>Follow</button>}
                             </div>
                         </span>
