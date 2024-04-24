@@ -1,18 +1,12 @@
 import {connect} from "react-redux";
 import Header from "./Header";
 import {useEffect} from "react";
-import {setAuthUserData} from "../../redux/auth-reducer";
-import {authAPI} from "../../API/api";
+import {getAuthUserData} from "../../redux/auth-reducer";
 
 function HeaderContainer(props) {
 
     useEffect(() => {
-        authAPI.authMe().then(data => {
-                if (data.resultCode === 0) {
-                    let {id, login, email} = data.data;
-                    props.setAuthUserData(id, login, email);
-                }
-            });
+        props.getAuthUserData();
     });
 
     return (
@@ -28,4 +22,4 @@ let mapStateToProps = (state) => ({
     isFetching: state.auth.isFetching
 });
 
-export default connect(mapStateToProps, {setAuthUserData})(HeaderContainer);
+export default connect(mapStateToProps, {getAuthUserData})(HeaderContainer);

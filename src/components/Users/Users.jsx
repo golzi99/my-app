@@ -1,8 +1,14 @@
 import UsersCss from "./UsersCss.module.css"
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {Navigate, NavLink} from "react-router-dom";
 
 function Users(props) {
+
+    if (!props.isAuth) {
+        return (<Navigate to="/Login">
+
+        </Navigate >);
+    }
 
     let pages = [];
     for (let i = 1; i <= props.pagesCount(); i++) {
@@ -46,21 +52,16 @@ function Users(props) {
                                 </NavLink>
                             </div>
                             <div>
-                                {u.followed ? <button onClick={() => {
-                                        props.unFollowOnUserAPI(u.id).then((data) => {
-                                            if (data.resultCode === 0) {
-                                                props.unFollowOnUser(u.id);
+                                {u.followed ? <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                                      onClick={() => {
+                                                          props.unFollow(u.id);
+                                                      }
+                                                      }>Unfollow</button> :
+                                    <button disabled={props.followingInProgress.some(id => id === u.id)}
+                                            onClick={() => {
+                                                props.follow(u.id);
                                             }
-                                        })
-
-                                    }}>Unfollow</button> :
-                                    <button onClick={() => {
-                                        props.followOnUserAPI(u.id).then((data) => {
-                                            if (data.resultCode === 0) {
-                                                props.followOnUser(u.id);
-                                            }
-                                        })
-                                    }}>Follow</button>}
+                                            }>Follow</button>}
                             </div>
                         </span>
                         <span>

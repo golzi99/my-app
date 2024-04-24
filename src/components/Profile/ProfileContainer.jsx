@@ -3,7 +3,6 @@ import {Profile} from "./Profile";
 import {connect} from "react-redux";
 import {setUserProfile} from "../../redux/profile-reducer";
 import {useParams} from "react-router-dom";
-import {profileAPI} from "../../API/api";
 
 function ProfileContainer(props) {
     let {userId} = useParams();
@@ -12,20 +11,19 @@ function ProfileContainer(props) {
     }
 
     useEffect(() => {
-        profileAPI.getProfile(userId).then((response) => {
-            props.setUserProfile(response.data);
-        });
+        props.setUserProfile(userId);
     }, [userId]);
 
     return (
         <div>
-            <Profile profile={props.profile}/>
+            <Profile profile={props.profile} isAuth={props.isAuth}/>
         </div>
     );
 }
 
 let mapStateToProps = (state) => ({
-    profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    isAuth: state.auth.isAuth
 });
 
 export default connect(mapStateToProps, {setUserProfile})(ProfileContainer)
