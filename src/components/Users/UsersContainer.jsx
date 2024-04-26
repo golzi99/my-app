@@ -5,6 +5,8 @@ import {unFollow, follow,
 import React from "react";
 import Users from "./Users";
 import Preloader from "../common/preLoader/preloader";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {compose} from "redux";
 
 class UsersContainer extends React.Component {
 
@@ -30,7 +32,6 @@ class UsersContainer extends React.Component {
                 {this.props.isFetching ? <Preloader></Preloader> : null}
                 <Users lastDigit={this._lastDigit} pagesCount={this._pagesCount}
                        onPageChanged={this._onPageChanged}
-                       isAuth={this.props.isAuth}
                        unFollow={this.props.unFollow}
                        follow={this.props.follow}
                        users={this.props.users}
@@ -51,12 +52,7 @@ let mapStateToProps = (state) => ({
     avatars: state.avatars.avatarsStore,
     isFetching: state.usersPage.isFetching,
     followingInProgress: state.usersPage.followingInProgress,
-    isAuth: state.auth.isAuth
 });
 
-export default connect(mapStateToProps, {
-    setCurrentPage,
-    unFollow,
-    follow,
-    getUsers
-})(UsersContainer);
+export default compose(connect(mapStateToProps, {
+    setCurrentPage, unFollow, follow, getUsers}), withAuthRedirect)(UsersContainer);

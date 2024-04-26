@@ -1,6 +1,6 @@
 import DialogsCss from "./Dialogs.module.css"
 import React from "react";
-import {Navigate, useLocation} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import {DialogItem} from "./DialogItem/DialogItem";
 import {MyMessage} from "./Message/MyMessage";
 import {OtherMessage} from "./Message/OtherMessage";
@@ -45,12 +45,6 @@ export function Dialogs(props) {
     let onNewMessageChange = (e) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
-    }
-
-    if (!props.isAuth) {
-        return (<Navigate to="/Login">
-
-        </Navigate >);
     }
 
     return (

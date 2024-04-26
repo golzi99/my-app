@@ -1,14 +1,8 @@
 import UsersCss from "./UsersCss.module.css"
 import React from "react";
-import {Navigate, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function Users(props) {
-
-    if (!props.isAuth) {
-        return (<Navigate to="/Login">
-
-        </Navigate >);
-    }
 
     let pages = [];
     for (let i = 1; i <= props.pagesCount(); i++) {
