@@ -14,7 +14,7 @@ export function ProfileInfo(props) {
             </div>
             <div className={ProfileInfoCss.descriptionBlock}>
                 <img alt="avatarProfile" src={props.profile.photos.large}/>
-                <ProfileStatus status="Hello my Friends"></ProfileStatus>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}></ProfileStatus>
             </div>
         </div>);
 }
