@@ -1,7 +1,10 @@
+import {LoginForm} from "../common/LoginForm/LoginForm";
+
 export function Login(props) {
+
     return (
-        <h1>
-            LOGIN
-        </h1>
+        <div>
+            <LoginForm formik={props.formik}></LoginForm>
+        </div>
     );
 }
