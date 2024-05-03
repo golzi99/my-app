@@ -6,12 +6,18 @@ import {useFormik} from "formik";
 function LoginContainer(props) {
 
     let formik = useFormik({
-        initialValues: props.initialValues,
+        initialValues: {
+            email: '',
+            password: '',
+            rememberMe: false,
+            captcha: false
+        },
         onSubmit: (values) => {
             let userLoginData = {
                 email: values.email,
                 password: values.password,
-                rememberMe: values.rememberMe
+                rememberMe: values.rememberMe,
+                captcha: values.captcha
             }
             props.authLoginUser(userLoginData);
         },
@@ -25,11 +31,7 @@ function LoginContainer(props) {
 }
 
 let mapStateToProps = (state) => ({
-    initialValues: {
-        email: state.form.email,
-        password: state.form.password,
-        rememberMe: state.form.rememberMe
-    }
+
 });
 
 export default connect(mapStateToProps, {authLoginUser})(LoginContainer)

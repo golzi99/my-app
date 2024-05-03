@@ -1,14 +1,28 @@
-import {sendMessageActionCreator, updateNewMessageActionCreator} from "../../redux/dialogs-reducer";
+import {sendMessageActionCreator} from "../../redux/dialogs-reducer";
 import {Dialogs} from "./Dialogs";
 import {connect} from "react-redux";
 import React from "react";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {useFormik} from "formik";
+import {MessageSchema} from "../Utils/Validators/validators";
 
 function DialogsContainer(props) {
+
+    let formik = useFormik({
+        initialValues: {
+            newTextBody: ''
+        },
+        validationSchema: MessageSchema,
+        onSubmit: (values) => {
+            props.sendNewMessage(values.newTextBody);
+            values.newTextBody = '';
+        },
+    });
+
     return (
         <div>
-            <Dialogs {...props}></Dialogs>
+            <Dialogs {...props} formik={formik}></Dialogs>
         </div>
     );
 }
@@ -24,12 +38,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        updateNewMessageBody: (body) => {
-            let action = updateNewMessageActionCreator(body);
-            dispatch(action);
-        },
-        sendNewMessage: () => {
-            dispatch(sendMessageActionCreator());
+        sendNewMessage: (newMessage) => {
+            dispatch(sendMessageActionCreator(newMessage));
         },
     };
 }
