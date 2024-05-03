@@ -3,10 +3,10 @@ import {authAPI} from "../API/api";
 const SET_LOGIN_PASSWORD_USER = "SET-LOGIN-PASSWORD-USER";
 
 let initState = {
-    email: '',
-    password: '',
-    rememberMe: false,
-    captcha: false
+    // email: '',
+    // password: '',
+    // rememberMe: false,
+    // captcha: false
 };
 
 const formReducer = (state = initState, action) => {
@@ -26,18 +26,23 @@ const formReducer = (state = initState, action) => {
     }
 }
 
-export const setEmailAndPassword = (email, password, rememberMe) => ({
+export const setEmailAndPassword = (email, password, rememberMe, captcha) => ({
     type: SET_LOGIN_PASSWORD_USER,
     email,
     password,
-    rememberMe
+    rememberMe,
+    captcha
 });
 
 export const authLoginUser = (userLoginData) => {
     return (dispatch) => {
         authAPI.authLoginPost(userLoginData).then(data => {
             if (data.resultCode === 0) {
-                dispatch(setEmailAndPassword(userLoginData.email, userLoginData.password, userLoginData.rememberMe));
+                console.log(userLoginData);
+                // dispatch(setEmailAndPassword(userLoginData.email, userLoginData.password, userLoginData.rememberMe));
+            }
+            else {
+                console.log("Incorrect login or password");
             }
         });
     }

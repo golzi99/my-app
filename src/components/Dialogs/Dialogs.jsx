@@ -4,6 +4,7 @@ import {useLocation} from "react-router-dom";
 import {DialogItem} from "./DialogItem/DialogItem";
 import {MyMessage} from "./Message/MyMessage";
 import {OtherMessage} from "./Message/OtherMessage";
+import {PostSmtFormFormik} from "../common/PostSmtForm/PostSmtFormFormik";
 
 
 export function Dialogs(props) {
@@ -38,15 +39,6 @@ export function Dialogs(props) {
         }
     );
 
-    let onAddMessage = () => {
-        props.sendNewMessage();
-    }
-
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-
     return (
         <div className={DialogsCss.dialogs}>
             <div className={DialogsCss.dialogsItems}>
@@ -54,11 +46,7 @@ export function Dialogs(props) {
             </div>
             <div className={DialogsCss.messages}>
                 {messagesElements}
-                <div className={DialogsCss.sendMessageBox}>
-                    <textarea onChange={onNewMessageChange} value={props.newMessageBody}
-                              placeholder="Enter your message"></textarea>
-                    <button onClick={onAddMessage}>Send message</button>
-                </div>
+                <PostSmtFormFormik formik={props.formik}></PostSmtFormFormik>
             </div>
         </div>);
 }

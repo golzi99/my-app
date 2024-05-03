@@ -1,6 +1,7 @@
 import Posts from "./MyPosts.module.css"
 import {Post} from "./Post/Post";
 import React from 'react';
+import {PostSmtFormFormik} from "../../common/PostSmtForm/PostSmtFormFormik";
 
 export function MyPosts(props) {
     let postsElements = props.postsData.map((p) => {
@@ -10,27 +11,11 @@ export function MyPosts(props) {
         return (<Post key={p.id} message={p.message} likesCount={p.likesCount} avatar={avatar.avatar}></Post>)
     })
 
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
-
     return (
         <div className={Posts.postsBlock}>
             <h3>My posts</h3>
-            <div>New Post
-                <div className={Posts.postEnterText}>
-                    <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}></textarea>
-                </div>
-                <div>
-                    <button onClick={onAddPost}>Add post</button>
-                </div>
+            <div>
+                <PostSmtFormFormik formik={props.formik}></PostSmtFormFormik>
             </div>
             <div className={Posts.postList}>
                 {postsElements}
