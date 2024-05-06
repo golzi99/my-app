@@ -1,46 +1,46 @@
+import LoginFormCss from "./LoginFormCss.module.css"
+import {Field, Form} from "formik";
+
 export function LoginForm(props) {
 
-    const formik = props.formik;
+    let hasErrorEmail = props.errors.email && props.touched.email;
+    let hasErrorPassword = props.errors.password && props.touched.password;
 
     return (
         <div>
-            <form onSubmit={formik.handleSubmit}>
+            <Form className={LoginFormCss.loginForm}>
                 <div>
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        onChange={formik.handleChange}
-                        value={formik.values.email}
+                    <label htmlFor="email">Email: </label>
+                    <Field className={hasErrorEmail && LoginFormCss.error}
+                           type="email"
+                           id="email"
+                           name="email"
+                           component="input"
                     />
-                    {formik.errors.email && <div>{formik.errors.email}</div>}
+                    {hasErrorEmail && <div>{props.errors.email}</div>}
                 </div>
                 <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        onChange={formik.handleChange}
-                        value={formik.values.password}
+                    <label htmlFor="password">Password: </label>
+                    <Field className={hasErrorPassword && LoginFormCss.error}
+                           type="password"
+                           id="password"
+                           name="password"
+                           component="input"
                     />
-                    {formik.errors.password && <div>{formik.errors.password}</div>}
+                    {hasErrorPassword && <div>{props.errors.password}</div>}
                 </div>
                 <div>
-                    <label htmlFor="rememberMe">Remember Me</label>
-                    <input
+                    <label htmlFor="rememberMe">Remember Me </label>
+                    <Field
                         type="checkbox"
                         id="rememberMe"
                         name="rememberMe"
-                        onChange={formik.handleChange}
-                        value={formik.values.rememberMe}
                     />
                 </div>
                 <div>
                     <button type="submit">Login</button>
                 </div>
-            </form>
+            </Form>
         </div>
     );
 }

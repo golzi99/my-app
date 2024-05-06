@@ -4,7 +4,7 @@ export function Login(props) {
 
     return (
         <div>
-            <LoginForm formik={props.formik}></LoginForm>
+            <LoginForm errors={props.errors} touched={props.touched}></LoginForm>
         </div>
     );
 }

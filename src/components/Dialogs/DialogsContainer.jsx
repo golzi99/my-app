@@ -4,33 +4,34 @@ import {connect} from "react-redux";
 import React from "react";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import {useFormik} from "formik";
+import {Formik} from "formik";
 import {MessageSchema} from "../Utils/Validators/validators";
 
 function DialogsContainer(props) {
 
-    let formik = useFormik({
-        initialValues: {
-            newTextBody: ''
-        },
-        validationSchema: MessageSchema,
-        onSubmit: (values) => {
-            props.sendNewMessage(values.newTextBody);
-            values.newTextBody = '';
-        },
-    });
-
     return (
-        <div>
-            <Dialogs {...props} formik={formik}></Dialogs>
-        </div>
+        <Formik
+            initialValues={{
+                newTextBody: ''
+            }}
+            validationSchema={MessageSchema}
+            onSubmit={
+                (values) => {
+                    props.sendNewMessage(values.newTextBody);
+                    values.newTextBody = '';
+                }
+            }
+        >
+            {({errors, touched}) => (
+                <Dialogs {...props} errors={errors} touched={touched}></Dialogs>
+            )}
+        </Formik>
     );
 }
 
 let mapStateToProps = (state) => {
     return {
         avatars: state.avatars.avatarsStore,
-        newMessageBody: state.dialogsPage.newMessageBody,
         dialogsData: state.dialogsPage.dialogsData,
         messagesData: state.dialogsPage.messagesData,
     };

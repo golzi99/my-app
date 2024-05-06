@@ -46,7 +46,7 @@ export function Dialogs(props) {
             </div>
             <div className={DialogsCss.messages}>
                 {messagesElements}
-                <PostSmtFormFormik formik={props.formik}></PostSmtFormFormik>
+                <PostSmtFormFormik errors={props.errors} touched={props.touched}></PostSmtFormFormik>
             </div>
         </div>);
 }

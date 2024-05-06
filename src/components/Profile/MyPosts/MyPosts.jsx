@@ -15,7 +15,7 @@ export function MyPosts(props) {
         <div className={Posts.postsBlock}>
             <h3>My posts</h3>
             <div>
-                <PostSmtFormFormik formik={props.formik}></PostSmtFormFormik>
+                <PostSmtFormFormik errors={props.errors} touched={props.touched}></PostSmtFormFormik>
             </div>
             <div className={Posts.postList}>
                 {postsElements}

@@ -1,27 +1,28 @@
 import {addPostActionCreator} from "../../../redux/profile-reducer";
 import {connect} from "react-redux";
 import {MyPosts} from "./MyPosts";
-import {useFormik} from "formik";
+import {Formik} from "formik";
 import {PostSchema} from "../../Utils/Validators/validators";
 
 export function MyPostContainer(props) {
 
-
-    let formik = useFormik({
-        initialValues: {
-            newTextBody: ''
-        },
-        validationSchema: PostSchema,
-        onSubmit: (values) => {
-            props.addPost(values.newTextBody);
-            values.newTextBody = '';
-        },
-    });
-
     return (
-        <div>
-            <MyPosts {...props} formik={formik}></MyPosts>
-        </div>
+        <Formik
+            initialValues={{
+                newTextBody: ''
+            }}
+            validationSchema={PostSchema}
+            onSubmit={
+                (values) => {
+                    props.addPost(values.newTextBody);
+                    values.newTextBody = '';
+                }
+            }
+        >
+            {({errors, touched}) => (
+                <MyPosts {...props} errors={errors} touched={touched}></MyPosts>
+            )}
+        </Formik>
     );
 }
 

@@ -54,9 +54,15 @@ export const authAPI = {
             });
     },
 
-    authLoginPost(userLoginData) {
+    login(userLoginData) {
         return instance.post(`/auth/login`, userLoginData).then(response => {
             return response.data;
         });
+    },
+
+    logout() {
+        return instance.delete(`/auth/login`).then(response => {
+            return response.data;
+        })
     }
 }

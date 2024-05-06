@@ -1,4 +1,5 @@
 import {authAPI} from "../API/api";
+import {getAuthUserData, setAuthUserData} from "./auth-reducer";
 
 const SET_LOGIN_PASSWORD_USER = "SET-LOGIN-PASSWORD-USER";
 
@@ -36,16 +37,26 @@ export const setEmailAndPassword = (email, password, rememberMe, captcha) => ({
 
 export const authLoginUser = (userLoginData) => {
     return (dispatch) => {
-        authAPI.authLoginPost(userLoginData).then(data => {
+        authAPI.login(userLoginData).then(data => {
             if (data.resultCode === 0) {
-                console.log(userLoginData);
-                // dispatch(setEmailAndPassword(userLoginData.email, userLoginData.password, userLoginData.rememberMe));
+                dispatch(getAuthUserData());
             }
             else {
-                console.log("Incorrect login or password");
+                alert("Incorrect login or password");
             }
         });
     }
 }
+
+export const authLogoutUser = () => {
+    return (dispatch) => {
+        authAPI.logout().then(data => {
+            if (data.resultCode === 0) {
+                dispatch(setAuthUserData(null, null, null, false));
+            }
+        });
+    }
+}
+
 
 export default formReducer;

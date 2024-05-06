@@ -16,7 +16,10 @@
     font-size: 25px;
 }
 
+.loginBlock span {
+    color: dodgerblue;
+}
+
 .loginBlock a {
-    font-size: 25px;
-    color: deepskyblue;
+    margin-left: 10px;
 }

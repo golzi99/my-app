@@ -1,23 +1,23 @@
 import PostSmtCss from "./PostSmtFormCss.module.css"
 import React from "react";
+import {Field, Form} from "formik";
 
 export function PostSmtFormFormik(props) {
 
-    const formik = props.formik;
-
+    let hasError = props.touched.newTextBody && props.errors.newTextBody;
     return (
         <div className={PostSmtCss.sendMessageBox}>
-            <form onSubmit={formik.handleSubmit}>
-                <textarea
+            <Form>
+                <Field
                     type="textarea"
                     id="newTextBody"
                     name="newTextBody"
-                    onChange={formik.handleChange}
-                    value={formik.values.newTextBody}
+                    placeholder="Enter your message"
+                    component="textarea"
                 />
-                {formik.touched.newTextBody && formik.errors.newTextBody ? <div>{formik.errors.newTextBody}</div> : null}
+                {hasError ? <div>{props.errors.newTextBody}</div> : null}
                 <button type="submit">Send</button>
-            </form>
+            </Form>
         </div>
     );
 }
