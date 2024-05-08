@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="03.05.2024 update methods with formik. also need to create specific textarea as HOC">
-      <change afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginFormCss.module.css" afterDir="false" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout">
+      <change afterPath="$PROJECT_DIR$/src/redux/app-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Utils/Validators/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/Validators/validators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginFormCss.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginFormCss.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/form-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/form-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/form-reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/React_programmes/my-app/src/components/common/LoginForm",
+    "last_opened_file_path": "D:/React_programmes/my-app/src/redux",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,11 +80,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\React_programmes\my-app\src\redux" />
       <recent name="D:\React_programmes\my-app\src\components\common\LoginForm" />
       <recent name="D:\React_programmes\my-app\src\components\common\PostSmtForm" />
       <recent name="D:\React_programmes\my-app\src\components\Dialogs\Message" />
       <recent name="D:\React_programmes\my-app\src\components\Dialogs\DialogItem" />
-      <recent name="D:\React_programmes\my-app\src\components\Profile\ProfileInfo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\React_programmes\my-app\src\hoc\elementForm" />
@@ -123,7 +122,9 @@
       <workItem from="1714460582071" duration="4358000" />
       <workItem from="1714714899382" duration="15101000" />
       <workItem from="1714975107372" duration="1998000" />
-      <workItem from="1714977129941" duration="20984000" />
+      <workItem from="1714977129941" duration="21072000" />
+      <workItem from="1715061063878" duration="16096000" />
+      <workItem from="1715145711674" duration="4816000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -244,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714742229075</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout">
+      <created>1715003795776</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1715003795776</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +343,7 @@
     <MESSAGE value="02.05.2024 create loginForm" />
     <MESSAGE value="02.05.2024 update methods with formik. also need to create specific textarea as HOC" />
     <MESSAGE value="03.05.2024 update methods with formik. also need to create specific textarea as HOC" />
-    <option name="LAST_COMMIT_MESSAGE" value="03.05.2024 update methods with formik. also need to create specific textarea as HOC" />
+    <MESSAGE value="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout" />
   </component>
 </project>

@@ -22,6 +22,7 @@ function Users(props) {
             <div className={UsersCss.pageString}>
                 {slicedPages.map((p) => {
                     return (<span className={props.currentPage === p ? UsersCss.selectedPage : UsersCss.page}
+                                  key={p.id}
                                   onClick={() => {
                                       props.onPageChanged(p)
                                   }}>{p}</span>);

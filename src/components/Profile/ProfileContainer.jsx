@@ -9,7 +9,7 @@ import {compose} from "redux";
 function ProfileContainer(props) {
     let {userId} = useParams();
     if (!userId) {
-        userId = 2;
+        userId = props.authorizedUserId;
     }
 
     useEffect(() => {
@@ -19,7 +19,7 @@ function ProfileContainer(props) {
 
     return (
         <div>
-            <Profile profile={props.profile} status={props.status} isAuth={props.isAuth}
+            <Profile profile={props.profile} status={props.status} initialized={props.initialized}
                      updateStatus={props.updateStatus}/>
         </div>
     );
@@ -27,7 +27,9 @@ function ProfileContainer(props) {
 
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    status: state.profilePage.status
+    status: state.profilePage.status,
+    authorizedUserId: state.auth.userId,
+    initialized: state.app.initialized
 });
 
 export default compose(connect(mapStateToProps, {

@@ -1,5 +1,5 @@
 .loginForm {
-
+ margin: 10px;
 }
 
 input {
@@ -8,4 +8,13 @@ input {
 
 .error {
     border: solid red 2px;
+}
+
+.summaryError {
+    border: solid red 2px;
+    padding: 5px;
+    color: red;
+    width: 200px;
+    background-color: greenyellow;
+    margin-top: 10px;
 }

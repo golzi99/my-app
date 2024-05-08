@@ -4,10 +4,9 @@ const SET_USER_DATA = "SET-USER-DATA";
 
 let initState = {
     userId: null,
-    login: null,
     email: null,
-    isAuth: false,
-    isFetching: false
+    login: null,
+    isAuth: null,
 };
 
 const authReducer = (state = initState, action) => {
@@ -31,10 +30,33 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
 
 export const getAuthUserData = () => {
     return (dispatch) => {
-        authAPI.authMe().then(data => {
+        return authAPI.authMe().then(data => {
             if (data.resultCode === 0) {
                 let {id, login, email} = data.data;
                 dispatch(setAuthUserData(id, login, email, true));
+            }
+        });
+    }
+}
+
+export const authLoginUser = (userLoginData, setStatus) => {
+    return (dispatch) => {
+        authAPI.login(userLoginData).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(getAuthUserData());
+            }
+            else {
+                setStatus({error: data.messages});
+            }
+        });
+    }
+}
+
+export const authLogoutUser = () => {
+    return (dispatch) => {
+        authAPI.logout().then(data => {
+            if (data.resultCode === 0) {
+                dispatch(setAuthUserData(null, null, null, false));
             }
         });
     }

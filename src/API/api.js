@@ -30,11 +30,17 @@ export const usersAPI = {
 }
 
 export const profileAPI = {
-    getProfile(userId = 2) {
+    getProfile(userId) {
+        if (userId == null){
+            return instance.get(`/profile/2`);
+        }
         return instance.get(`/profile/${userId}`);
     },
 
-    getStatus(userId = 2) {
+    getStatus(userId) {
+        if (userId == null){
+            return instance.get(`/profile/status/2`);
+        }
         return instance.get(`/profile/status/${userId}`);
     },
 

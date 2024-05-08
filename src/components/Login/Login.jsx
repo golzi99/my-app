@@ -4,7 +4,7 @@ export function Login(props) {
 
     return (
         <div>
-            <LoginForm errors={props.errors} touched={props.touched}></LoginForm>
+            <LoginForm apiError={props.apiError}></LoginForm>
         </div>
     );
 }
