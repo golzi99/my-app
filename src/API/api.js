@@ -32,14 +32,14 @@ export const usersAPI = {
 export const profileAPI = {
     getProfile(userId) {
         if (userId == null){
-            return instance.get(`/profile/2`);
+            return instance.get(`/profile/`);
         }
         return instance.get(`/profile/${userId}`);
     },
 
     getStatus(userId) {
         if (userId == null){
-            return instance.get(`/profile/status/2`);
+            return instance.get(`/profile/status`);
         }
         return instance.get(`/profile/status/${userId}`);
     },

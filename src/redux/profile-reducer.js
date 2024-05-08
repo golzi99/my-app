@@ -3,6 +3,7 @@ import {profileAPI} from "../API/api";
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_USER_STATUS = "SET-USER-STATUS";
+const RESET_PROFILE = "RESET_PROFILE";
 
 let initState = {
     postsData: [
@@ -39,6 +40,11 @@ const profileReducer = (state = initState, action) => {
                 ...state,
                 status: action.status
             }
+        case RESET_PROFILE:
+            return {
+                ...state,
+                profile: action.profile
+            }
         default:
             return {
                 ...state
@@ -61,7 +67,12 @@ export const setStatus = (status) => ({
     status
 });
 
-export const setUserProfile = (userId) => {
+export const resetProfile = () => ({
+    type: RESET_PROFILE,
+    profile: null
+});
+
+export const getUserProfile = (userId) => {
     return (dispatch) => {
         profileAPI.getProfile(userId).then((response) => {
             dispatch(setUserProfileSuccess(response.data));
@@ -84,6 +95,13 @@ export const updateStatus = (status) => {
                 dispatch(setStatus(status));
             }
         })
+    }
+}
+
+
+export const resetProf = () => {
+    return (dispatch) => {
+        dispatch(resetProfile());
     }
 }
 

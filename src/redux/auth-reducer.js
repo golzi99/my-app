@@ -44,8 +44,7 @@ export const authLoginUser = (userLoginData, setStatus) => {
         authAPI.login(userLoginData).then(data => {
             if (data.resultCode === 0) {
                 dispatch(getAuthUserData());
-            }
-            else {
+            } else {
                 setStatus({error: data.messages});
             }
         });

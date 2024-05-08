@@ -4,6 +4,7 @@ import {FormikProvider, useFormik} from "formik";
 import {EmailErrorSchema} from "../Utils/Validators/validators";
 import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer";
+import {resetProf} from "../../redux/profile-reducer";
 
 function LoginContainer(props) {
 
@@ -23,6 +24,7 @@ function LoginContainer(props) {
                     rememberMe: values.rememberMe,
                     captcha: values.captcha
                 }
+                props.resetProf();
                 props.authLoginUser(userLoginData, submitProps.setStatus);
                 submitProps.resetForm();
             }
@@ -47,4 +49,4 @@ let mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
 });
 
-export default connect(mapStateToProps, {authLoginUser})(LoginContainer)
+export default connect(mapStateToProps, {authLoginUser, resetProf})(LoginContainer)

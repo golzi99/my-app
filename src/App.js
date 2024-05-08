@@ -15,7 +15,7 @@ function App(props) {
 
     useEffect(() => {
         props.initializeApp();
-    }, []);
+    }, );
 
     return (<>
             {!props.initialized ? <Preloader></Preloader> :
