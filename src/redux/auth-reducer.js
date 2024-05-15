@@ -1,6 +1,6 @@
 import {authAPI} from "../API/api";
 
-const SET_USER_DATA = "SET-USER-DATA";
+const SET_USER_DATA = "samurai/auth/SET-USER-DATA";
 
 let initState = {
     userId: null,
@@ -28,37 +28,31 @@ export const setAuthUserData = (userId, login, email, isAuth) => ({
     }
 })
 
-export const getAuthUserData = () => {
-    return (dispatch) => {
-        return authAPI.authMe().then(data => {
-            if (data.resultCode === 0) {
-                let {id, login, email} = data.data;
-                dispatch(setAuthUserData(id, login, email, true));
-            }
-        });
+export const getAuthUserData = () => async (dispatch) => {
+    let response = await authAPI.authMe();
+
+    if (response.resultCode === 0) {
+        let {id, login, email} = response.data;
+        dispatch(setAuthUserData(id, login, email, true));
     }
 }
 
-export const authLoginUser = (userLoginData, setStatus) => {
-    return (dispatch) => {
-        authAPI.login(userLoginData).then(data => {
-            if (data.resultCode === 0) {
-                dispatch(getAuthUserData());
-            } else {
-                setStatus({error: data.messages});
-            }
-        });
-    }
+export const authLoginUser = (userLoginData, setStatus) => (dispatch) => {
+    authAPI.login(userLoginData).then(data => {
+        if (data.resultCode === 0) {
+            dispatch(getAuthUserData());
+        } else {
+            setStatus({error: data.messages});
+        }
+    });
 }
 
-export const authLogoutUser = () => {
-    return (dispatch) => {
-        authAPI.logout().then(data => {
-            if (data.resultCode === 0) {
-                dispatch(setAuthUserData(null, null, null, false));
-            }
-        });
-    }
+export const authLogoutUser = () => (dispatch) => {
+    authAPI.logout().then(data => {
+        if (data.resultCode === 0) {
+            dispatch(setAuthUserData(null, null, null, false));
+        }
+    });
 }
 
 export default authReducer;
