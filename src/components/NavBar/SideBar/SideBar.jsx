@@ -4,10 +4,7 @@ import {FriendIcon} from "./FriendIcon/FriendIcon";
 export function SideBar(props) {
     let friendsElements = props.sideBarData.topFriends.map(
         (f) => {
-            let avatar = props.avatars.find((value) => {
-                return value.id === f.id;
-            });
-            return (<FriendIcon key={f.id} name={f.name} avatar={avatar.avatar} id={f.id}></FriendIcon>);
+            return (<FriendIcon key={f.id} name={f.name} id={f.id}></FriendIcon>);
         }
     );
 

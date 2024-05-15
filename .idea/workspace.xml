@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="06.05.2024 rebuild auth and app reducers, correct working with authorization and do not show dialogs if not auth">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="08.05.2024 add some test, update fromik, add memo in some components, delete avatars, need to add avatars in correct form">
+      <change afterPath="$PROJECT_DIR$/public/img/no-profile-picture-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatusWithHooks.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/profile-reducer.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/users-selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBarContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/avatars-reducer.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -66,6 +83,7 @@
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs.jest.jest_package": "D:/React_programmes/my-app/node_modules/react-scripts",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "editor.preferences.completion",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
@@ -75,10 +93,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\React_programmes\my-app\src\redux" />
+      <recent name="D:\React_programmes\my-app\src\components\Profile\ProfileInfo" />
       <recent name="D:\React_programmes\my-app\src\components\common\LoginForm" />
       <recent name="D:\React_programmes\my-app\src\components\common\PostSmtForm" />
       <recent name="D:\React_programmes\my-app\src\components\Dialogs\Message" />
-      <recent name="D:\React_programmes\my-app\src\components\Dialogs\DialogItem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\React_programmes\my-app\src\hoc\elementForm" />
@@ -87,6 +105,68 @@
       <recent name="D:\React_programmes\my-app\src\components\NavBar" />
       <recent name="D:\React_programmes\my-app\src\components\Header" />
     </key>
+  </component>
+  <component name="RunManager" selected="Jest.after deleting length of post shouldn`t be decrement if id is incorrect">
+    <configuration name="after deleting length of post should be decrement" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-names>
+        <test-name value="after deleting length of post should be decrement" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="after deleting length of post shouldn`t be decrement if id is incorrect" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-names>
+        <test-name value="after deleting length of post shouldn`t be decrement if id is incorrect" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="length of post should be incremented" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-names>
+        <test-name value="length of post should be incremented" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="message of new post should be &quot;it-course&quot;" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-names>
+        <test-name value="message of new post should be &quot;it-course&quot;" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.after deleting length of post shouldn`t be decrement if id is incorrect" />
+        <item itemvalue="Jest.after deleting length of post should be decrement" />
+        <item itemvalue="Jest.message of new post should be &quot;it-course&quot;" />
+        <item itemvalue="Jest.length of post should be incremented" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -118,7 +198,10 @@
       <workItem from="1714975107372" duration="1998000" />
       <workItem from="1714977129941" duration="21072000" />
       <workItem from="1715061063878" duration="16096000" />
-      <workItem from="1715145711674" duration="18582000" />
+      <workItem from="1715145711674" duration="18652000" />
+      <workItem from="1715577027815" duration="12653000" />
+      <workItem from="1715663823348" duration="2498000" />
+      <workItem from="1715751429207" duration="12277000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -253,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715151536616</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="08.05.2024 add clear profile when login">
+      <created>1715169416631</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715169416631</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +436,8 @@
     <MESSAGE value="03.05.2024 update methods with formik. also need to create specific textarea as HOC" />
     <MESSAGE value="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout" />
     <MESSAGE value="06.05.2024 rebuild auth and app reducers, correct working with authorization and do not show dialogs if not auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="06.05.2024 rebuild auth and app reducers, correct working with authorization and do not show dialogs if not auth" />
+    <MESSAGE value="08.05.2024 add clear profile when login" />
+    <MESSAGE value="08.05.2024 add some test, update fromik, add memo in some components, delete avatars, need to add avatars in correct form" />
+    <option name="LAST_COMMIT_MESSAGE" value="08.05.2024 add some test, update fromik, add memo in some components, delete avatars, need to add avatars in correct form" />
   </component>
 </project>

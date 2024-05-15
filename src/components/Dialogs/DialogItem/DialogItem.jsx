@@ -15,7 +15,7 @@ export function DialogItem(props) {
             <NavLink to={path} className={SelectedLink()}>
                 <img
                     alt="Avatar"
-                    src={props.avatar}/>
+                    src={`/img/no-profile-picture-icon.png`}/>
                 {props.name}
             </NavLink>
         </div>);

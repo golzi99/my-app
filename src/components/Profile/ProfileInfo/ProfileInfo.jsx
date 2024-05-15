@@ -1,7 +1,7 @@
 import ProfileInfoCss from "./ProfileInfo.module.css";
 import Preloader from "../../common/preLoader/preloader";
 import React from "react";
-import ProfileStatus from "./ProfileStatus"
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 export function ProfileInfo(props) {
     if (!props.profile) {
@@ -12,7 +12,7 @@ export function ProfileInfo(props) {
             <div className={ProfileInfoCss.backgroundProfile}></div>
             <div className={ProfileInfoCss.descriptionBlock}>
                 <img alt="avatarProfile" src={props.profile.photos.large}/>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}></ProfileStatus>
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}></ProfileStatusWithHooks>
             </div>
         </div>
     );

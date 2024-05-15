@@ -5,7 +5,6 @@ import {Formik} from "formik";
 import {PostSchema} from "../../Utils/Validators/validators";
 
 export function MyPostContainer(props) {
-
     return (
         <Formik
             initialValues={{
@@ -19,18 +18,14 @@ export function MyPostContainer(props) {
                 }
             }
         >
-            {({errors, touched}) => (
-                <MyPosts {...props} errors={errors} touched={touched}></MyPosts>
-            )}
+            <MyPosts {...props}></MyPosts>
         </Formik>
     );
 }
 
 let mapStateToProps = (state) => {
     return {
-        avatars: state.avatars.avatarsStore,
         postsData: state.profilePage.postsData,
-        newPostText: state.profilePage.newPostText
     };
 }
 

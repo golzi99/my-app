@@ -8,7 +8,7 @@ export function FriendIcon(props) {
         <div className={FriendIconCss.friendItem}>
             <NavLink to={path} className={FriendIconCss.linkBestFriend}>
                 <img alt="Avatar"
-                     src={props.avatar}/>
+                     src={`/img/no-profile-picture-icon.png`}/>
                 {props.name}
             </NavLink>
         </div>

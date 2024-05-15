@@ -3,12 +3,11 @@ import {SideBar} from "./SideBar";
 
 let mapStateToProps = (state) => {
     return {
-        avatars: state.avatars.avatarsStore,
         sideBarData: state.sideBar,
     };
 }
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = () => {
     return {
 
     };

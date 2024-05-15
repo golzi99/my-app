@@ -4,7 +4,7 @@ export function Post(props) {
     return (
         <div className={PostModule.item}>
             <img alt="Avatar"
-                 src={props.avatar}/>
+                 src={`/img/no-profile-picture-icon.png`}/>
             {props.message}
             <div>
                 <span>Like {props.likesCount}</span>

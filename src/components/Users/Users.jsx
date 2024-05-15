@@ -30,20 +30,11 @@ function Users(props) {
             </div>
             {
                 props.users.map(u => {
-                    let avatar = props.avatars.find((value) => {
-                        if (u.photos.small === null) {
-                            return value.id === props.lastDigit(u.id);
-                        } else {
-                            return u.photos.small; // check it in the further
-                        }
-
-                    });
-
                     return (<div key={u.id} className={UsersCss.userList}>
                         <span>
                             <div>
                                 <NavLink to={`/ProfileInfo/${u.id}`}>
-                                    <img alt="avatar" src={avatar.avatar}/>
+                                    <img alt="avatar" src={`/img/no-profile-picture-icon.png`}/>
                                 </NavLink>
                             </div>
                             <div>

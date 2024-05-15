@@ -17,8 +17,7 @@ function ProfileContainer(props) {
     useEffect(() => {
         if (!userId) {
             navigate("/Login");
-        }
-        else {
+        } else {
             props.getUserProfile(userId);
             props.getStatus(userId);
         }

@@ -1,28 +1,17 @@
 import DialogsCss from "./Dialogs.module.css"
 import React from "react";
-import {useLocation} from "react-router-dom";
 import {DialogItem} from "./DialogItem/DialogItem";
 import {MyMessage} from "./Message/MyMessage";
 import {OtherMessage} from "./Message/OtherMessage";
 import {PostSmtFormFormik} from "../common/PostSmtForm/PostSmtFormFormik";
 
 
-export function Dialogs(props) {
-    const splitLoc = useLocation().pathname.substring(1).split('/');
-    let dialogRef;
-    if (splitLoc.length > 1) {
-        dialogRef = splitLoc[splitLoc.length - 1];
-    } else
-        dialogRef = "0";
+export const Dialogs = React.memo(props => {
 
     let id = 0;
-
     let dialogsElements = props.dialogsData.map(
         (d) => {
-            let avatar = props.avatars.find((value) => {
-                return value.id === d.id;
-            })
-            return <DialogItem key={d.id} name={d.name} id={d.id} avatar={avatar.avatar}></DialogItem>;
+            return <DialogItem key={d.id} name={d.name} id={d.id}></DialogItem>;
         }
     );
 
@@ -30,11 +19,9 @@ export function Dialogs(props) {
         (m) => {
             id++;
             if (m.id === 0) {
-                const messageAvatar = props.avatars.find(object => object.id === 0).avatar;
-                return (<MyMessage key={id} textMessage={m.message} avatar={messageAvatar}></MyMessage>);
+                return (<MyMessage key={id} textMessage={m.message}></MyMessage>);
             } else {
-                const messageAvatar = props.avatars.find(object => object.id.toString() === dialogRef).avatar;
-                return (<OtherMessage key={id} textMessage={m.message} avatar={messageAvatar}></OtherMessage>);
+                return (<OtherMessage key={id} textMessage={m.message}></OtherMessage>);
             }
         }
     );
@@ -46,7 +33,7 @@ export function Dialogs(props) {
             </div>
             <div className={DialogsCss.messages}>
                 {messagesElements}
-                <PostSmtFormFormik errors={props.errors} touched={props.touched}></PostSmtFormFormik>
+                <PostSmtFormFormik></PostSmtFormFormik>
             </div>
         </div>);
-}
+});

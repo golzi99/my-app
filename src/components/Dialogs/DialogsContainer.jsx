@@ -22,16 +22,13 @@ function DialogsContainer(props) {
                 }
             }
         >
-            {({errors, touched}) => (
-                <Dialogs {...props} errors={errors} touched={touched}></Dialogs>
-            )}
+                <Dialogs {...props}></Dialogs>
         </Formik>
     );
 }
 
 let mapStateToProps = (state) => {
     return {
-        avatars: state.avatars.avatarsStore,
         dialogsData: state.dialogsPage.dialogsData,
         messagesData: state.dialogsPage.messagesData,
     };

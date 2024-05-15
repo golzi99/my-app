@@ -4,7 +4,7 @@ export function MyMessage(props) {
     return (
         <div className={MessagesCss.myMessage}>
             {props.textMessage}
-            <img alt="avatar" src={props.avatar}/>
+            <img alt="avatar" src={`/img/no-profile-picture-icon.png`}/>
         </div>
     );
 }
