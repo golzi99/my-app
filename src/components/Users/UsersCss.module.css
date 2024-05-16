@@ -3,23 +3,3 @@
     height: 50px;
     width: 50px;
 }
-
-.pageString {
-    font-size: 20px;
-    display: flex;
-    padding: 10px;
-}
-
-.pageString span {
-    padding: 5px;
-    margin-right: 20px;
-}
-
-.selectedPage {
-    font-weight: bold;
-    cursor: default;
-}
-
-.page {
-    cursor: pointer;
-}

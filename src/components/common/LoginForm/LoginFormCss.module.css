@@ -6,10 +6,6 @@ input {
     border: solid sandybrown 2px;
 }
 
-.error {
-    border: solid red 2px;
-}
-
 .summaryError {
     border: solid red 2px;
     padding: 5px;
@@ -17,4 +13,8 @@ input {
     width: 200px;
     background-color: greenyellow;
     margin-top: 10px;
+}
+
+.error input {
+    border: solid red 2px;
 }

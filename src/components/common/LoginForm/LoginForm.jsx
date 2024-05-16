@@ -1,7 +1,8 @@
 import LoginFormCss from "./LoginFormCss.module.css"
-import {Field, useFormikContext} from "formik";
+import {useFormikContext} from "formik";
+import {createField} from "../SimpleForms/SimpleForms";
 
-export function LoginForm(props) {
+export function LoginForm({apiError}) {
 
     const formik = useFormikContext();
 
@@ -10,38 +11,24 @@ export function LoginForm(props) {
 
     return (
         <form onSubmit={formik.handleSubmit} className={LoginFormCss.loginForm}>
-            <div>
+            <div className={hasErrorEmail && LoginFormCss.error}>
                 <label htmlFor="email">Email: </label>
-                <Field className={hasErrorEmail && LoginFormCss.error}
-                       type="email"
-                       id="email"
-                       name="email"
-                       component="input"
-                />
+                {createField("email", "email", "email", "input")}
                 {hasErrorEmail && <div>{formik.errors.email}</div>}
             </div>
-            <div>
+            <div className={hasErrorPassword && LoginFormCss.error}>
                 <label htmlFor="password">Password: </label>
-                <Field className={hasErrorPassword && LoginFormCss.error}
-                       type="password"
-                       id="password"
-                       name="password"
-                       component="input"
-                />
+                {createField("password", "password", "password", "input")}
                 {hasErrorPassword && <div>{formik.errors.password}</div>}
             </div>
             <div>
                 <label htmlFor="rememberMe">Remember Me </label>
-                <Field
-                    type="checkbox"
-                    id="rememberMe"
-                    name="rememberMe"
-                />
+                {createField("checkbox", "checkbox", "rememberMe")}
             </div>
             <div>
                 <button type="submit">Login</button>
             </div>
-            {props.apiError ? <div className={LoginFormCss.summaryError}>{props.apiError}</div> : null}
+            {apiError ? <div className={LoginFormCss.summaryError}>{apiError}</div> : null}
         </form>
     );
 }

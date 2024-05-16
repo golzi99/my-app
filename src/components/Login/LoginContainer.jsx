@@ -6,7 +6,7 @@ import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer";
 import {resetProf} from "../../redux/profile-reducer";
 
-function LoginContainer(props) {
+function LoginContainer({resetProf, authLoginUser, isAuth}) {
 
     const formik = useFormik({
         initialValues: {
@@ -24,8 +24,8 @@ function LoginContainer(props) {
                     rememberMe: values.rememberMe,
                     captcha: values.captcha
                 }
-                props.resetProf();
-                props.authLoginUser(userLoginData, submitProps.setStatus);
+                resetProf();
+                authLoginUser(userLoginData, submitProps.setStatus);
                 submitProps.resetForm();
             }
     })
@@ -38,7 +38,7 @@ function LoginContainer(props) {
     return (
         <FormikProvider value={formik}>
             <div>
-                {props.isAuth ? <Navigate to={"/ProfileInfo"}/> :
+                {isAuth ? <Navigate to={"/ProfileInfo"}/> :
                     <Login apiError={apiErrors}></Login>}
             </div>
         </FormikProvider>

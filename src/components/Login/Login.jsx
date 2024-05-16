@@ -1,10 +1,10 @@
 import {LoginForm} from "../common/LoginForm/LoginForm";
 
-export function Login(props) {
+export function Login({apiError}) {
 
     return (
         <div>
-            <LoginForm apiError={props.apiError}></LoginForm>
+            <LoginForm apiError={apiError}></LoginForm>
         </div>
     );
 }

@@ -1,0 +1,19 @@
+.selectedPage {
+    font-weight: bold;
+    cursor: default;
+}
+
+.pageString span {
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.page {
+    cursor: pointer;
+}
+
+.pageString {
+    font-size: 20px;
+    display: flex;
+    padding: 10px;
+}
