@@ -8,24 +8,43 @@ function Paginator({pagesCount, currentPage, onPageChanged}) {
         pages.push(i);
     }
 
-    let slicedPages;
     let curPage = currentPage;
-    if (curPage - 3 < 0) {
-        slicedPages = pages.slice(0, 5);
+    let slicedPages;
+
+    if (curPage - 5 < 0) {
+        slicedPages = pages.slice(0, 10);
     } else {
-        slicedPages = pages.slice(curPage - 3, curPage + 2);
+        slicedPages = pages.slice(curPage - 5, curPage + 5);
     }
 
-    return (
-        <div className={PaginatorCss.pageString}>
-            {slicedPages.map((p) => {
-                return (<span key={p} className={currentPage === p ? PaginatorCss.selectedPage : PaginatorCss.page}
-                              onClick={() => {
-                                  onPageChanged(p)
-                              }}>{p}</span>);
-            })}
-        </div>
-    );
+    return (<div className={PaginatorCss.pageString}>
+        {currentPage > 1 && <button onClick={() => {
+            onPageChanged(curPage - 1);
+        }}>PREV</button>}
+
+        {slicedPages.map((p) => {
+            return (<span key={p} className={currentPage === p ? PaginatorCss.selectedPage : PaginatorCss.page}
+                          onClick={() => {
+                              onPageChanged(p);
+                          }}>{p}</span>);
+        })}
+
+
+        {currentPage < pagesCount() && <button onClick={() => {
+            onPageChanged(curPage + 1);
+        }}>NEXT</button>}
+    </div>);
+
+    // return (
+    //     <div className={PaginatorCss.pageString}>
+    //         {slicedPages.map((p) => {
+    //             return (<span key={p} className={currentPage === p ? PaginatorCss.selectedPage : PaginatorCss.page}
+    //                           onClick={() => {
+    //                               onPageChanged(p)
+    //                           }}>{p}</span>);
+    //         })}
+    //     </div>
+    // );
 }
 
 export default Paginator;

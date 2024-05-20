@@ -4,7 +4,7 @@ import {unFollow, follow,
 } from "../../redux/users-reducer";
 import React from "react";
 import Users from "./Users";
-import Preloader from "../common/preLoader/preloader";
+// import Preloader from "../common/preLoader/preloader";
 import {compose} from "redux";
 import {
     getCurrentPage, getFollowingInProgress,
@@ -33,7 +33,7 @@ class UsersContainer extends React.Component {
     render() {
         return (
             <>
-                {this.props.isFetching ? <Preloader></Preloader> : null}
+                {/*{this.props.isFetching ? <Preloader></Preloader> : null}*/}
                 <Users pagesCount={this._pagesCount}
                        onPageChanged={this._onPageChanged}
                        unFollow={this.props.unFollow}

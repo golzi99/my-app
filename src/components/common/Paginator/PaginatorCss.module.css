@@ -1,11 +1,19 @@
 .selectedPage {
     font-weight: bold;
     cursor: default;
+    color: black;
+    background-color: yellow;
 }
 
 .pageString span {
-    padding: 5px;
-    margin-right: 20px;
+    flex: 1; /* Занимает всю доступную ширину */
+    min-width: 30px; /* Минимальная ширина страницы */
+    max-width: 400px; /* Максимальная ширина страницы */
+    margin: 2px; /* Отступ между страницами */
+    border: 1px solid sandybrown; /* Граница вокруг страницы */
+    text-align: center; /* Центрирование содержимого */
+    padding: 5px; /* Внутренний отступ */
+    flex-shrink: 0; /* Предотвращение сжатия */
 }
 
 .page {
@@ -13,7 +21,7 @@
 }
 
 .pageString {
-    font-size: 20px;
     display: flex;
-    padding: 10px;
+    width: 100px; /* Ширина контейнера */
+    height: 40px;  /* Высота контейнера */
 }
