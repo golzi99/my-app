@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="15.05.2024 update some reducers">
-      <change afterPath="$PROJECT_DIR$/src/components/Users/User.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utils/object-helpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/PaginatorCss.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.js" afterDir="false" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="16.05.2024 refactor components">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersCss.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersCss.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginFormCss.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginFormCss.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/React_programmes/my-app/src/components/Users",
+    "last_opened_file_path": "D:/React_programmes/my-app/src/components/Profile/ProfileInfo",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,9 +73,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\React_programmes\my-app\src\components\Profile\ProfileInfo" />
       <recent name="D:\React_programmes\my-app\src\components\Users" />
       <recent name="D:\React_programmes\my-app\src\redux" />
-      <recent name="D:\React_programmes\my-app\src\components\Profile\ProfileInfo" />
       <recent name="D:\React_programmes\my-app\src\components\common\LoginForm" />
       <recent name="D:\React_programmes\my-app\src\components\common\PostSmtForm" />
     </key>
@@ -96,76 +87,84 @@
       <recent name="D:\React_programmes\my-app\src\components\NavBar" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.after deleting length of post shouldn`t be decrement if id is incorrect">
-    <configuration name="after deleting length of post should be decrement" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.ProfileStatus component.status from props should be in state">
+    <configuration name="ProfileStatus component.after creations &lt;span&gt; should be displayed with correct status" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
       <test-names>
-        <test-name value="after deleting length of post should be decrement" />
+        <test-name value="ProfileStatus component" />
+        <test-name value="after creations &lt;span&gt; should be displayed with correct status" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="after deleting length of post shouldn`t be decrement if id is incorrect" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileStatus component.after creations &lt;span&gt; should be displayed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
       <test-names>
-        <test-name value="after deleting length of post shouldn`t be decrement if id is incorrect" />
+        <test-name value="ProfileStatus component" />
+        <test-name value="after creations &lt;span&gt; should be displayed" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="length of post should be incremented" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileStatus component.callback should be called" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
       <test-names>
-        <test-name value="length of post should be incremented" />
+        <test-name value="ProfileStatus component" />
+        <test-name value="callback should be called" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="message of new post should be &quot;it-course&quot;" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="ProfileStatus component.input should be displayed in editMode instead of span" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.js" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
       <test-names>
-        <test-name value="message of new post should be &quot;it-course&quot;" />
+        <test-name value="ProfileStatus component" />
+        <test-name value="input should be displayed in editMode instead of span" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
+    <configuration name="ProfileStatus component.status from props should be in state" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
       <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
+      <test-names>
+        <test-name value="ProfileStatus component" />
+        <test-name value="status from props should be in state" />
+      </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
-        <item itemvalue="Jest.after deleting length of post shouldn`t be decrement if id is incorrect" />
-        <item itemvalue="Jest.after deleting length of post should be decrement" />
-        <item itemvalue="Jest.message of new post should be &quot;it-course&quot;" />
-        <item itemvalue="Jest.length of post should be incremented" />
+        <item itemvalue="Jest.ProfileStatus component.status from props should be in state" />
+        <item itemvalue="Jest.ProfileStatus component.callback should be called" />
+        <item itemvalue="Jest.ProfileStatus component.input should be displayed in editMode instead of span" />
+        <item itemvalue="Jest.ProfileStatus component.after creations &lt;span&gt; should be displayed" />
+        <item itemvalue="Jest.ProfileStatus component.after creations &lt;span&gt; should be displayed with correct status" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +202,8 @@
       <workItem from="1715577027815" duration="12653000" />
       <workItem from="1715663823348" duration="2498000" />
       <workItem from="1715751429207" duration="13759000" />
-      <workItem from="1715837975841" duration="12040000" />
+      <workItem from="1715837975841" duration="13315000" />
+      <workItem from="1716181191108" duration="10878000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -359,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715777888347</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="16.05.2024 refactor components">
+      <created>1715860504992</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1715860504992</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,6 +462,14 @@
     <MESSAGE value="08.05.2024 add clear profile when login" />
     <MESSAGE value="08.05.2024 add some test, update fromik, add memo in some components, delete avatars, need to add avatars in correct form" />
     <MESSAGE value="15.05.2024 update some reducers" />
-    <option name="LAST_COMMIT_MESSAGE" value="15.05.2024 update some reducers" />
+    <MESSAGE value="16.05.2024 refactor components" />
+    <option name="LAST_COMMIT_MESSAGE" value="16.05.2024 refactor components" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JavaScriptTestRunnerJest">
+        <watch expression="span._fiber" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

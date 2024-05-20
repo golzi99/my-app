@@ -6,16 +6,17 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginContainer from "./components/Login/LoginContainer";
-import {useEffect} from "react";
-import {connect} from "react-redux";
+import React, {useEffect} from "react";
+import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preLoader/preloader";
+import store from "./redux/redux-store";
 
 function App(props) {
 
     useEffect(() => {
         props.initializeApp();
-    }, );
+    },);
 
     return (<>
             {!props.initialized ? <Preloader></Preloader> :
@@ -41,4 +42,13 @@ let mapStateToProps = (state) => ({
     initialized: state.app.initialized,
 });
 
-export default connect(mapStateToProps, {initializeApp})(App);
+let AppContainer = connect(mapStateToProps, {initializeApp})(App);
+
+const SamuraiJSApp = () => {
+    return (
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider>);
+}
+
+export default SamuraiJSApp;
