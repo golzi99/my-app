@@ -1,16 +1,17 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import LoginContainer from "./components/Login/LoginContainer";
 import React, {useEffect} from "react";
 import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/preLoader/preloader";
 import store from "./redux/redux-store";
+
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.jsx'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.jsx'));
+const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer'));
 
 function App(props) {
 
@@ -25,12 +26,14 @@ function App(props) {
                         <HeaderContainer></HeaderContainer>
                         <NavBar></NavBar>
                         <div className="app-content">
-                            <Routes>
-                                <Route path="/ProfileInfo/:userId?" element={<ProfileContainer/>}/>
-                                <Route path="/Dialogs/*" element={<DialogsContainer/>}/>
-                                <Route path="/Users" element={<UsersContainer/>}/>
-                                <Route path="/Login" element={<LoginContainer/>}/>
-                            </Routes>
+                            <React.Suspense fallback={<div><Preloader /></div>}>
+                                <Routes>
+                                    <Route path="/ProfileInfo/:userId?" element={<ProfileContainer />} />
+                                    <Route path="/Login" element={<LoginContainer/>} />
+                                    <Route exact path="//Dialogs/*" element={<DialogsContainer />} />
+                                    <Route path="/Users" element={<UsersContainer />} />
+                                </Routes>
+                            </React.Suspense>
                         </div>
                     </div>
                 </BrowserRouter>}
