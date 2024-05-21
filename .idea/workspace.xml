@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="21.05.2024 first deploy">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="21.05.2024 first deploy 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716299249084</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="21.05.2024 first deploy 1">
+      <created>1716299355675</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1716299355675</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +451,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="28.03.2024 RefactorStruct" />
     <MESSAGE value="28.03.2024 Refactor Struct" />
     <MESSAGE value="28.03.2024 Rebuild NavBar and add Dialog" />
     <MESSAGE value="01.04.2024 Refactor project, make first outer res, add new img" />
@@ -470,7 +475,8 @@
     <MESSAGE value="20.05.2024 add ProfileStatus test and app test" />
     <MESSAGE value="20.05.2024 change paginator on usersPage" />
     <MESSAGE value="21.05.2024 first deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="21.05.2024 first deploy" />
+    <MESSAGE value="21.05.2024 first deploy 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="21.05.2024 first deploy 1" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
