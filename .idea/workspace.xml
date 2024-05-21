@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="20.05.2024 change paginator on usersPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,20 +83,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Jest.ProfileStatus component.status from props should be in state">
-    <configuration name="ProfileStatus component.after creations &lt;span&gt; should be displayed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
-      <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="after creations &lt;span&gt; should be displayed" />
-      </test-names>
-      <method v="2" />
-    </configuration>
     <configuration name="ProfileStatus component.callback should be called" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -107,20 +94,6 @@
       <test-names>
         <test-name value="ProfileStatus component" />
         <test-name value="callback should be called" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProfileStatus component.input should be displayed in editMode instead of span" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
-      <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="input should be displayed in editMode instead of span" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -138,6 +111,26 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -150,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.ProfileStatus component.status from props should be in state" />
         <item itemvalue="Jest.ProfileStatus component.callback should be called" />
-        <item itemvalue="Jest.ProfileStatus component.input should be displayed in editMode instead of span" />
-        <item itemvalue="Jest.ProfileStatus component.after creations &lt;span&gt; should be displayed" />
       </list>
     </recent_temporary>
   </component>
