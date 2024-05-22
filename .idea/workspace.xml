@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="21.05.2024 first deploy 3" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="21.05.2024 bugs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -139,9 +144,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.start" />
         <item itemvalue="Jest.ProfileStatus component.status from props should be in state" />
         <item itemvalue="Jest.ProfileStatus component.callback should be called" />
       </list>
@@ -184,6 +189,7 @@
       <workItem from="1715837975841" duration="13315000" />
       <workItem from="1716181191108" duration="19664000" />
       <workItem from="1716280786349" duration="4912000" />
+      <workItem from="1716356647183" duration="714000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -392,19 +398,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="dev" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
         <entry key="ff6db3fd-dd3a-4b90-8f44-f1a9404897b4">
