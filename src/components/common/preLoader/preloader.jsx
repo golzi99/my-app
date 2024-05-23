@@ -1,8 +1,9 @@
 import React from "react";
+import nonProfileImg from "@assets/svg/loading.svg"
 
-function Preloader(props) {
+function Preloader() {
     return (<div>
-        <img alt="Loading" src={`${process.env.PUBLIC_URL}/svg/loading.svg`}/>
+        <img alt="Loading" src={nonProfileImg}/>
     </div>);
 }
 

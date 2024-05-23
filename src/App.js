@@ -26,12 +26,12 @@ function App(props) {
                         <HeaderContainer></HeaderContainer>
                         <NavBar></NavBar>
                         <div className="app-content">
-                            <React.Suspense fallback={<div><Preloader /></div>}>
+                            <React.Suspense fallback={<div><Preloader/></div>}>
                                 <Routes>
-                                    <Route path="/ProfileInfo/:userId?" element={<ProfileContainer />} />
+                                    <Route path="/ProfileInfo/:userId?" element={<ProfileContainer/>} />
                                     <Route path="/Login" element={<LoginContainer/>} />
-                                    <Route exact path="//Dialogs/*" element={<DialogsContainer />} />
-                                    <Route path="/Users" element={<UsersContainer />} />
+                                    <Route exact path="//Dialogs/*" element={<DialogsContainer/>} />
+                                    <Route path="/Users" element={<UsersContainer/>} />
                                 </Routes>
                             </React.Suspense>
                         </div>

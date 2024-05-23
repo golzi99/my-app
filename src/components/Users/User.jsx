@@ -1,6 +1,7 @@
 import UsersCss from "./UsersCss.module.css"
 import React from "react";
 import {NavLink} from "react-router-dom";
+import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 
 function User({user, followingInProgress, unFollow, follow}) {
     return (
@@ -8,7 +9,7 @@ function User({user, followingInProgress, unFollow, follow}) {
             <span>
                 <div>
                     <NavLink to={`/ProfileInfo/${user.id}`}>
-                        <img alt="avatar" src={`/img/no-profile-picture-icon.png`}/>
+                        <img alt="avatar" src={nonProfileImg}/>
                     </NavLink>
                 </div>
                 <div>

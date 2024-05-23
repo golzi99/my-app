@@ -1,5 +1,6 @@
 import DialogsCss from "./../Dialogs.module.css"
 import {NavLink} from "react-router-dom";
+import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 
 export function DialogItem(props) {
     let path = `/Dialogs/${props.id}`;
@@ -15,7 +16,7 @@ export function DialogItem(props) {
             <NavLink to={path} className={SelectedLink()}>
                 <img
                     alt="Avatar"
-                    src={`../img/no-profile-picture-icon.png`}/>
+                    src={nonProfileImg}/>
                 {props.name}
             </NavLink>
         </div>);
