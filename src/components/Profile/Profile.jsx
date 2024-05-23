@@ -6,7 +6,7 @@ import Preloader from "../common/preLoader/preloader";
 
 export function Profile(props) {
 
-    if (props.location === "/ProfileInfo" && !props.isAuth) {
+    if (props.isOwner && !props.isAuth) {
         return (<Navigate to={"/Login"}></Navigate>);
     }
 
@@ -14,8 +14,8 @@ export function Profile(props) {
         <div>
             {!props.profile ? <Preloader></Preloader> :
                 <>
-                    <ProfileInfo isAuth={props.isAuth} location={props.location} profile={props.profile} status={props.status}
-                                 updateStatus={props.updateStatus}></ProfileInfo>
+                    <ProfileInfo profile={props.profile} status={props.status} isOwner={props.isOwner}
+                                 updateStatus={props.updateStatus} savePhoto={props.savePhoto}></ProfileInfo>
                     <MyPostsContainer></MyPostsContainer>
                 </>}
         </div>);

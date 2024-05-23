@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import React, {useEffect} from "react";
@@ -21,7 +21,7 @@ function App(props) {
 
     return (<>
             {!props.initialized ? <Preloader></Preloader> :
-                <BrowserRouter>
+                <HashRouter>
                     <div className="App">
                         <HeaderContainer></HeaderContainer>
                         <NavBar></NavBar>
@@ -36,7 +36,7 @@ function App(props) {
                             </React.Suspense>
                         </div>
                     </div>
-                </BrowserRouter>}
+                </HashRouter>}
         </>
     );
 }

@@ -34,17 +34,6 @@ function Paginator({pagesCount, currentPage, onPageChanged}) {
             onPageChanged(curPage + 1);
         }}>NEXT</button>}
     </div>);
-
-    // return (
-    //     <div className={PaginatorCss.pageString}>
-    //         {slicedPages.map((p) => {
-    //             return (<span key={p} className={currentPage === p ? PaginatorCss.selectedPage : PaginatorCss.page}
-    //                           onClick={() => {
-    //                               onPageChanged(p)
-    //                           }}>{p}</span>);
-    //         })}
-    //     </div>
-    // );
 }
 
 export default Paginator;
