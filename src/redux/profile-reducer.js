@@ -101,7 +101,6 @@ const setProfilePhoto = (photos) => ({
 
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await profileAPI.getProfile(userId);
-
     dispatch(setUserProfileSuccess(response.data));
 }
 

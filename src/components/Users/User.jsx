@@ -9,7 +9,7 @@ function User({user, followingInProgress, unFollow, follow}) {
             <span>
                 <div>
                     <NavLink to={`/ProfileInfo/${user.id}`}>
-                        <img alt="avatar" src={nonProfileImg}/>
+                        <img alt="avatar" src={user.photos.small || nonProfileImg}/>
                     </NavLink>
                 </div>
                 <div>
