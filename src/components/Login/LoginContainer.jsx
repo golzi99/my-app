@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import {Login} from "./Login";
 import {FormikProvider, useFormik} from "formik";
-import {EmailErrorSchema} from "../Utils/Validators/validators";
+import {LoginErrorSchema} from "../Utils/Validators/validators";
 import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer";
 import {resetProf} from "../../redux/profile-reducer";
@@ -15,7 +15,7 @@ function LoginContainer({resetProf, authLoginUser, isAuth}) {
             rememberMe: false,
             captcha: false
         },
-        validationSchema: EmailErrorSchema,
+        validationSchema: LoginErrorSchema,
         onSubmit:
             (values, submitProps) => {
                 let userLoginData = {

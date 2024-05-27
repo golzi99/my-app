@@ -15,7 +15,8 @@ export function Profile(props) {
             {!props.profile ? <Preloader></Preloader> :
                 <>
                     <ProfileInfo profile={props.profile} status={props.status} isOwner={props.isOwner}
-                                 updateStatus={props.updateStatus} savePhoto={props.savePhoto}></ProfileInfo>
+                                 updateStatus={props.updateStatus} savePhoto={props.savePhoto}
+                                 saveProfile={props.saveProfile}></ProfileInfo>
                     <MyPostsContainer></MyPostsContainer>
                 </>}
         </div>);

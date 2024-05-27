@@ -18,7 +18,6 @@ function ProfileData({profile}) {
             {profile.aboutMe &&
                 <div>
                     <b>About me:</b> {profile.aboutMe}
-                    }
                 </div>
             }
             <div>

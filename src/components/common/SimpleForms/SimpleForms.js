@@ -1,9 +1,20 @@
 import {Field} from "formik";
 
-export const createField = (type, id, name, placeholder, component) => {
-    return (<Field type={type}
+export const createField = (type, id, name, placeholder, component, value) => {
+    let checked;
+    if (type === "checkbox") {
+        checked = value;
+    }
+
+    return (
+        <div>
+            <Field type={type}
                    id={id}
                    name={name}
                    placeholder={placeholder}
-                   component={component}/>);
+                   value={value || ""}
+                   checked={checked}
+                   component={component}/>
+        </div>
+);
 }

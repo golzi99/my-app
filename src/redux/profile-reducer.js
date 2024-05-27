@@ -5,7 +5,7 @@ const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_USER_STATUS = "SET-USER-STATUS";
 const RESET_PROFILE = "RESET_PROFILE";
 const DELETE_POST = "DELETE-POST";
-const SET_PROFILE_PHOTO = "SET-PROFILE-PHOTO"
+const SET_PROFILE_PHOTO = "SET-PROFILE-PHOTO";
 
 let initState = {
     postsData: [
@@ -13,7 +13,6 @@ let initState = {
         {id: 2, message: 'Я смогу добавить props в посты', likesCount: 27},
         {id: 3, message: 'Еще сообщение', likesCount: 2}
     ],
-    avatar: `${process.env.PUBLIC_URL}/img/avatar3.png`,
     profile: null,
     status: ``,
 };
@@ -100,26 +99,38 @@ const setProfilePhoto = (photos) => ({
 });
 
 export const getUserProfile = (userId) => async (dispatch) => {
-    let response = await profileAPI.getProfile(userId);
+    const response = await profileAPI.getProfile(userId);
     dispatch(setUserProfileSuccess(response.data));
 }
 
 export const getStatus = (userId) => async (dispatch) => {
-    let response = await profileAPI.getStatus(userId)
+    const response = await profileAPI.getStatus(userId)
     dispatch(setStatus(response.data));
 }
 
 export const updateStatus = (status) => async (dispatch) => {
-    let response = await profileAPI.updateStatus(status);
+    const response = await profileAPI.updateStatus(status);
     if (response.data.resultCode === 0) {
         dispatch(setStatus(status));
     }
 }
 
 export const savePhoto = (photo) => async (dispatch) => {
-    let response = await profileAPI.savePhoto(photo);
+    const response = await profileAPI.savePhoto(photo);
     if (response.data.resultCode === 0) {
         dispatch(setProfilePhoto(response.data.data.photos))
+    }
+}
+
+export const saveProfile = (profileData, setStatus) => async (dispatch, getState) => {
+    const userId = getState().auth.userId;
+    const response = await profileAPI.saveProfile(profileData);
+    if (response.data.resultCode === 0) {
+        dispatch(getUserProfile(userId));
+    }
+    else {
+        setStatus({errors: response.data.messages});
+        return Promise.reject("wrong");
     }
 }
 

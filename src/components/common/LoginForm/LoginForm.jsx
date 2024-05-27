@@ -13,12 +13,12 @@ export function LoginForm({apiError}) {
         <form onSubmit={formik.handleSubmit} className={LoginFormCss.loginForm}>
             <div className={hasErrorEmail && LoginFormCss.error}>
                 <label htmlFor="email">Email: </label>
-                {createField("email", "email", "email", "","input")}
+                {createField("email", "email", "email", "","input", formik.values.email)}
                 {hasErrorEmail && <div>{formik.errors.email}</div>}
             </div>
             <div className={hasErrorPassword && LoginFormCss.error}>
                 <label htmlFor="password">Password: </label>
-                {createField("password", "password", "password", "", "input")}
+                {createField("password", "password", "password", "", "input", formik.values.password)}
                 {hasErrorPassword && <div>{formik.errors.password}</div>}
             </div>
             <div>

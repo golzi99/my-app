@@ -5,11 +5,38 @@ import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 import ProfileData from "./ProfileData/ProfileData";
 import ProfileDataForm from "./ProfileData/ProfileDataForm";
-import {Formik} from "formik";
+import {FormikProvider, useFormik} from "formik";
+import {WebSiteSchema} from "../../Utils/Validators/validators";
 
-export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto}) {
+export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) {
 
     let [editMode, setEditMode] = useState(false);
+
+    const formik = useFormik({
+        initialValues: {
+            fullName: profile.fullName,
+            lookingForAJob: profile.lookingForAJob,
+            lookingForAJobDescription: profile.lookingForAJobDescription,
+            aboutMe: profile.aboutMe,
+            contacts: profile.contacts,
+        },
+        validationSchema: WebSiteSchema,
+        onSubmit:
+             (values, submitProps) => {
+                let profileData = {
+                    fullName: values.fullName,
+                    lookingForAJob: values.lookingForAJob,
+                    lookingForAJobDescription: values.lookingForAJobDescription,
+                    aboutMe: values.aboutMe,
+                    contacts: values.contacts
+                };
+                saveProfile(profileData, submitProps.setStatus).then(() => {
+                    setEditMode(false);
+                }).catch(() => {
+
+                });
+            }
+    });
 
     if (!profile) {
         return (<Preloader></Preloader>);
@@ -37,18 +64,9 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto})
                     }
                 </div>
                 {editMode ?
-                    <Formik
-                        initialValues={{
-
-                        }}
-                        onSubmit={
-                            () => {
-                                setEditMode(false)
-                            }
-                        }
-                    >
+                    <FormikProvider value={formik}>
                         <ProfileDataForm profile={profile} setEditMode={setEditMode}></ProfileDataForm>
-                    </Formik>
+                    </FormikProvider>
                     :
                     <ProfileData profile={profile}></ProfileData>
                 }
