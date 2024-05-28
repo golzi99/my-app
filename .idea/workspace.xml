@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="24.05.2024 Add ProfileData into Profile, need to finish API and thunks to send data">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="27.05.2024 update simpleForm, update profile-update, need to finish things with validation and errors.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Utils/Validators/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/Validators/validators.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +196,8 @@
       <workItem from="1716356647183" duration="4313000" />
       <workItem from="1716442149872" duration="18800000" />
       <workItem from="1716529711690" duration="15978000" />
-      <workItem from="1716786291952" duration="28392000" />
+      <workItem from="1716786291952" duration="28859000" />
+      <workItem from="1716872937087" duration="9561000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -427,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716555076394</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="27.05.2024 update simpleForm, update profile-update, need to finish things with validation and errors.">
+      <created>1716819741338</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1716819741338</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -490,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="17.04.2024 add preloader and optimize usersContainer" />
     <MESSAGE value="18.04.2024 Try to rebuild all components withRouter to insert right img" />
     <MESSAGE value="18.04.2024 Try to rebuild all components withRouter to insert right img 2" />
     <MESSAGE value="19.04.2024 add authReducer and etc" />
@@ -515,7 +517,8 @@
     <MESSAGE value="23.05.2024 fix bugs and add craco" />
     <MESSAGE value="23.05.2024 add loading profilePhoto" />
     <MESSAGE value="24.05.2024 Add ProfileData into Profile, need to finish API and thunks to send data" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.05.2024 Add ProfileData into Profile, need to finish API and thunks to send data" />
+    <MESSAGE value="27.05.2024 update simpleForm, update profile-update, need to finish things with validation and errors." />
+    <option name="LAST_COMMIT_MESSAGE" value="27.05.2024 update simpleForm, update profile-update, need to finish things with validation and errors." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

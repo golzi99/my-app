@@ -6,14 +6,14 @@ import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer";
 import {resetProf} from "../../redux/profile-reducer";
 
-function LoginContainer({resetProf, authLoginUser, isAuth}) {
+function LoginContainer({resetProf, authLoginUser, isAuth, captchaUrl}) {
 
     const formik = useFormik({
         initialValues: {
             email: '',
             password: '',
             rememberMe: false,
-            captcha: false
+            captcha: ''
         },
         validationSchema: LoginErrorSchema,
         onSubmit:
@@ -39,7 +39,7 @@ function LoginContainer({resetProf, authLoginUser, isAuth}) {
         <FormikProvider value={formik}>
             <div>
                 {isAuth ? <Navigate to={"/ProfileInfo"}/> :
-                    <Login apiError={apiErrors}></Login>}
+                    <Login apiError={apiErrors} captchaUrl={captchaUrl}></Login>}
             </div>
         </FormikProvider>
     );
@@ -47,6 +47,7 @@ function LoginContainer({resetProf, authLoginUser, isAuth}) {
 
 let mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl
 });
 
 export default connect(mapStateToProps, {authLoginUser, resetProf})(LoginContainer)

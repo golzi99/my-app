@@ -22,7 +22,7 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, 
         },
         validationSchema: WebSiteSchema,
         onSubmit:
-             (values, submitProps) => {
+             async (values, submitProps) => {
                 let profileData = {
                     fullName: values.fullName,
                     lookingForAJob: values.lookingForAJob,
@@ -30,11 +30,13 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, 
                     aboutMe: values.aboutMe,
                     contacts: values.contacts
                 };
-                saveProfile(profileData, submitProps.setStatus).then(() => {
-                    setEditMode(false);
-                }).catch(() => {
-
-                });
+                 // saveProfile(profileData, submitProps.setStatus).then(()=> {
+                 //     setEditMode(false);
+                 // }).catch(() => {
+                 //
+                 // });
+                await saveProfile(profileData, submitProps.setStatus);
+                setEditMode(false);
             }
     });
 

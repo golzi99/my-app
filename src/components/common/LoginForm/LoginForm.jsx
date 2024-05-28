@@ -2,7 +2,7 @@ import LoginFormCss from "./LoginFormCss.module.css"
 import {useFormikContext} from "formik";
 import {createField} from "../SimpleForms/SimpleForms";
 
-export function LoginForm({apiError}) {
+export function LoginForm({apiError, captchaUrl}) {
 
     const formik = useFormikContext();
 
@@ -28,6 +28,8 @@ export function LoginForm({apiError}) {
             <div>
                 <button type="submit">Login</button>
             </div>
+            {captchaUrl && <img alt={"captcha"} src={captchaUrl}/>}
+            {captchaUrl && createField("captchaSymbols", "captcha", "captcha", "Enter captcha symbols", "input", formik.values.captcha)}
             {apiError ? <div className={LoginFormCss.summaryError}>{apiError}</div> : null}
         </form>
     );

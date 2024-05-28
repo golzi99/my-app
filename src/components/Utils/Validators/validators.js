@@ -2,7 +2,11 @@ import * as Yup from 'yup';
 
 export const LoginErrorSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required email'),
-    password: Yup.string().required('Required password')
+    password: Yup.string().required('Required password'),
+    captcha: Yup.string().when("captchaUrl", {
+        is: true,
+        then: Yup.string().required("Required captcha symbols")
+    })
 });
 
 export const PostSchema = Yup.object().shape({
