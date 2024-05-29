@@ -10,7 +10,7 @@ export const withAuthRedirect = (Component) => {
 
     function RedirectComponent(props) {
         if (!props.isAuth) {
-            return <Navigate to="/Login"></Navigate>
+            return <Navigate to="/login"></Navigate>
         }
         return <Component {...props}></Component>
     }

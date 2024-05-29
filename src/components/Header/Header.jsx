@@ -11,9 +11,9 @@ function Header(props) {
                 {props.isAuth ?
                     <span>
                         <span>{props.login}</span>
-                        <NavLink to={"/Login"} onClick={props.authLogoutUser}>Logout</NavLink>
+                        <NavLink to={"/login"} onClick={props.authLogoutUser}>Logout</NavLink>
                     </span> :
-                    <NavLink to={'/Login'}>Login</NavLink>}
+                    <NavLink to={'/login'}>Login</NavLink>}
             </div>
         </header>);
 }

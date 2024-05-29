@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 
 export function DialogItem(props) {
-    let path = `/Dialogs/${props.id}`;
+    let path = `/dialogs/${props.id}`;
 
     const SelectedLink = () => {
         return (

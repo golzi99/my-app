@@ -7,7 +7,7 @@ import Preloader from "../common/preLoader/preloader";
 export function Profile(props) {
 
     if (props.isOwner && !props.isAuth) {
-        return (<Navigate to={"/Login"}></Navigate>);
+        return (<Navigate to={"/login"}></Navigate>);
     }
 
     return (

@@ -1,5 +1,6 @@
 import PaginatorCss from "./PaginatorCss.module.css";
 import React from "react";
+import cn from 'classnames';
 
 function Paginator({pagesCount, currentPage, onPageChanged}) {
 
@@ -23,12 +24,11 @@ function Paginator({pagesCount, currentPage, onPageChanged}) {
         }}>PREV</button>}
 
         {slicedPages.map((p) => {
-            return (<span key={p} className={currentPage === p ? PaginatorCss.selectedPage : PaginatorCss.page}
+            return (<span key={p} className={cn(PaginatorCss.page, {[PaginatorCss.selectedPage]: currentPage === p})}
                           onClick={() => {
                               onPageChanged(p);
                           }}>{p}</span>);
         })}
-
 
         {currentPage < pagesCount() && <button onClick={() => {
             onPageChanged(curPage + 1);

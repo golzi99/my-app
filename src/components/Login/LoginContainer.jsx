@@ -38,7 +38,7 @@ function LoginContainer({resetProf, authLoginUser, isAuth, captchaUrl}) {
     return (
         <FormikProvider value={formik}>
             <div>
-                {isAuth ? <Navigate to={"/ProfileInfo"}/> :
+                {isAuth ? <Navigate to={"/profile"}/> :
                     <Login apiError={apiErrors} captchaUrl={captchaUrl}></Login>}
             </div>
         </FormikProvider>

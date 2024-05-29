@@ -2,32 +2,32 @@ import NavBarCss from "./NavBar.module.css"
 import {NavLink} from "react-router-dom";
 import {SideBarContainer} from "./SideBar/SideBarContainer";
 
-function NavBar(props) {
+function NavBar() {
     return (
         <div className={NavBarCss.navBar}>
             <nav className={NavBarCss.nav}>
                 <div className={NavBarCss.item}>
-                    <NavLink to="/ProfileInfo"
+                    <NavLink to="/profile"
                              className={SelectedLink()}>ProfileInfo</NavLink>
                 </div>
                 <div className={NavBarCss.item}>
-                    <NavLink to="/Dialogs"
+                    <NavLink to="/dialogs"
                              className={SelectedLink()}>Messages</NavLink>
                 </div>
                 <div className={NavBarCss.item}>
-                    <NavLink to="/Users"
+                    <NavLink to="/users"
                              className={SelectedLink()}>Users</NavLink>
                 </div>
                 <div className={NavBarCss.item}>
-                    <NavLink to="/News"
+                    <NavLink to="/news"
                              className={SelectedLink()}>News</NavLink>
                 </div>
                 <div className={NavBarCss.item}>
-                    <NavLink to="/Music"
+                    <NavLink to="/music"
                              className={SelectedLink()}>Music</NavLink>
                 </div>
                 <div className={NavBarCss.item}>
-                    <NavLink to="/Settings"
+                    <NavLink to="/settings"
                              className={SelectedLink()}>Settings</NavLink>
                 </div>
             </nav>

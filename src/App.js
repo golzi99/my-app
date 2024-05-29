@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import React, {useEffect} from "react";
@@ -15,28 +15,39 @@ const LoginContainer = React.lazy(() => import('./components/Login/LoginContaine
 
 function App(props) {
 
+    const catchAllUnhandledErrors = (promiseRejectionEvent, promise) => {
+        alert("Some error occurred");
+        // console.error(promiseRejectionEvent);
+    };
+
     useEffect(() => {
         props.initializeApp();
+        window.addEventListener("unhandledrejection", catchAllUnhandledErrors);
+        return () => {
+            //will unmount
+            window.removeEventListener("unhandledrejection", catchAllUnhandledErrors);
+        };
     },);
 
     return (<>
             {!props.initialized ? <Preloader></Preloader> :
-                <HashRouter>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
                     <div className="App">
                         <HeaderContainer></HeaderContainer>
                         <NavBar></NavBar>
                         <div className="app-content">
                             <React.Suspense fallback={<div><Preloader/></div>}>
                                 <Routes>
-                                    <Route path="/ProfileInfo/:userId?" element={<ProfileContainer/>} />
-                                    <Route path="/Login" element={<LoginContainer/>} />
-                                    <Route exact path="//Dialogs/*" element={<DialogsContainer/>} />
-                                    <Route path="/Users" element={<UsersContainer/>} />
+                                    <Route path="/profile/:userId?" element={<ProfileContainer/>} />
+                                    <Route path="/login" element={<LoginContainer/>} />
+                                    <Route path="/dialogs/*" element={<DialogsContainer/>} />
+                                    <Route path="/users" element={<UsersContainer/>} />
+                                    <Route path="/" element={<Navigate to="/profile" />} />
                                 </Routes>
                             </React.Suspense>
                         </div>
                     </div>
-                </HashRouter>}
+                </BrowserRouter>}
         </>
     );
 }
