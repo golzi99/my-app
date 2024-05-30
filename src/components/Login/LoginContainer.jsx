@@ -3,8 +3,8 @@ import {Login} from "./Login";
 import {FormikProvider, useFormik} from "formik";
 import {LoginErrorSchema} from "../Utils/Validators/validators";
 import {Navigate} from "react-router-dom";
-import {authLoginUser} from "../../redux/auth-reducer";
-import {resetProf} from "../../redux/profile-reducer";
+import {authLoginUser} from "../../redux/auth-reducer.ts";
+import {resetProf} from "../../redux/profile-reducer.ts";
 
 function LoginContainer({resetProf, authLoginUser, isAuth, captchaUrl}) {
 

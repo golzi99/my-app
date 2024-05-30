@@ -1,4 +1,4 @@
-import {addPostActionCreator} from "../../../redux/profile-reducer";
+import {addPost} from "../../../redux/profile-reducer.ts";
 import {connect} from "react-redux";
 import {MyPosts} from "./MyPosts";
 import {Formik} from "formik";
@@ -13,7 +13,7 @@ export function MyPostContainer(props) {
             validationSchema={PostSchema}
             onSubmit={
                 (values) => {
-                    props.addPost(values.newTextBody);
+                    props.addNewPost(values.newTextBody);
                     values.newTextBody = '';
                 }
             }
@@ -32,8 +32,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addPost: (newPost) => {
-            dispatch(addPostActionCreator(newPost));
+        addNewPost: (newPost) => {
+            dispatch(addPost(newPost));
         },
     };
 }

@@ -1,4 +1,14 @@
-const SEND_MESSAGE = 'SEND-MESSAGE';
+const SEND_MESSAGE = 'samurai/dialogs/SEND-MESSAGE';
+
+type MessagesDataType = {
+    id: number,
+    message: string
+}
+
+type DialogsDataType = {
+    id: number,
+    message: string
+}
 
 let initState = {
     messagesData: [
@@ -9,7 +19,7 @@ let initState = {
         {id: 1, message: "doubi doubi"},
         {id: 0, message: "WAZZZAAA"},
         {id: 1, message: "Welcome"}
-    ],
+    ] as Array<MessagesDataType>,
     dialogsData: [
         {id: 1, name: "Paul"},
         {id: 2, name: "Oleg"},
@@ -18,10 +28,12 @@ let initState = {
         {id: 5, name: "Liza"},
         {id: 6, name: "Semen"},
         {id: 7, name: "Cumpot"}
-    ],
+    ] as Array<DialogsDataType>,
 }
 
-const dialogsReducer = (state = initState, action) => {
+type InitStateType = typeof initState;
+
+const dialogsReducer = (state = initState, action: any): InitStateType => {
 
     switch (action.type) {
         case SEND_MESSAGE:
@@ -33,7 +45,7 @@ const dialogsReducer = (state = initState, action) => {
 
             return {
                 ...state,
-                messagesData: [...state.messagesData, newMessage]
+                messagesData: [...state.messagesData, newMessage],
             };
         default:
             return {
@@ -42,7 +54,12 @@ const dialogsReducer = (state = initState, action) => {
     }
 }
 
-export const sendMessageActionCreator = (newMessage) => ({
+type SendMessageType = {
+    type: typeof SEND_MESSAGE,
+    message: string
+}
+
+export const sendMessage = (newMessage: string): SendMessageType => ({
     type: SEND_MESSAGE,
     message: newMessage
 });

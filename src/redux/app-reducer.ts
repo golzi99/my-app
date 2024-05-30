@@ -1,12 +1,16 @@
-import {getAuthUserData} from "./auth-reducer";
+import {getAuthUserData} from "./auth-reducer.ts";
 
-const INITIALIZED_SUCCESS = "INITIALIZED-SUCCESS";
+const INITIALIZED_SUCCESS = "samurai/app/INITIALIZED-SUCCESS";
 
-let initState = {
+type InitStateType = {
+    initialized: boolean
+}
+
+let initState: InitStateType = {
     initialized: false,
 };
 
-const appReducer = (state = initState, action) => {
+const appReducer = (state = initState, action: any): InitStateType => {
     switch (action.type) {
         case INITIALIZED_SUCCESS:
             return {
@@ -18,12 +22,16 @@ const appReducer = (state = initState, action) => {
     }
 }
 
-export const initializedSuccess = () => ({
+type initializedSuccessType = {
+    type: typeof INITIALIZED_SUCCESS
+}
+
+export const initializedSuccess = (): initializedSuccessType => ({
     type: INITIALIZED_SUCCESS,
 });
 
 export const initializeApp = () => {
-    return (dispatch) => {
+    return (dispatch: any) => {
         let promise = dispatch(getAuthUserData());
         Promise.all([promise]).then(() => {
             dispatch(initializedSuccess());

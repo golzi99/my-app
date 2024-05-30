@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import Header from "./Header";
-import {authLogoutUser} from "../../redux/auth-reducer";
+import {authLogoutUser} from "../../redux/auth-reducer.ts";
 
 function HeaderContainer(props) {
 
