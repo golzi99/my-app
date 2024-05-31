@@ -2,8 +2,16 @@ import UsersCss from "./UsersCss.module.css"
 import React from "react";
 import {NavLink} from "react-router-dom";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
+import {UserType} from "../../types/types";
 
-function User({user, followingInProgress, unFollow, follow}) {
+type Props = {
+    user: UserType,
+    followingInProgress: Array<number>,
+    unFollow: (userId: number) => void,
+    follow: (userId: number) => void
+}
+
+const User: React.FC<Props> = ({user, followingInProgress, unFollow, follow}) => {
     return (
         <div key={user.id} className={UsersCss.userList}>
             <span>
