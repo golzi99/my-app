@@ -132,6 +132,7 @@ const setProfilePhoto = (photos: PhotosType): SetProfilePhotoType => ({
 });
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
+    dispatch(resetProfile());
     const response = await profileAPI.getProfile(userId);
     dispatch(setUserProfileSuccess(response.data));
 }

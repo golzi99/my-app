@@ -1,6 +1,6 @@
 import {usersAPI} from "../API/api";
 import {updateObjectInArray} from "../components/Utils/object-helpers";
-import {userType} from "../types/types";
+import {UserType} from "../types/types";
 
 const FOLLOW_ON_USER = "samurai/users/FOLLOW-ON-USER";
 const UNFOLLOW_ON_USER = "samurai/users/UNFOLLOW-ON-USER";
@@ -10,7 +10,7 @@ const SET_TOTAL_USERS_COUNT = "samurai/users/SET-TOTAL-USERS-COUNT";
 const TOGGLE_IS_FETCHING = "samurai/users/TOGGLE_IS_FETCHING";
 const TOGGLE_IS_FOLLOWING_PROGRESS = "samurai/users/TOGGLE-IS-FOLLOWING-PROGRESS";
 
-type usersType = Array<userType>;
+type usersType = Array<UserType>;
 
 let initState = {
     users: [] as usersType,

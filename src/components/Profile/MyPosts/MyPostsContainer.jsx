@@ -26,7 +26,7 @@ export function MyPostContainer(props) {
 let mapStateToProps = (state) => {
     return {
         postsData: state.profilePage.postsData,
-        profilePhoto: state.profilePage.profile.photos.small
+        // profilePhoto: state.profilePage.profile.photos.small
     };
 }
 

@@ -17,7 +17,7 @@ export function Profile(props) {
                     <ProfileInfo profile={props.profile} status={props.status} isOwner={props.isOwner}
                                  updateStatus={props.updateStatus} savePhoto={props.savePhoto}
                                  saveProfile={props.saveProfile}></ProfileInfo>
-                    <MyPostsContainer></MyPostsContainer>
+                    <MyPostsContainer profile={props.profile}></MyPostsContainer>
                 </>}
         </div>);
 }

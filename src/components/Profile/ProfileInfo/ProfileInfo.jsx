@@ -1,7 +1,7 @@
 import ProfileInfoCss from "./ProfileInfo.module.css";
 import Preloader from "../../common/preLoader/preloader";
 import React, {useState} from "react";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import ProfileStatus from "./ProfileStatus/ProfileStatus.tsx";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 import ProfileData from "./ProfileData/ProfileData";
 import ProfileDataForm from "./ProfileData/ProfileDataForm";

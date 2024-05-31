@@ -9,7 +9,8 @@ export const MyPosts = React.memo(props => {
 
     // window.props.push(props);
     let postsElements = props.postsData.map((p) => {
-        return (<Post key={p.id} message={p.message} likesCount={p.likesCount} profilePhoto={props.profilePhoto}></Post>)
+        return (<Post key={p.id} message={p.message} likesCount={p.likesCount}
+                      profilePhoto={props.profile.photos.small}></Post>)
     })
 
     return (

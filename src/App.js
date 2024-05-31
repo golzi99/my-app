@@ -1,13 +1,13 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
-import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
-import UsersContainer from "./components/Users/UsersContainer";
+import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
+import UsersContainer from "./components/Users/UsersContainer.tsx";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import React, {useEffect} from "react";
 import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer.ts";
 import Preloader from "./components/common/preLoader/preloader";
-import store from "./redux/redux-store";
+import store from "./redux/redux-store.ts";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.jsx'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.jsx'));
@@ -28,10 +28,10 @@ function App(props) {
         //     window.removeEventListener("unhandledrejection", catchAllUnhandledErrors);
         // };
     },);
-
+//basename={process.env.PUBLIC_URL}
     return (<>
             {!props.initialized ? <Preloader></Preloader> :
-                <BrowserRouter basename={process.env.PUBLIC_URL}>
+                <HashRouter>
                     <div className="App">
                         <HeaderContainer></HeaderContainer>
                         <NavBar></NavBar>
@@ -41,13 +41,13 @@ function App(props) {
                                     <Route path="/profile/:userId?" element={<ProfileContainer/>} />
                                     <Route path="/login" element={<LoginContainer/>} />
                                     <Route path="/dialogs/*" element={<DialogsContainer/>} />
-                                    <Route path="/users" element={<UsersContainer/>} />
+                                    <Route path="/users" element={<UsersContainer pageTitle={"Samurai"}/>} />
                                     <Route path="/" element={<Navigate to="/profile" />} />
                                 </Routes>
                             </React.Suspense>
                         </div>
                     </div>
-                </BrowserRouter>}
+                </HashRouter>}
         </>
     );
 }
