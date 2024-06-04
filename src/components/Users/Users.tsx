@@ -1,8 +1,8 @@
 import React, {FC} from "react";
 import Paginator from "../common/Paginator/Paginator.tsx";
-import User from "./User";
+import User from "./User.tsx";
 import {UserType} from "../../types/types";
-import Preloader from "../common/preLoader/preloader";
+import Preloader from "../common/preLoader/preloader.tsx";
 
 type Props = {
     pagesCount: () => number,

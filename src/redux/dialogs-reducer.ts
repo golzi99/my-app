@@ -59,9 +59,13 @@ type SendMessageType = {
     message: string
 }
 
-export const sendMessage = (newMessage: string): SendMessageType => ({
+const sendMessage = (newMessage: string): SendMessageType => ({
     type: SEND_MESSAGE,
     message: newMessage
 });
+
+export const sendNewMessage = (newMessage: string) => async (dispatch: any) => {
+    dispatch(sendMessage(newMessage));
+}
 
 export default dialogsReducer;

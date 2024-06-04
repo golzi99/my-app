@@ -1,9 +1,14 @@
 import React from "react";
-import {createField} from "../../../common/SimpleForms/SimpleForms";
+import {createField} from "../../../common/SimpleForms/SimpleForms.tsx";
 import {useFormikContext} from "formik";
 import ProfileDataCss from "./ProfileDataCss.module.css"
+import {ProfileType} from "../../../../types/types";
 
-function ProfileDataForm({profile}) {
+type Props = {
+    profile: ProfileType
+}
+
+const ProfileDataForm: React.FC<Props> = ({profile}) => {
     const formik = useFormikContext();
 
     // let hasErrorFullName = formik.errors.fullName && formik.touched.fullName;
@@ -17,8 +22,8 @@ function ProfileDataForm({profile}) {
     // let hasErrorContactGithub = formik.errors.github && formik.touched.github;
     // let hasErrorContactMainLink = formik.errors.mainLink && formik.touched.mainLink;
 
-    let apiErrors;
-    if(formik.status) {
+    let apiErrors: any;
+    if (formik.status) {
         apiErrors = formik.status.errors.map((item, index) => <p key={index}>{item}</p>);
     }
 
@@ -28,28 +33,28 @@ function ProfileDataForm({profile}) {
                 <label htmlFor="fullName">
                     <b>Full name: </b>
                 </label>
-                {createField("fullName", "fullName", "fullName", "Full Name", "input", formik.values.fullName)}
+                {createField("fullName", "fullName", "fullName", "input", formik.values.fullName, "Full Name")}
                 {/*{hasErrorFullName && <div>{formik.errors.fullName}</div>}*/}
             </div>
             <div>
                 <label htmlFor="lookingForAJob">
                     Looking for a job:
                 </label>
-                {createField("checkbox", "lookingForAJob", "lookingForAJob", '', "", formik.values.lookingForAJob)}
+                {createField("checkbox", "lookingForAJob", "lookingForAJob", "", formik.values.lookingForAJob, '')}
             </div>
             <div>
                 <label htmlFor="lookingForAJobDescription">
                     <b>My professional skills: </b>
                 </label>
-                {createField("lookingForAJobDescription", "lookingForAJobDescription", "lookingForAJobDescription",
-                    'Your professional skills...', "textarea", formik.values.lookingForAJobDescription)}
+                {createField("lookingForAJobDescription", "lookingForAJobDescription", "lookingForAJobDescription", "textarea",
+                    formik.values.lookingForAJobDescription, 'Your professional skills...')}
                 {/*{hasErrorEmail && <div>{formik.errors.email}</div>}*/}
             </div>
             <div>
                 <label htmlFor="aboutMe">
                     <b>About me: </b>
                 </label>
-                {createField("aboutMe", "aboutMe", "aboutMe", "About you...", "textarea", formik.values.aboutMe)}
+                {createField("aboutMe", "aboutMe", "aboutMe", "textarea", formik.values.aboutMe, "About you...")}
                 {/*{hasErrorEmail && <div>{formik.errors.email}</div>}*/}
             </div>
             <div>
@@ -57,13 +62,13 @@ function ProfileDataForm({profile}) {
                     <b>Contacts:</b>
                 </label>
                 <div>
-                    {Object.entries(profile.contacts).map(([contactTitle, contactValue]) => {
+                    {Object.keys(profile.contacts).map((contactTitle) => {
                         return (
                             <div key={contactTitle} className={ProfileDataCss.contact}>
                                 <label htmlFor={contactTitle}>
                                     <b>{contactTitle}: </b>
                                 </label>
-                                {createField(contactTitle, `contacts.` + contactTitle, `contacts.` + contactTitle, contactTitle, "input", formik.values.contacts[contactTitle])}
+                                {createField(contactTitle, `contacts.` + contactTitle, `contacts.` + contactTitle, "input", formik.values.contacts[contactTitle], contactTitle)}
                             </div>
                         );
                     })}

@@ -21,12 +21,13 @@ export type PhotosType = {
 }
 
 export type ProfileType = {
-    userId: number,
+    userId?: number,
     lookingForAJob: boolean,
     lookingForAJobDescription: string | null,
     fullName: string,
     contacts: ContactsType,
-    photos: PhotosType
+    photos?: PhotosType,
+    aboutMe?: string
 }
 
 export type UserType = {
@@ -35,4 +36,11 @@ export type UserType = {
     status: string,
     photos: PhotosType,
     followed: boolean
+}
+
+export type LoginDataType = {
+    email: string | null,
+    password: string | null,
+    rememberMe: boolean,
+    captcha: string | null
 }

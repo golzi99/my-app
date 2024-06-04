@@ -1,12 +1,25 @@
 import {connect} from "react-redux";
-import {Login} from "./Login";
+import Login from "./Login.tsx";
 import {FormikProvider, useFormik} from "formik";
 import {LoginErrorSchema} from "../Utils/Validators/validators";
 import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer.ts";
 import {resetProf} from "../../redux/profile-reducer.ts";
+import {LoginDataType} from "../../types/types";
 
-function LoginContainer({resetProf, authLoginUser, isAuth, captchaUrl}) {
+type MapStateToPropsType = {
+    isAuth: boolean,
+    captchaUrl: string | null
+}
+
+type MapDispatchPropsType = {
+    authLoginUser: (userLoginData: LoginDataType, setStatus: any) => void,
+    resetProf: () => void
+}
+
+type Props = MapStateToPropsType & MapDispatchPropsType;
+
+const LoginContainer: React.FC<Props> = ({resetProf, authLoginUser, isAuth, captchaUrl}) => {
 
     const formik = useFormik({
         initialValues: {
@@ -18,7 +31,7 @@ function LoginContainer({resetProf, authLoginUser, isAuth, captchaUrl}) {
         validationSchema: LoginErrorSchema,
         onSubmit:
             (values, submitProps) => {
-                let userLoginData = {
+                let userLoginData: LoginDataType = {
                     email: values.email,
                     password: values.password,
                     rememberMe: values.rememberMe,

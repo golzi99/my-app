@@ -1,17 +1,17 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar.jsx';
+import NavBar from './components/NavBar/NavBar.tsx';
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer.tsx";
-import HeaderContainer from "./components/Header/HeaderContainer";
+import HeaderContainer from "./components/Header/HeaderContainer.tsx";
 import React, {useEffect} from "react";
 import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer.ts";
-import Preloader from "./components/common/preLoader/preloader";
+import Preloader from "./components/common/preLoader/preloader.tsx";
 import store from "./redux/redux-store.ts";
 
-const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.jsx'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.jsx'));
-const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer.jsx'));
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.tsx'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.tsx'));
+const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer.tsx'));
 
 function App(props) {
 

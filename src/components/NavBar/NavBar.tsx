@@ -1,8 +1,9 @@
 import NavBarCss from "./NavBar.module.css"
 import {NavLink} from "react-router-dom";
-import {SideBarContainer} from "./SideBar/SideBarContainer";
+import {SideBarContainer} from "./SideBar/SideBarContainer.ts";
 
-function NavBar() {
+
+const NavBar = () => {
     return (
         <div className={NavBarCss.navBar}>
             <nav className={NavBarCss.nav}>

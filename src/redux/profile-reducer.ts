@@ -131,6 +131,10 @@ const setProfilePhoto = (photos: PhotosType): SetProfilePhotoType => ({
     photos
 });
 
+export const addNewPost = (textPost: string) => async (dispatch: any) => {
+    dispatch(addPost(textPost));
+}
+
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
     dispatch(resetProfile());
     const response = await profileAPI.getProfile(userId);

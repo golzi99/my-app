@@ -1,14 +1,24 @@
 import ProfileInfoCss from "./ProfileInfo.module.css";
-import Preloader from "../../common/preLoader/preloader";
+import Preloader from "../../common/preLoader/preloader.tsx";
 import React, {useState} from "react";
 import ProfileStatus from "./ProfileStatus/ProfileStatus.tsx";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
-import ProfileData from "./ProfileData/ProfileData";
-import ProfileDataForm from "./ProfileData/ProfileDataForm";
+import ProfileData from "./ProfileData/ProfileData.tsx";
+import ProfileDataForm from "./ProfileData/ProfileDataForm.tsx";
 import {FormikProvider, useFormik} from "formik";
 import {WebSiteSchema} from "../../Utils/Validators/validators";
+import {ProfileType} from "../../../types/types";
 
-export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) {
+type Props = {
+    profile: ProfileType,
+    status: string,
+    updateStatus: (status: string) => void,
+    isOwner: boolean,
+    savePhoto: (photo: any) => void,
+    saveProfile: (profileData: ProfileType, setStatus: any) => void
+}
+
+const ProfileInfo: React.FC<Props> = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
     let [editMode, setEditMode] = useState(false);
 
@@ -23,7 +33,7 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, 
         validationSchema: WebSiteSchema,
         onSubmit:
              async (values, submitProps) => {
-                let profileData = {
+                let profileData: ProfileType = {
                     fullName: values.fullName,
                     lookingForAJob: values.lookingForAJob,
                     lookingForAJobDescription: values.lookingForAJobDescription,
@@ -53,7 +63,7 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, 
     return (
         <div>
             <div className={ProfileInfoCss.descriptionBlock}>
-                <div className={ProfileInfoCss.avatarEditable}>
+                <div>
                     {isOwner ?
                         <label role={"button"} title={"Edit your profile photo"}>
                             <input type={"file"} accept={"image/png, image/jpeg"} style={{display: "none"}}
@@ -67,7 +77,7 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, 
                 </div>
                 {editMode ?
                     <FormikProvider value={formik}>
-                        <ProfileDataForm profile={profile} setEditMode={setEditMode}></ProfileDataForm>
+                        <ProfileDataForm profile={profile}></ProfileDataForm>
                     </FormikProvider>
                     :
                     <ProfileData profile={profile}></ProfileData>
@@ -81,3 +91,5 @@ export function ProfileInfo({profile, status, updateStatus, isOwner, savePhoto, 
         </div>
     );
 }
+
+export default ProfileInfo;

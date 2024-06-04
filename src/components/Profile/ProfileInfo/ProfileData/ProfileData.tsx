@@ -1,7 +1,12 @@
 import ProfileInfoCss from "../ProfileInfo.module.css";
 import React from "react";
+import {ProfileType} from "../../../../types/types";
 
-function ProfileData({profile}) {
+type Props = {
+    profile: ProfileType
+}
+
+const ProfileData: React.FC<Props> = ({profile}) => {
     return (
         <div>
             <div>
@@ -22,10 +27,10 @@ function ProfileData({profile}) {
             }
             <div>
                 <b>Contact:</b>
-                {Object.entries(profile.contacts).map(([contactTitle, contactValue]) => {
-                    if (contactValue) {
+                {Object.keys(profile.contacts).map((contactTitle) => {
+                    if (profile.contacts[contactTitle]) {
                         return (<div key={contactTitle} className={ProfileInfoCss.contact}>
-                            <b>{contactTitle}:</b> {contactValue}
+                            <b>{contactTitle}:</b> {profile.contacts[contactTitle]}
                         </div>);
                     }
                     else {

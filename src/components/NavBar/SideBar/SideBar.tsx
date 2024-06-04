@@ -1,8 +1,12 @@
 import SideBarCss from "./SideBar.module.css";
-import {FriendIcon} from "./FriendIcon/FriendIcon";
+import FriendIcon from "./FriendIcon/FriendIcon.tsx";
 
-export function SideBar(props) {
-    let friendsElements = props.sideBarData.topFriends.map(
+type Props = {
+    sideBarData: any
+}
+
+const SideBar: React.FC<Props> = ({sideBarData}) => {
+    let friendsElements = sideBarData.topFriends.map(
         (f) => {
             return (<FriendIcon key={f.id} name={f.name} id={f.id}></FriendIcon>);
         }
@@ -18,3 +22,5 @@ export function SideBar(props) {
             </div>
         </div>);
 }
+
+export default SideBar;

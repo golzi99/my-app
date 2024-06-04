@@ -1,21 +1,27 @@
 import DialogsCss from "./Dialogs.module.css"
 import React from "react";
-import {DialogItem} from "./DialogItem/DialogItem";
-import {MyMessage} from "./Message/MyMessage";
-import {OtherMessage} from "./Message/OtherMessage";
-import {PostSmtFormFormik} from "../common/PostSmtForm/PostSmtFormFormik";
+import DialogItem from "./DialogItem/DialogItem.tsx";
+import MyMessage from "./Message/MyMessage.tsx";
+import OtherMessage from "./Message/OtherMessage.tsx";
+import PostSmtFormFormik from "../common/PostSmtForm/PostSmtFormFormik.tsx";
+import {DialogsDataType, MessagesDataType} from "./DialogsContainer";
+import {useFormikContext} from "formik";
 
+type Props = {
+    dialogsData: Array<DialogsDataType>,
+    messagesData: Array<MessagesDataType>
+}
 
-export const Dialogs = React.memo(props => {
+const Dialogs: React.FC<Props> = React.memo(({dialogsData, messagesData}) => {
 
     let id = 0;
-    let dialogsElements = props.dialogsData.map(
+    let dialogsElements = dialogsData.map(
         (d) => {
             return <DialogItem key={d.id} name={d.name} id={d.id}></DialogItem>;
         }
     );
 
-    let messagesElements = props.messagesData.map(
+    let messagesElements = messagesData.map(
         (m) => {
             id++;
             if (m.id === 0) {
@@ -33,7 +39,9 @@ export const Dialogs = React.memo(props => {
             </div>
             <div className={DialogsCss.messages}>
                 {messagesElements}
-                <PostSmtFormFormik></PostSmtFormFormik>
+                <PostSmtFormFormik {...useFormikContext()}></PostSmtFormFormik>
             </div>
         </div>);
 });
+
+export default Dialogs;

@@ -1,10 +1,16 @@
 import PostSmtCss from "./PostSmtFormCss.module.css"
 import React from "react";
-import {Field, Form, useFormikContext} from "formik";
+import {Field, Form, FormikProps, useFormikContext} from "formik";
 
-export function PostSmtFormFormik() {
+interface FormValues {
+    newTextBody: string;
+}
 
-    const formik = useFormikContext();
+type Props = FormikProps<FormValues>;
+
+const PostSmtFormFormik: React.FC<Props> = () => {
+
+    const formik = useFormikContext<FormValues>();
 
     let hasError = formik.touched.newTextBody && formik.errors.newTextBody;
     return (
@@ -23,3 +29,5 @@ export function PostSmtFormFormik() {
         </div>
     );
 }
+
+export default PostSmtFormFormik;

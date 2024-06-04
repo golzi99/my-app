@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="30.05.2024 update some components into TS">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="03.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/User.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBarContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBarContainer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/preLoader/preloader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/preLoader/preloader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +232,9 @@
       <workItem from="1717046173341" duration="20000" />
       <workItem from="1717053382564" duration="6354000" />
       <workItem from="1717064212428" duration="8116000" />
-      <workItem from="1717136687787" duration="19746000" />
+      <workItem from="1717136687787" duration="20410000" />
+      <workItem from="1717393776740" duration="20397000" />
+      <workItem from="1717478948791" duration="1498000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -464,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717158322310</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="31.05.2024 update User to ts">
+      <created>1717165355178</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1717165355178</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="24.04.24 add loginPage and check auth, add redux-thunk and rebuild project with that thunks" />
-    <MESSAGE value="26.04.24 rebuild with compose and add component ProfileStatus with localState" />
     <MESSAGE value="02.05.2024 create loginForm" />
     <MESSAGE value="02.05.2024 update methods with formik. also need to create specific textarea as HOC" />
     <MESSAGE value="03.05.2024 update methods with formik. also need to create specific textarea as HOC" />
@@ -552,7 +588,9 @@
     <MESSAGE value="29.05.2024 update links and state" />
     <MESSAGE value="30.05.2024 transform some reducer into ts" />
     <MESSAGE value="30.05.2024 update some components into TS" />
-    <option name="LAST_COMMIT_MESSAGE" value="30.05.2024 update some components into TS" />
+    <MESSAGE value="31.05.2024 update User to ts" />
+    <MESSAGE value="03.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types" />
+    <option name="LAST_COMMIT_MESSAGE" value="03.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
