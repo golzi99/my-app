@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="04.05.2024 update simpleForm and corrected checkbox">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="04.05.2024 start to update API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2eIw6LKGZrAdNvkFcCquvKPSbhZ" />
   <component name="ProjectViewState">
@@ -210,7 +211,11 @@
       <workItem from="1717064212428" duration="8116000" />
       <workItem from="1717136687787" duration="20410000" />
       <workItem from="1717393776740" duration="20397000" />
-      <workItem from="1717478948791" duration="10895000" />
+      <workItem from="1717478948791" duration="15604000" />
+      <workItem from="1717499113798" duration="228000" />
+      <workItem from="1717499351955" duration="2446000" />
+      <workItem from="1717501827003" duration="6381000" />
+      <workItem from="1717508436656" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -492,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717481089339</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="04.05.2024 convert thunks in reducers">
+      <created>1717493875689</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1717493875689</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,8 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="03.05.2024 update methods with formik. also need to create specific textarea as HOC" />
-    <MESSAGE value="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout" />
     <MESSAGE value="06.05.2024 rebuild auth and app reducers, correct working with authorization and do not show dialogs if not auth" />
     <MESSAGE value="08.05.2024 add clear profile when login" />
     <MESSAGE value="08.05.2024 add some test, update fromik, add memo in some components, delete avatars, need to add avatars in correct form" />
@@ -580,7 +590,9 @@
     <MESSAGE value="03.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types" />
     <MESSAGE value="04.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types, add {...useFormikContext()} but need to fix it too" />
     <MESSAGE value="04.05.2024 update simpleForm and corrected checkbox" />
-    <option name="LAST_COMMIT_MESSAGE" value="04.05.2024 update simpleForm and corrected checkbox" />
+    <MESSAGE value="04.05.2024 convert thunks in reducers" />
+    <MESSAGE value="04.05.2024 start to update API" />
+    <option name="LAST_COMMIT_MESSAGE" value="04.05.2024 start to update API" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -39,8 +39,8 @@ export type UserType = {
 }
 
 export type LoginDataType = {
-    email: string | null,
-    password: string | null,
+    email: string,
+    password: string,
     rememberMe: boolean,
     captcha: string | null
 }
