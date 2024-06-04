@@ -38,7 +38,7 @@ const LoginForm: React.FC<Props> = ({apiError, captchaUrl, ...props}) => {
             </div>
             <div>
                 <label htmlFor="rememberMe">Remember Me </label>
-                {createField("checkbox", "checkbox", "rememberMe", "")}
+                {createField("checkbox", "checkbox", "rememberMe", "", props.values.rememberMe)}
             </div>
             <div>
                 <button type="submit">Login</button>
