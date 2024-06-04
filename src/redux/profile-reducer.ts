@@ -1,5 +1,7 @@
 import {profileAPI} from "../API/api";
 import {PhotosType, PostDataType, ProfileType} from "../types/types";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "./redux-store";
 
 const ADD_POST = 'samurai/profile/ADD-POST';
 const SET_USER_PROFILE = "samurai/profile/SET-USER-PROFILE";
@@ -20,7 +22,10 @@ let initState = {
 
 type InitStateType = typeof initState;
 
-const profileReducer = (state = initState, action: any): InitStateType => {
+type ActionsTypes = AddPostType | SetUserProfileSuccessType | SetStatusType |
+    ResetProfileType | DeletePostType | SetProfilePhotoType
+
+const profileReducer = (state = initState, action: ActionsTypes): InitStateType => {
 
     switch (action.type) {
         case ADD_POST:
@@ -81,12 +86,12 @@ export const addPost = (newPostText: string): AddPostType => ({
     newPostText
 });
 
-type SetUserProfileSuccess = {
+type SetUserProfileSuccessType = {
     type: typeof SET_USER_PROFILE,
     profile: ProfileType
 }
 
-export const setUserProfileSuccess = (profile: ProfileType): SetUserProfileSuccess => ({
+export const setUserProfileSuccess = (profile: ProfileType): SetUserProfileSuccessType => ({
     type: SET_USER_PROFILE,
     profile
 });
@@ -111,12 +116,12 @@ export const resetProfile = (): ResetProfileType => ({
     profile: null
 });
 
-type DeletePost = {
+type DeletePostType = {
     type: typeof DELETE_POST,
     postId: number
 }
 
-export const deletePost = (postId: number): DeletePost => ({
+export const deletePost = (postId: number): DeletePostType => ({
     type: DELETE_POST,
     postId
 });
@@ -131,22 +136,24 @@ const setProfilePhoto = (photos: PhotosType): SetProfilePhotoType => ({
     photos
 });
 
-export const addNewPost = (textPost: string) => async (dispatch: any) => {
+type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>;
+
+export const addNewPost = (textPost: string): ThunkType => async (dispatch) => {
     dispatch(addPost(textPost));
 }
 
-export const getUserProfile = (userId: number) => async (dispatch: any) => {
+export const getUserProfile = (userId: number): ThunkType => async (dispatch) => {
     dispatch(resetProfile());
     const response = await profileAPI.getProfile(userId);
     dispatch(setUserProfileSuccess(response.data));
 }
 
-export const getStatus = (userId: number) => async (dispatch: any) => {
+export const getStatus = (userId: number): ThunkType => async (dispatch) => {
     const response = await profileAPI.getStatus(userId)
     dispatch(setStatus(response.data));
 }
 
-export const updateStatus = (status: string) => async (dispatch: any) => {
+export const updateStatus = (status: string): ThunkType => async (dispatch) => {
     try {
         const response = await profileAPI.updateStatus(status);
         if (response.data.resultCode === 0) {
@@ -159,14 +166,14 @@ export const updateStatus = (status: string) => async (dispatch: any) => {
 
 }
 
-export const savePhoto = (photo: any) => async (dispatch: any) => {
+export const savePhoto = (photo: any): ThunkType => async (dispatch) => {
     const response = await profileAPI.savePhoto(photo);
     if (response.data.resultCode === 0) {
         dispatch(setProfilePhoto(response.data.data.photos))
     }
 }
 
-export const saveProfile = (profileData: ProfileType, setStatus: any) => async (dispatch: any, getState: any) => {
+export const saveProfile = (profileData: ProfileType, setStatus: any): ThunkType => async (dispatch, getState) => {
     const userId = getState().auth.userId;
     const response = await profileAPI.saveProfile(profileData);
     if (response.data.resultCode === 0) {
@@ -178,10 +185,8 @@ export const saveProfile = (profileData: ProfileType, setStatus: any) => async (
     }
 }
 
-export const resetProf = () => {
-    return (dispatch) => {
-        dispatch(resetProfile());
-    }
+export const resetProf = (): ThunkType => async (dispatch) => {
+    dispatch(resetProfile());
 }
 
 export default profileReducer;

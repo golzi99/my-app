@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="04.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types, add {...useFormikContext()} but need to fix it too">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="04.05.2024 update simpleForm and corrected checkbox">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/SimpleForms/SimpleForms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +210,7 @@
       <workItem from="1717064212428" duration="8116000" />
       <workItem from="1717136687787" duration="20410000" />
       <workItem from="1717393776740" duration="20397000" />
-      <workItem from="1717478948791" duration="1863000" />
+      <workItem from="1717478948791" duration="10895000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -481,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717480596801</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="04.05.2024 update simpleForm and corrected checkbox">
+      <created>1717481089339</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1717481089339</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="02.05.2024 update methods with formik. also need to create specific textarea as HOC" />
     <MESSAGE value="03.05.2024 update methods with formik. also need to create specific textarea as HOC" />
     <MESSAGE value="06.05.2024 rebuild from useFormik on Formik and Fields, add login and logout" />
     <MESSAGE value="06.05.2024 rebuild auth and app reducers, correct working with authorization and do not show dialogs if not auth" />
@@ -569,7 +579,8 @@
     <MESSAGE value="31.05.2024 update User to ts" />
     <MESSAGE value="03.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types" />
     <MESSAGE value="04.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types, add {...useFormikContext()} but need to fix it too" />
-    <option name="LAST_COMMIT_MESSAGE" value="04.05.2024 convert &quot;some&quot; files into TS, but check it all again later to set correct types, add {...useFormikContext()} but need to fix it too" />
+    <MESSAGE value="04.05.2024 update simpleForm and corrected checkbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="04.05.2024 update simpleForm and corrected checkbox" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

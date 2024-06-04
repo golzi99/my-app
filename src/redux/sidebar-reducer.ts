@@ -13,11 +13,11 @@ let initState = {
 
 type InitStateType = typeof initState;
 
-const sidebarReducer = (state = initState, action: any): InitStateType => {
-    switch (action.type) {
-        default:
-            break;
-    }
+const sidebarReducer = (state = initState): InitStateType => {
+    // switch (action.type) {
+    //     default:
+    //         break;
+    // }
     return state;
 }
 

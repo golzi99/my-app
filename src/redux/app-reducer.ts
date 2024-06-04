@@ -1,4 +1,6 @@
 import {getAuthUserData} from "./auth-reducer.ts";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "./redux-store";
 
 const INITIALIZED_SUCCESS = "samurai/app/INITIALIZED-SUCCESS";
 
@@ -10,7 +12,9 @@ let initState: InitStateType = {
     initialized: false,
 };
 
-const appReducer = (state = initState, action: any): InitStateType => {
+type ActionsTypes = initializedSuccessType;
+
+const appReducer = (state = initState, action: ActionsTypes): InitStateType => {
     switch (action.type) {
         case INITIALIZED_SUCCESS:
             return {
@@ -30,13 +34,13 @@ export const initializedSuccess = (): initializedSuccessType => ({
     type: INITIALIZED_SUCCESS,
 });
 
-export const initializeApp = () => {
-    return (dispatch: any) => {
-        let promise = dispatch(getAuthUserData());
-        Promise.all([promise]).then(() => {
-            dispatch(initializedSuccess());
-        })
-    }
+type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
+
+export const initializeApp = (): ThunkType => async (dispatch) => {
+    let promise = dispatch(getAuthUserData());
+    Promise.all([promise]).then(() => {
+        dispatch(initializedSuccess());
+    })
 }
 
 export default appReducer;
