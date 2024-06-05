@@ -1,5 +1,5 @@
 import {usersAPI} from "../API/api.ts";
-import {updateObjectInArray} from "../components/Utils/object-helpers";
+import {updateObjectInArray} from "../components/Utils/object-helpers.js";
 import {UserType} from "../types/types";
 import {AppStateType} from "./redux-store";
 import {ThunkAction} from "redux-thunk";

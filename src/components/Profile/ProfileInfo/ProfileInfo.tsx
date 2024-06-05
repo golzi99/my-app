@@ -6,7 +6,7 @@ import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 import ProfileData from "./ProfileData/ProfileData.tsx";
 import ProfileDataForm from "./ProfileData/ProfileDataForm.tsx";
 import {FormikProvider, useFormik} from "formik";
-import {WebSiteSchema} from "../../Utils/Validators/validators";
+import {WebSiteSchema} from "../../Utils/Validators/validators.js";
 import {ProfileType} from "../../../types/types";
 
 type Props = {

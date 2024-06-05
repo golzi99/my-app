@@ -2,10 +2,10 @@ import {sendNewMessage} from "../../redux/dialogs-reducer.ts";
 import Dialogs from "./Dialogs.tsx";
 import {connect} from "react-redux";
 import React from "react";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect.js";
 import {compose} from "redux";
 import {Formik} from "formik";
-import {MessageSchema} from "../Utils/Validators/validators";
+import {MessageSchema} from "../Utils/Validators/validators.js";
 
 export type MessagesDataType = {
     id: number,

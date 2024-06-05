@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import Login from "./Login.tsx";
 import {FormikProvider, useFormik} from "formik";
-import {LoginErrorSchema} from "../Utils/Validators/validators";
+import {LoginErrorSchema} from "../Utils/Validators/validators.js";
 import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer.ts";
 import {resetProf} from "../../redux/profile-reducer.ts";

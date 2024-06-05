@@ -2,7 +2,7 @@ import {addNewPost} from "../../../redux/profile-reducer.ts";
 import {connect} from "react-redux";
 import MyPosts from "./MyPosts.tsx";
 import {Formik} from "formik";
-import {PostSchema} from "../../Utils/Validators/validators";
+import {PostSchema} from "../../Utils/Validators/validators.js";
 import {PostDataType, ProfileType} from "../../../types/types";
 
 type MapStateToPropsType = {

@@ -44,7 +44,7 @@ const LoginForm: React.FC<Props> = ({apiError, captchaUrl, ...props}) => {
                 <button type="submit">Login</button>
             </div>
             {captchaUrl && <img alt={"captcha"} src={captchaUrl}/>}
-            {captchaUrl && createField("captchaSymbols", "captcha", "captcha", "Enter captcha symbols", "input", props.values.captcha)}
+            {captchaUrl && createField("captchaSymbols", "captcha", "captcha", "input", props.values.captcha, "Enter captcha symbols")}
             {apiError ? <div className={LoginFormCss.summaryError}>{apiError}</div> : null}
         </form>
     );
