@@ -1,4 +1,4 @@
-import {authAPI, ResultCodes, securityAPI} from "../API/api.ts";
+import {authAPI, ResultCodeForCaptcha, ResultCodes, securityAPI} from "../API/api.ts";
 import {ThunkAction} from "redux-thunk";
 import {AppStateType} from "./redux-store";
 
@@ -95,7 +95,7 @@ export const authLoginUser = (userLoginData: UserLoginDataType, setStatus: any):
     if (data.resultCode === ResultCodes.Success) {
         dispatch(getAuthUserData());
     } else {
-        if (data.resultCode === ResultCodes.CaptchaIsRequired) {
+        if (data.resultCode === ResultCodeForCaptcha.CaptchaIsRequired) {
             dispatch(getCaptchaUrl())
         }
         setStatus({error: data.messages});

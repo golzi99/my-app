@@ -1,5 +1,5 @@
 import axios, {CreateAxiosDefaults} from "axios";
-import {LoginDataType, ProfileType} from "../types/types";
+import {LoginDataType, PhotosType, ProfileType, UserType} from "../types/types";
 
 const instance = axios.create({
     baseURL: "https://social-network.samuraijs.com/api/1.0",
@@ -7,50 +7,67 @@ const instance = axios.create({
     headers: {"API-KEY": "c597e703-6d67-494f-9429-342d142ce134"}
 } as CreateAxiosDefaults);
 
+type GetUsersType = {
+    items: Array<UserType>,
+    totalCount: number,
+    error: string,
+}
+
+type FollowOrUnFollowOnUserType = {
+    resultCode: ResultCodes,
+    messages: Array<string>,
+    data: {}
+}
+
 export const usersAPI = {
-    getUsers(currentPage = 1, pageSize = 10) {
-        return instance.get(`/users?page=${currentPage}&count=${pageSize}`).then(response => {
-            return response.data;
-        });
+    getUsers(currentPage = 1, pageSize = 10): Promise<GetUsersType> {
+        return instance.get(`/users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
     },
 
-    followOnUserAPI(userId: number) {
-        return instance.post(`/follow/${userId}`, null)
-            .then(response => {
-                return response.data;
-            });
+    followOnUserAPI(userId: number): Promise<FollowOrUnFollowOnUserType> {
+        return instance.post(`/follow/${userId}`, null).then(response => response.data);
     },
 
-    unFollowOnUserAPI(userId: number) {
-        return instance.delete(`/follow/${userId}`).then(response => {
-            return response.data;
-        });
+    unFollowOnUserAPI(userId: number): Promise<FollowOrUnFollowOnUserType> {
+        return instance.delete(`/follow/${userId}`).then(response => response.data)
     }
 }
 
+type ProfileResponseType = {
+    resultCode: ResultCodes,
+    messages: Array<string>,
+    data: {}
+}
+
+type SavePhotosType = {
+    data: PhotosType
+    resultCode: ResultCodes,
+    messages: Array<string>,
+}
+
 export const profileAPI = {
-    getProfile(userId: number) {
+    getProfile(userId: number): Promise<ProfileType> {
         if (userId == null){
             return instance.get(`/profile/`);
         }
         return instance.get(`/profile/${userId}`);
     },
 
-    getStatus(userId: number) {
+    getStatus(userId: number): Promise<string> {
         if (userId == null){
             return instance.get(`/profile/status`);
         }
         return instance.get(`/profile/status/${userId}`);
     },
 
-    updateStatus(status: string) {
+    updateStatus(status: string): Promise<ProfileResponseType> {
         return instance.put(`/profile/status`,
             {
                 status: status
             });
     },
 
-    savePhoto(photo: any) {
+    savePhoto(photo: any): Promise<SavePhotosType> {
         const formData = new FormData();
         formData.append("image", photo);
         return instance.put(`/profile/photo`, formData, {
@@ -60,7 +77,7 @@ export const profileAPI = {
         });
     },
 
-    saveProfile(profileData: ProfileType) {
+    saveProfile(profileData: ProfileType): Promise<ProfileResponseType> {
         if (profileData) {
             return instance.put("/profile", profileData)
         }
@@ -69,7 +86,11 @@ export const profileAPI = {
 
 export enum ResultCodes {
     Success = 0,
-    CaptchaIsRequired = 10,
+    Error = 1
+}
+
+export enum ResultCodeForCaptcha {
+    CaptchaIsRequired = 10
 }
 
 type MeResponseType = {
@@ -78,21 +99,21 @@ type MeResponseType = {
         email: string,
         login: string,
     }
-    resultCode: number,
+    resultCode: ResultCodes,
     messages: Array<string>
 }
 
-type LoginMeResponseType = {
+type LoginResponseType = {
     data: {
         userId: number,
     }
-    resultCode: number,
+    resultCode: ResultCodes | ResultCodeForCaptcha,
     messages: Array<string>
 }
 
-type LogoutMeResponseType = {
+type LogoutResponseType = {
     data: {}
-    resultCode: number,
+    resultCode: ResultCodes,
     messages: Array<string>
 }
 
@@ -101,11 +122,11 @@ export const authAPI = {
         return instance.get(`/auth/me`).then(response => response.data);
     },
 
-    login(userLoginData: LoginDataType): Promise<LoginMeResponseType> {
+    login(userLoginData: LoginDataType): Promise<LoginResponseType> {
         return instance.post(`/auth/login`, userLoginData).then(response => response.data);
     },
 
-    logout(): Promise<LogoutMeResponseType> {
+    logout(): Promise<LogoutResponseType> {
         return instance.delete(`/auth/login`).then(response => response.data);
     }
 }
