@@ -1,7 +1,5 @@
 import {ThunkAction} from "redux-thunk";
-import {AppStateType} from "./redux-store";
-
-const SEND_MESSAGE = 'samurai/dialogs/SEND-MESSAGE';
+import {AppStateType, InferActionsType} from "./redux-store";
 
 type MessagesDataType = {
     id: number,
@@ -36,12 +34,10 @@ let initState = {
 
 type InitStateType = typeof initState;
 
-type ActionsTypes = SendMessageType;
-
 const dialogsReducer = (state = initState, action: ActionsTypes): InitStateType => {
 
     switch (action.type) {
-        case SEND_MESSAGE:
+        case "samurai/dialogs/SEND-MESSAGE":
 
             let newMessage = {
                 id: 0,
@@ -59,20 +55,18 @@ const dialogsReducer = (state = initState, action: ActionsTypes): InitStateType 
     }
 }
 
-type SendMessageType = {
-    type: typeof SEND_MESSAGE,
-    message: string
+type ActionsTypes = InferActionsType<typeof dialogActions>;
+export const dialogActions = {
+    sendMessage: (newMessage: string) => ({
+        type: 'samurai/dialogs/SEND-MESSAGE',
+        message: newMessage
+    })
 }
-
-const sendMessage = (newMessage: string): SendMessageType => ({
-    type: SEND_MESSAGE,
-    message: newMessage
-});
 
 type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
 
 export const sendNewMessage = (newMessage: string): ThunkType => async (dispatch) => {
-    dispatch(sendMessage(newMessage));
+    dispatch(dialogActions.sendMessage(newMessage));
 }
 
 export default dialogsReducer;
