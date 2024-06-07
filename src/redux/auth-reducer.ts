@@ -1,6 +1,5 @@
 import {ResultCodeForCaptcha, ResultCodes} from "../API/api.ts";
-import {ThunkAction} from "redux-thunk";
-import {AppStateType, InferActionsType} from "./redux-store";
+import {BaseThunkType, InferActionsType} from "./redux-store";
 import {authAPI} from "../API/auth-api.ts";
 import {securityAPI} from "../API/security-api.ts";
 
@@ -11,8 +10,6 @@ let initState = {
     isAuth: null as boolean,
     captchaUrl: null as string | null // null if captcha is not required
 };
-
-type InitStateType = typeof initState;
 
 const authReducer = (state = initState, action: ActionsTypes): InitStateType => {
     switch (action.type) {
@@ -27,10 +24,8 @@ const authReducer = (state = initState, action: ActionsTypes): InitStateType => 
     }
 }
 
-type ActionsTypes = InferActionsType<typeof authActions>;
-
 export const authActions = {
-    setAuthUserData: (userId: number, login: string, email: string, isAuth: boolean, captchaUrl: string) => ({
+    setAuthUserData: (userId: number | null, login: string | null, email: string | null, isAuth: boolean, captchaUrl: string | null) => ({
         type: "samurai/auth/SET-USER-DATA",
         payLoad: {
             userId,
@@ -46,8 +41,6 @@ export const authActions = {
     } as const)
 }
 
-type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
-
 export const getAuthUserData = (): ThunkType => async (dispatch) => {
     let response = await authAPI.authMe();
 
@@ -55,13 +48,6 @@ export const getAuthUserData = (): ThunkType => async (dispatch) => {
         let {id, login, email} = response.data;
         dispatch(authActions.setAuthUserData(id, login, email, true, null));
     }
-}
-
-type UserLoginDataType = {
-    email: string,
-    password: string,
-    rememberMe: boolean,
-    captcha: string
 }
 
 export const authLoginUser = (userLoginData: UserLoginDataType, setStatus: any): ThunkType => async (dispatch) => {
@@ -89,3 +75,14 @@ export const getCaptchaUrl = (): ThunkType => async (dispatch) => {
 }
 
 export default authReducer;
+
+type InitStateType = typeof initState;
+type ActionsTypes = InferActionsType<typeof authActions>;
+type ThunkType = BaseThunkType<ActionsTypes>;
+type UserLoginDataType = {
+    email: string,
+    password: string,
+    rememberMe: boolean,
+    captcha: string
+}
+
