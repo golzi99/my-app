@@ -34,7 +34,6 @@ const ProfileDataForm: React.FC<Props> = ({profile}) => {
                     <b>Full name: </b>
                 </label>
                 {createField("fullName", "fullName", "fullName", "input", formik.values.fullName, "Full Name")}
-                {/*{hasErrorFullName && <div>{formik.errors.fullName}</div>}*/}
             </div>
             <div>
                 <label htmlFor="lookingForAJob">
@@ -48,14 +47,12 @@ const ProfileDataForm: React.FC<Props> = ({profile}) => {
                 </label>
                 {createField("lookingForAJobDescription", "lookingForAJobDescription", "lookingForAJobDescription", "textarea",
                     formik.values.lookingForAJobDescription, 'Your professional skills...')}
-                {/*{hasErrorEmail && <div>{formik.errors.email}</div>}*/}
             </div>
             <div>
                 <label htmlFor="aboutMe">
                     <b>About me: </b>
                 </label>
                 {createField("aboutMe", "aboutMe", "aboutMe", "textarea", formik.values.aboutMe, "About you...")}
-                {/*{hasErrorEmail && <div>{formik.errors.email}</div>}*/}
             </div>
             <div>
                 <label>

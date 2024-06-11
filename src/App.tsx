@@ -7,17 +7,18 @@ import React, {useEffect} from "react";
 import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer.ts";
 import Preloader from "./components/common/preLoader/preloader.tsx";
-import store from "./redux/redux-store.ts";
+import store, {AppStateType} from "./redux/redux-store.ts";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.tsx'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.tsx'));
 const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer.tsx'));
 
-function App(props) {
+const App: React.FC<Props> = (props) => {
 
-    // const catchAllUnhandledErrors = (promiseRejectionEvent, promise) => {
+    // const catchAllUnhandledErrors = (promiseRejectionEvent : PromiseRejectionEvent, promise) => {
     //     alert("Some error occurred");
     //     // console.error(promiseRejectionEvent);
+    //     return promiseRejectionEvent;
     // };
 
     useEffect(() => {
@@ -52,13 +53,13 @@ function App(props) {
     );
 }
 
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state: AppStateType) => ({
     initialized: state.app.initialized,
 });
 
 let AppContainer = connect(mapStateToProps, {initializeApp})(App);
 
-const SamuraiJSApp = () => {
+const SamuraiJSApp: React.FC = () => {
     return (
         <Provider store={store}>
             <AppContainer/>
@@ -66,3 +67,9 @@ const SamuraiJSApp = () => {
 }
 
 export default SamuraiJSApp;
+
+type Props = ReturnType<typeof mapStateToProps> & MapDispatchPropsType;
+
+type MapDispatchPropsType = {
+    initializeApp: () => void;
+}

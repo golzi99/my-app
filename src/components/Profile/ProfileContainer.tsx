@@ -5,22 +5,17 @@ import {getStatus, getUserProfile, savePhoto, saveProfile, updateStatus} from ".
 import {useNavigate, useParams} from "react-router-dom";
 import {compose} from "redux";
 import {ProfileType} from "../../types/types";
+import {AppStateType} from "../../redux/redux-store";
 
-type MapStateToPropsType = {
-    profile: ProfileType | null
-    status: string
-    authorizedUserId: number
-    isAuth: boolean
-}
-
+type MapStateToPropsType = ReturnType<typeof mapStateToProps>;
 
 type MapDispatchPropsType = {
     getUserProfile: (userId: number) => void,
     getStatus: (userId: number) => void,
     updateStatus: (status: string) => void,
     savePhoto: (photo: any) => void,
-    saveProfile: (profileData: ProfileType, setStatus: any) => void,
-}
+    saveProfile: (profileData: ProfileType, setStatus: any) => Promise<any>,
+};
 
 
 type Props = MapStateToPropsType & MapDispatchPropsType;
@@ -39,7 +34,7 @@ const ProfileContainer: React.FC<Props> = ({
     const navigate = useNavigate()
     const params = useParams();
 
-    let userId: number = +params["userId"];
+    let userId: number | null = +params["userId"];
     if (!userId) {
         userId = authorizedUserId;
     }
@@ -62,17 +57,12 @@ const ProfileContainer: React.FC<Props> = ({
     );
 }
 
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state: AppStateType) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     authorizedUserId: state.auth.userId,
     isAuth: state.auth.isAuth
 });
 
-export default compose(connect(mapStateToProps, {
-    getUserProfile,
-    getStatus,
-    updateStatus,
-    savePhoto,
-    saveProfile,
-}))(ProfileContainer); //, withAuthRedirect
+export default compose(connect(mapStateToProps,
+    {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile}))(ProfileContainer) as React.ComponentType; //, withAuthRedirect

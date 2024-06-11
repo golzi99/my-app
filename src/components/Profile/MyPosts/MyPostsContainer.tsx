@@ -4,6 +4,7 @@ import MyPosts from "./MyPosts.tsx";
 import {Formik} from "formik";
 import {PostSchema} from "../../Utils/Validators/validators.js";
 import {PostDataType, ProfileType} from "../../../types/types";
+import {AppStateType} from "../../../redux/redux-store";
 
 type MapStateToPropsType = {
     postsData: Array<PostDataType>,
@@ -39,7 +40,7 @@ const MyPostContainer: React.FC<Props> = ({postsData, addNewPost, profile}) => {
     );
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state : AppStateType) => {
     return {
         postsData: state.profilePage.postsData,
     };

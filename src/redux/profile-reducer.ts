@@ -1,6 +1,5 @@
 import {PhotosType, PostDataType, ProfileType} from "../types/types";
-import {ThunkAction} from "redux-thunk";
-import {AppStateType, InferActionsType} from "./redux-store";
+import {BaseThunkType, InferActionsType} from "./redux-store";
 import {profileAPI} from "../API/profile-api.ts";
 
 let initState = {
@@ -12,8 +11,6 @@ let initState = {
     profile: null as ProfileType | null,
     status: '',
 };
-
-type InitStateType = typeof initState;
 
 const profileReducer = (state = initState, action: ActionsTypes): InitStateType => {
 
@@ -66,7 +63,6 @@ const profileReducer = (state = initState, action: ActionsTypes): InitStateType 
     }
 }
 
-type ActionsTypes = InferActionsType<typeof profileActions>;
 export const profileActions = {
     addPost: (newPostText: string) => ({
         type: "samurai/profile/ADD-POST",
@@ -93,8 +89,6 @@ export const profileActions = {
         photos
     } as const)
 }
-
-type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>;
 
 export const addNewPost = (textPost: string): ThunkType => async (dispatch) => {
     dispatch(profileActions.addPost(textPost));
@@ -124,7 +118,7 @@ export const updateStatus = (status: string): ThunkType => async (dispatch) => {
 
 }
 
-export const savePhoto = (photo: any): ThunkType => async (dispatch) => {
+export const savePhoto = (photo: File): ThunkType => async (dispatch) => {
     const data = await profileAPI.savePhoto(photo);
     if (data.resultCode === 0) {
         dispatch(profileActions.setProfilePhoto(data.data.photos))
@@ -148,3 +142,7 @@ export const resetProf = (): ThunkType => async (dispatch) => {
 }
 
 export default profileReducer;
+
+type InitStateType = typeof initState;
+type ActionsTypes = InferActionsType<typeof profileActions>;
+type ThunkType = BaseThunkType<ActionsTypes>;

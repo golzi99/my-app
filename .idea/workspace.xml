@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="06.05.2024 type and refactor apis">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="11.06.2024 fixed into ts again...">
+      <change afterPath="$PROJECT_DIR$/src/API/dialogs-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/profile-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/profile-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBarContainer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBarContainer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Utils/object-helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Utils/object-helpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostSmtFormFormik.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostedForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withAuthRedirect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +38,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -100,7 +121,20 @@
       <recent name="D:\React_programmes\my-app\src\API\usersAPI.ts" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.ProfileStatus component.status from props should be in state">
+  <component name="RunManager" selected="Jest.ProfileStatus component">
+    <configuration name="ProfileStatus component" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.test.tsx" />
+      <test-names>
+        <test-name value="ProfileStatus component" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="ProfileStatus component.callback should be called" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -108,45 +142,24 @@
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
+      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.test.tsx" />
       <test-names>
         <test-name value="ProfileStatus component" />
         <test-name value="callback should be called" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="ProfileStatus component.status from props should be in state" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="after deleting length of post shouldn`t be decrement if id is incorrect" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.test.jsx" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reducer.test.ts" />
       <test-names>
-        <test-name value="ProfileStatus component" />
-        <test-name value="status from props should be in state" />
+        <test-name value="after deleting length of post shouldn`t be decrement if id is incorrect" />
       </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="deploy" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -159,13 +172,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
-        <item itemvalue="npm.deploy" />
-        <item itemvalue="npm.build" />
-        <item itemvalue="Jest.ProfileStatus component.status from props should be in state" />
+        <item itemvalue="Jest.ProfileStatus component" />
         <item itemvalue="Jest.ProfileStatus component.callback should be called" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="Jest.after deleting length of post shouldn`t be decrement if id is incorrect" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +249,10 @@
       <workItem from="1717508436656" duration="479000" />
       <workItem from="1717590155180" duration="4277000" />
       <workItem from="1717653221905" duration="13958000" />
-      <workItem from="1717738509574" duration="10204000" />
+      <workItem from="1717738509574" duration="10855000" />
+      <workItem from="1717997593841" duration="11484000" />
+      <workItem from="1718017191879" duration="7609000" />
+      <workItem from="1718086458454" duration="8433000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -543,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717679893479</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="07.05.2024 rebuild app and auth reducers">
+      <created>1717769127577</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1717769127577</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,8 +639,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="16.05.2024 refactor components" />
-    <MESSAGE value="20.05.2024 add ProfileStatus test and app test" />
     <MESSAGE value="20.05.2024 change paginator on usersPage" />
     <MESSAGE value="21.05.2024 first deploy" />
     <MESSAGE value="21.05.2024 first deploy 1" />
@@ -631,7 +662,9 @@
     <MESSAGE value="05.05.2024 correct work" />
     <MESSAGE value="05.05.2024 update redux store and user-reducer, need to update all reducers" />
     <MESSAGE value="06.05.2024 type and refactor apis" />
-    <option name="LAST_COMMIT_MESSAGE" value="06.05.2024 type and refactor apis" />
+    <MESSAGE value="07.05.2024 rebuild app and auth reducers" />
+    <MESSAGE value="11.06.2024 fixed into ts again..." />
+    <option name="LAST_COMMIT_MESSAGE" value="11.06.2024 fixed into ts again..." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

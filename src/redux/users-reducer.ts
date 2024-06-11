@@ -1,7 +1,6 @@
-import {updateObjectInArray} from "../components/Utils/object-helpers.js";
+import {updateObjectInArray} from "../components/Utils/object-helpers.ts";
 import {UserType} from "../types/types";
-import {AppStateType, InferActionsType} from "./redux-store";
-import {ThunkAction} from "redux-thunk";
+import {BaseThunkType, InferActionsType} from "./redux-store";
 import {Dispatch} from "redux";
 import {usersAPI} from "../API/users-api.ts";
 
@@ -16,7 +15,7 @@ let initState = {
     followingInProgress: [] as Array<number> // array of users id
 };
 
-type InitStateType = typeof initState;
+
 
 const usersReducer = (state = initState, action: ActionsTypes): InitStateType => {
 
@@ -56,8 +55,6 @@ const usersReducer = (state = initState, action: ActionsTypes): InitStateType =>
     }
 }
 
-type ActionsTypes = InferActionsType<typeof usersActions>;
-
 export const usersActions = {
     setUsers: (users: usersType) => ({
         type: "SET_USERS",
@@ -90,8 +87,6 @@ export const usersActions = {
     } as const)
 }
 
-type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>;
-
 export const requestUsers = (page: number, pageSize: number): ThunkType => async (dispatch) => {
     dispatch(usersActions.toggleIsFetching(true));
     let data = await usersAPI.getUsers(page, pageSize);
@@ -122,3 +117,7 @@ export const follow = (userId: number): ThunkType => async (dispatch) => {
 }
 
 export default usersReducer;
+
+type InitStateType = typeof initState;
+type ActionsTypes = InferActionsType<typeof usersActions>;
+type ThunkType = BaseThunkType<ActionsTypes>;

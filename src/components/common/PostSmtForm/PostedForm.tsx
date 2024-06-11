@@ -8,7 +8,7 @@ interface FormValues {
 
 type Props = FormikProps<FormValues>;
 
-const PostSmtFormFormik: React.FC<Props> = () => {
+const PostedForm: React.FC<Props> = () => {
 
     const formik = useFormikContext<FormValues>();
 
@@ -30,4 +30,4 @@ const PostSmtFormFormik: React.FC<Props> = () => {
     );
 }
 
-export default PostSmtFormFormik;
+export default PostedForm;

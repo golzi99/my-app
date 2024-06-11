@@ -1,7 +1,7 @@
 import Posts from "./MyPosts.module.css"
 import Post from "./Post/Post.tsx";
 import React from 'react';
-import PostSmtFormFormik from "../../common/PostSmtForm/PostSmtFormFormik.tsx";
+import PostedForm from "../../common/PostSmtForm/PostedForm.tsx";
 import {PostDataType, ProfileType} from "../../../types/types";
 import {useFormikContext} from "formik";
 
@@ -21,7 +21,7 @@ const MyPosts: React.FC<Props> = React.memo(({postsData, profile}) => {
         <div className={Posts.postsBlock}>
             <h3>My posts</h3>
             <div>
-                <PostSmtFormFormik {...useFormikContext()}></PostSmtFormFormik>
+                <PostedForm {...useFormikContext()}></PostedForm>
             </div>
             <div className={Posts.postList}>
                 {postsElements}

@@ -3,7 +3,7 @@ import React from "react";
 import DialogItem from "./DialogItem/DialogItem.tsx";
 import MyMessage from "./Message/MyMessage.tsx";
 import OtherMessage from "./Message/OtherMessage.tsx";
-import PostSmtFormFormik from "../common/PostSmtForm/PostSmtFormFormik.tsx";
+import PostedForm from "../common/PostSmtForm/PostedForm.tsx";
 import {DialogsDataType, MessagesDataType} from "./DialogsContainer";
 import {useFormikContext} from "formik";
 
@@ -39,7 +39,7 @@ const Dialogs: React.FC<Props> = React.memo(({dialogsData, messagesData}) => {
             </div>
             <div className={DialogsCss.messages}>
                 {messagesElements}
-                <PostSmtFormFormik {...useFormikContext()}></PostSmtFormFormik>
+                <PostedForm {...useFormikContext()}></PostedForm>
             </div>
         </div>);
 });

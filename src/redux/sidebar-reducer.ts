@@ -11,8 +11,6 @@ let initState = {
     ] as Array<TopFriendsType>
 };
 
-type InitStateType = typeof initState;
-
 const sidebarReducer = (state = initState): InitStateType => {
     // switch (action.type) {
     //     default:
@@ -22,3 +20,5 @@ const sidebarReducer = (state = initState): InitStateType => {
 }
 
 export default sidebarReducer;
+
+type InitStateType = typeof initState;

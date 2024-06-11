@@ -1,11 +1,12 @@
-import {sendNewMessage} from "../../redux/dialogs-reducer.ts";
+import {getDialogs, sendNewMessage} from "../../redux/dialogs-reducer.ts";
 import Dialogs from "./Dialogs.tsx";
 import {connect} from "react-redux";
-import React from "react";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect.js";
+import React, {useEffect} from "react";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect.tsx";
 import {compose} from "redux";
 import {Formik} from "formik";
 import {MessageSchema} from "../Utils/Validators/validators.js";
+import {AppStateType} from "../../redux/redux-store";
 
 export type MessagesDataType = {
     id: number,
@@ -19,16 +20,22 @@ export type DialogsDataType = {
 
 type MapStateToPropsType = {
     dialogsData: Array<DialogsDataType>,
-    messagesData: Array<MessagesDataType>
+    messagesData: Array<MessagesDataType>,
+    allDialogs: Array<any>
 }
 
 type MapDispatchPropsType = {
-    sendNewMessage: (textMessage: string) => void
+    sendNewMessage: (textMessage: string) => void,
+    getDialogs: () => void
 }
 
 type Props = MapStateToPropsType & MapDispatchPropsType;
 
-const DialogsContainer: React.FC<Props> = ({dialogsData, messagesData, sendNewMessage}) => {
+const DialogsContainer: React.FC<Props> = ({dialogsData, messagesData, allDialogs, sendNewMessage, getDialogs}) => {
+
+    useEffect(() => {
+        getDialogs();
+    }, []);
 
     return (
         <Formik
@@ -43,16 +50,20 @@ const DialogsContainer: React.FC<Props> = ({dialogsData, messagesData, sendNewMe
                 }
             }
         >
-                <Dialogs dialogsData={dialogsData} messagesData={messagesData}></Dialogs>
+            <Dialogs dialogsData={dialogsData} messagesData={messagesData}></Dialogs>
         </Formik>
     );
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType) => {
     return {
         dialogsData: state.dialogsPage.dialogsData,
         messagesData: state.dialogsPage.messagesData,
+        allDialogs: state.dialogsPage.allDialogs
     };
 }
 
-export default compose(connect(mapStateToProps, {sendNewMessage}), withAuthRedirect)(DialogsContainer);
+export default compose<React.ComponentType>(connect(mapStateToProps, {
+    sendNewMessage,
+    getDialogs
+}), withAuthRedirect)(DialogsContainer);

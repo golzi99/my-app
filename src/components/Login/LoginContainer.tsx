@@ -6,6 +6,8 @@ import {Navigate} from "react-router-dom";
 import {authLoginUser} from "../../redux/auth-reducer.ts";
 import {resetProf} from "../../redux/profile-reducer.ts";
 import {LoginDataType} from "../../types/types";
+import React from "react";
+import {AppStateType} from "../../redux/redux-store";
 
 type MapStateToPropsType = {
     isAuth: boolean,
@@ -58,9 +60,9 @@ const LoginContainer: React.FC<Props> = ({resetProf, authLoginUser, isAuth, capt
     );
 }
 
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state: AppStateType) => ({
     isAuth: state.auth.isAuth,
     captchaUrl: state.auth.captchaUrl
 });
 
-export default connect(mapStateToProps, {authLoginUser, resetProf})(LoginContainer)
+export default connect(mapStateToProps, {authLoginUser, resetProf})(LoginContainer) as React.ComponentType;

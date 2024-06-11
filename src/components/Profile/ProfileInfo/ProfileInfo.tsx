@@ -1,6 +1,6 @@
 import ProfileInfoCss from "./ProfileInfo.module.css";
 import Preloader from "../../common/preLoader/preloader.tsx";
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import ProfileStatus from "./ProfileStatus/ProfileStatus.tsx";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 import ProfileData from "./ProfileData/ProfileData.tsx";
@@ -14,8 +14,8 @@ type Props = {
     status: string,
     updateStatus: (status: string) => void,
     isOwner: boolean,
-    savePhoto: (photo: any) => void,
-    saveProfile: (profileData: ProfileType, setStatus: any) => void
+    savePhoto: (photo: File) => void,
+    saveProfile: (profileData: ProfileType, setStatus: any) => Promise<any>
 }
 
 const ProfileInfo: React.FC<Props> = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
@@ -54,8 +54,8 @@ const ProfileInfo: React.FC<Props> = ({profile, status, updateStatus, isOwner, s
         return (<Preloader></Preloader>);
     }
 
-    const onMainPhotoSelected = (e) => {
-        if (e.target.files.length) {
+    const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files?.length) {
             savePhoto(e.target.files[0]);
         }
     };

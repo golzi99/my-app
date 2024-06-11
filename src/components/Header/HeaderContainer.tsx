@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import Header from "./Header.tsx";
 import {authLogoutUser} from "../../redux/auth-reducer.ts";
+import {AppStateType} from "../../redux/redux-store";
 
 type MapStateToPropsType = {
     isAuth: boolean,
@@ -20,7 +21,7 @@ const HeaderContainer: React.FC<Props> = ({isAuth, login, authLogoutUser}) => {
     );
 }
 
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state: AppStateType) => ({
     isAuth: state.auth.isAuth,
     login: state.auth.login,
 });

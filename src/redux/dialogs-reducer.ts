@@ -1,4 +1,5 @@
 import {BaseThunkType, InferActionsType} from "./redux-store";
+import {dialogsAPI} from "../API/dialogs-api.ts";
 
 let initState = {
     messagesData: [
@@ -19,13 +20,13 @@ let initState = {
         {id: 6, name: "Semen"},
         {id: 7, name: "Cumpot"}
     ] as Array<IDofTextDataType>,
+    allDialogs: [] as Array<any>
 }
 
 const dialogsReducer = (state = initState, action: ActionsTypes): InitStateType => {
 
     switch (action.type) {
         case "samurai/dialogs/SEND-MESSAGE":
-
             let newMessage = {
                 id: 0,
                 message: action.message
@@ -35,6 +36,11 @@ const dialogsReducer = (state = initState, action: ActionsTypes): InitStateType 
                 ...state,
                 messagesData: [...state.messagesData, newMessage],
             };
+        case "samurai/dialogs/GET_ALL_DIALOGS":
+            return {
+                ...state,
+                allDialogs: action.allDialogs
+            }
         default:
             return {
                 ...state
@@ -46,12 +52,22 @@ export const dialogActions = {
     sendMessage: (newMessage: string) => ({
         type: 'samurai/dialogs/SEND-MESSAGE',
         message: newMessage
-    })
+    } as const),
+    getAllDialogs: (data: any) => ({
+        type: "samurai/dialogs/GET_ALL_DIALOGS",
+        allDialogs: data
+    } as const)
 }
 
 export const sendNewMessage = (newMessage: string): ThunkType => async (dispatch) => {
     dispatch(dialogActions.sendMessage(newMessage));
 }
+
+export const getDialogs = (): ThunkType => async (dispatch) => {
+    const data = await dialogsAPI.getDialogs();
+    dispatch(dialogActions.getAllDialogs(data));
+}
+
 
 export default dialogsReducer;
 
