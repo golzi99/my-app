@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import {SideBarContainer} from "./SideBar/SideBarContainer.ts";
 
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
     return (
         <div className={NavBarCss.navBar}>
             <nav className={NavBarCss.nav}>

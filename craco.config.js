@@ -1,6 +1,6 @@
 const path = require('path');
 
-const resolvePath = p => path.resolve(__dirname, p)
+const resolvePath = (p) => path.resolve(__dirname, p)
 
 module.exports = {
     // ...
@@ -10,6 +10,9 @@ module.exports = {
             '@assets': resolvePath('./src/assets'),
             '@services': resolvePath('./src/services')
         }
+    },
+    typescript: {
+        enableTypeChecking: true /* (default value) */,
     },
     // ...
 }
