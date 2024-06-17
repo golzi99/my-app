@@ -19,9 +19,9 @@ type MapDispatchPropsType = {
     resetProf: () => void
 }
 
-type Props = MapStateToPropsType & MapDispatchPropsType;
+type PropsType = MapStateToPropsType & MapDispatchPropsType;
 
-const LoginContainer: React.FC<Props> = ({resetProf, authLoginUser, isAuth, captchaUrl}) => {
+const LoginContainer: React.FC<PropsType> = ({resetProf, authLoginUser, isAuth, captchaUrl}) => {
 
     const formik = useFormik({
         initialValues: {

@@ -6,9 +6,9 @@ interface FormValues {
     newTextBody: string;
 }
 
-type Props = FormikProps<FormValues>;
+type PropsType = FormikProps<FormValues>;
 
-const PostedForm: React.FC<Props> = () => {
+const PostedForm: React.FC<PropsType> = () => {
 
     const formik = useFormikContext<FormValues>();
 

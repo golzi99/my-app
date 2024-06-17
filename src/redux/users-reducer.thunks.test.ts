@@ -29,8 +29,6 @@ test("Success follow thunk",async () => {
 
     const thunk = follow(1);
 
-
-    //@ts-ignore
     await thunk(dispatchMock, getStateMock, {});
 
     expect(dispatchMock).toBeCalledTimes(3);
@@ -45,7 +43,6 @@ test("Success unfollow thunk",async () => {
 
     const thunk = unFollow(1);
 
-    //@ts-ignore
     await thunk(dispatchMock, getStateMock, {});
 
     expect(dispatchMock).toBeCalledTimes(3);

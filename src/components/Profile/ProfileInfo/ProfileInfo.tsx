@@ -9,7 +9,7 @@ import {FormikProvider, useFormik} from "formik";
 import {WebSiteSchema} from "../../Utils/Validators/validators.js";
 import {ProfileType} from "../../../types/types";
 
-type Props = {
+type PropsType = {
     profile: ProfileType,
     status: string,
     updateStatus: (status: string) => void,
@@ -18,7 +18,7 @@ type Props = {
     saveProfile: (profileData: ProfileType, setStatus: any) => Promise<any>
 }
 
-const ProfileInfo: React.FC<Props> = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
+const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
     let [editMode, setEditMode] = useState(false);
 

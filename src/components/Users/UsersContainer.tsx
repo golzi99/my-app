@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {
-    unFollow, follow, requestUsers
+    unFollow, follow, requestUsers, FilterType
 } from "../../redux/users-reducer.ts";
 import React, {useEffect} from "react";
 import Users from "./Users.tsx";
@@ -9,7 +9,7 @@ import {
     getCurrentPage, getFollowingInProgress,
     getIsFetching,
     getPageSize,
-    getTotalUsersCount, getUsersBase
+    getTotalUsersCount, getUsersBase, getUsersFilter
 } from "../../redux/users-selectors.ts";
 import {UserType} from "../../types/types";
 import {AppStateType} from "../../redux/redux-store.ts";
@@ -20,11 +20,12 @@ type MapStateToPropsType = {
     totalUsersCount: number,
     isFetching: boolean,
     users: Array<UserType>,
-    followingInProgress: Array<number>
+    followingInProgress: Array<number>,
+    filter: FilterType
 }
 
 type MapDispatchPropsType = {
-    requestUsers: (currentPage, pageSize) => void,
+    requestUsers: (currentPage: number, pageSize: number, filter: FilterType) => void,
     unFollow: (userId: number) => void,
     follow: (userId: number) => void
 }
@@ -33,9 +34,9 @@ type OwnPropsType = {
     pageTitle: string
 }
 
-type Props = MapStateToPropsType & MapDispatchPropsType & OwnPropsType;
+type PropsType = MapStateToPropsType & MapDispatchPropsType & OwnPropsType;
 
-const UsersContainer: React.FC<Props> = ({currentPage, pageSize, totalUsersCount, requestUsers,
+const UsersContainer: React.FC<PropsType> = ({currentPage, pageSize, totalUsersCount, requestUsers, filter,
                                              users, followingInProgress, follow, unFollow, isFetching
 }) => {
 
@@ -45,12 +46,16 @@ const UsersContainer: React.FC<Props> = ({currentPage, pageSize, totalUsersCount
     };
 
     const onPageChanged = (pageNumber) => {
-        requestUsers(pageNumber, pageSize);
+        requestUsers(pageNumber, pageSize, filter);
     };
 
+    const onFilterChanged = (filter: FilterType) => {
+        requestUsers(1, pageSize, filter)
+    }
+
     useEffect(() => {
-        requestUsers(currentPage, pageSize);
-    }, [currentPage, pageSize, requestUsers]);
+        requestUsers(currentPage, pageSize, filter);
+    }, []);
 
     return (
         <>
@@ -62,6 +67,7 @@ const UsersContainer: React.FC<Props> = ({currentPage, pageSize, totalUsersCount
                    currentPage={currentPage}
                    followingInProgress={followingInProgress}
                    isFetching={isFetching}
+                   onFilterChanged={onFilterChanged}
             ></Users>
         </>
     );
@@ -74,6 +80,7 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => ({
     currentPage: getCurrentPage(state),
     isFetching: getIsFetching(state),
     followingInProgress: getFollowingInProgress(state),
+    filter: getUsersFilter(state)
 });
 
 export default compose(connect<MapStateToPropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {

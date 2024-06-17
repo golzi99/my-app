@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="11.06.2024 fixed into ts again...">
-      <change afterPath="$PROJECT_DIR$/src/redux/users-reducer.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/users-reducer.thunks.test.ts" afterDir="false" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="17.06.2024 use Formik in UsersSearchForm and add search and selector">
+      <change afterPath="$PROJECT_DIR$/src/components/Users/UsersSearchForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/craco.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/craco.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/preLoader/preloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/preLoader/preloader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/users-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/users-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/SideBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/Post/Post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileData/ProfileDataForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/LoginForm/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostedForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/PostSmtForm/PostedForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.thunks.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.thunks.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-selectors.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +121,27 @@
       <recent name="D:\React_programmes\my-app\public" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="D:\React_programmes\my-app\src\components\Users\UsersSearchForm.tsx" />
       <recent name="D:\React_programmes\my-app\src\API\security-api.ts" />
       <recent name="D:\React_programmes\my-app\src\API\auth-api.ts" />
       <recent name="D:\React_programmes\my-app\src\API\profile-api.ts" />
       <recent name="D:\React_programmes\my-app\src\API\usersAPI.ts" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.unfollow success">
+  <component name="RunManager" selected="Jest.Success unfollow thunk">
+    <configuration name="Success unfollow thunk" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/users-reducer.thunks.test.ts" />
+      <test-names>
+        <test-name value="Success unfollow thunk" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="follow success" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -116,19 +152,6 @@
       <test-file value="$PROJECT_DIR$/src/redux/users-reducer.test.ts" />
       <test-names>
         <test-name value="follow success" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="renders without crashing" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/App.test.ts" />
-      <test-names>
-        <test-name value="renders without crashing" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -167,11 +190,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="Jest.Success unfollow thunk" />
         <item itemvalue="npm.test" />
         <item itemvalue="Jest.unfollow success" />
         <item itemvalue="Jest.follow success" />
-        <item itemvalue="Jest.renders without crashing" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +259,9 @@
       <workItem from="1717997593841" duration="11484000" />
       <workItem from="1718017191879" duration="7609000" />
       <workItem from="1718086458454" duration="8490000" />
-      <workItem from="1718256840049" duration="12291000" />
+      <workItem from="1718256840049" duration="12544000" />
+      <workItem from="1718343008275" duration="1208000" />
+      <workItem from="1718602471498" duration="12829000" />
     </task>
     <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
       <created>1711609068715</created>
@@ -567,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718115577988</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="13.06.2024 add some test user-reducer thunks">
+      <created>1718288055994</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1718288055994</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,8 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="20.05.2024 change paginator on usersPage" />
-    <MESSAGE value="21.05.2024 first deploy" />
     <MESSAGE value="21.05.2024 first deploy 1" />
     <MESSAGE value="21.05.2024 first deploy 3" />
     <MESSAGE value="22.05.2024 change img res in dialogs" />
@@ -655,7 +685,9 @@
     <MESSAGE value="06.05.2024 type and refactor apis" />
     <MESSAGE value="07.05.2024 rebuild app and auth reducers" />
     <MESSAGE value="11.06.2024 fixed into ts again..." />
-    <option name="LAST_COMMIT_MESSAGE" value="11.06.2024 fixed into ts again..." />
+    <MESSAGE value="13.06.2024 add some test user-reducer thunks" />
+    <MESSAGE value="17.06.2024 use Formik in UsersSearchForm and add search and selector" />
+    <option name="LAST_COMMIT_MESSAGE" value="17.06.2024 use Formik in UsersSearchForm and add search and selector" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

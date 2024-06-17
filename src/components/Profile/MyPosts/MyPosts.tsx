@@ -5,12 +5,12 @@ import PostedForm from "../../common/PostSmtForm/PostedForm.tsx";
 import {PostDataType, ProfileType} from "../../../types/types";
 import {useFormikContext} from "formik";
 
-type Props = {
+type PropsType = {
     postsData: Array<PostDataType>,
     profile: ProfileType
 }
 
-const MyPosts: React.FC<Props> = React.memo(({postsData, profile}) => {
+const MyPosts: React.FC<PropsType> = React.memo(({postsData, profile}) => {
     // window.props.push(props);
     let postsElements = postsData.map((p) => {
         return (<Post key={p.id} message={p.message} likesCount={p.likesCount}

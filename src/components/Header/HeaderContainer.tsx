@@ -12,9 +12,9 @@ type MapDispatchPropsType = {
     authLogoutUser: () => void;
 }
 
-type Props = MapStateToPropsType & MapDispatchPropsType;
+type PropsType = MapStateToPropsType & MapDispatchPropsType;
 
-const HeaderContainer: React.FC<Props> = ({isAuth, login, authLogoutUser}) => {
+const HeaderContainer: React.FC<PropsType> = ({isAuth, login, authLogoutUser}) => {
 
     return (
         <Header isAuth={isAuth} login={login} authLogoutUser={authLogoutUser}></Header>

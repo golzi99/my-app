@@ -2,13 +2,13 @@ import PaginatorCss from "./PaginatorCss.module.css";
 import React from "react";
 import cn from 'classnames';
 
-type Props = {
+type PropsType = {
     pagesCount: () => number,
     currentPage: number,
     onPageChanged: (pageNumber: number) => void
 }
 
-const Paginator: React.FC<Props> = ({pagesCount, currentPage, onPageChanged}) => {
+const Paginator: React.FC<PropsType> = ({pagesCount, currentPage, onPageChanged}) => {
 
     let pages: Array<number> = [];
     for (let i = 1; i <= pagesCount(); i++) {

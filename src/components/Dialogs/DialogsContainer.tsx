@@ -29,9 +29,9 @@ type MapDispatchPropsType = {
     getDialogs: () => void
 }
 
-type Props = MapStateToPropsType & MapDispatchPropsType;
+type PropsType = MapStateToPropsType & MapDispatchPropsType;
 
-const DialogsContainer: React.FC<Props> = ({dialogsData, messagesData, allDialogs, sendNewMessage, getDialogs}) => {
+const DialogsContainer: React.FC<PropsType> = ({dialogsData, messagesData, allDialogs, sendNewMessage, getDialogs}) => {
 
     useEffect(() => {
         getDialogs();

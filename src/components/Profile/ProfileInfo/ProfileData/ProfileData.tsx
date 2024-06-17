@@ -2,11 +2,11 @@ import ProfileInfoCss from "../ProfileInfo.module.css";
 import React from "react";
 import {ContactsType, ProfileType} from "../../../../types/types";
 
-type Props = {
+type PropsType = {
     profile: ProfileType
 }
 
-const ProfileData: React.FC<Props> = ({profile}) => {
+const ProfileData: React.FC<PropsType> = ({profile}) => {
     return (
         <div>
             <div>

@@ -4,11 +4,11 @@ import {useFormikContext} from "formik";
 import ProfileDataCss from "./ProfileDataCss.module.css"
 import {ProfileType} from "../../../../types/types";
 
-type Props = {
+type PropsType = {
     profile: ProfileType
 }
 
-const ProfileDataForm: React.FC<Props> = ({profile}) => {
+const ProfileDataForm: React.FC<PropsType> = ({profile}) => {
     const formik = useFormikContext();
 
     // let hasErrorFullName = formik.errors.fullName && formik.touched.fullName;

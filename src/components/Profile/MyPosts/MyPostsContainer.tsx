@@ -18,9 +18,9 @@ type OwnPropsType = {
     profile: ProfileType
 }
 
-type Props = MapStateToPropsType & MapDispatchPropsType & OwnPropsType;
+type PropsType = MapStateToPropsType & MapDispatchPropsType & OwnPropsType;
 
-const MyPostContainer: React.FC<Props> = ({postsData, addNewPost, profile}) => {
+const MyPostContainer: React.FC<PropsType> = ({postsData, addNewPost, profile}) => {
 
     return (
         <Formik

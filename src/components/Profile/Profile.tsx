@@ -5,17 +5,17 @@ import React from "react";
 import Preloader from "../common/preLoader/preloader.tsx";
 import {ProfileType} from "../../types/types";
 
-type Props = {
+type PropsType = {
     isAuth: boolean,
     profile: ProfileType,
     status: string,
     isOwner: boolean,
     updateStatus: (status: string) => void,
     savePhoto: (photo: any) => void,
-    saveProfile: (profileData: ProfileType, setStatus: any) => void
+    saveProfile: (profileData: ProfileType, setStatus: any) => Promise<any>
 }
 
-const Profile: React.FC<Props> = ({isAuth, profile, status, isOwner, updateStatus, savePhoto, saveProfile}) => {
+const Profile: React.FC<PropsType> = ({isAuth, profile, status, isOwner, updateStatus, savePhoto, saveProfile}) => {
 
     if (isOwner && !isAuth) {
         return (<Navigate to={"/login"}></Navigate>);

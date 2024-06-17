@@ -1,12 +1,12 @@
 import LoginForm from "../common/LoginForm/LoginForm.tsx";
 import {useFormikContext} from "formik";
 
-type Props = {
+type PropsType = {
     apiError: any,
     captchaUrl: string | null
 }
 
-const Login: React.FC<Props> = ({apiError, captchaUrl}) => {
+const Login: React.FC<PropsType> = ({apiError, captchaUrl}) => {
 
     return (
         <div>

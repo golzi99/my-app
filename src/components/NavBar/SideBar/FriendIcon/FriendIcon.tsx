@@ -2,12 +2,12 @@ import FriendIconCss from "./FriendIcon.module.css";
 import {NavLink} from "react-router-dom";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 
-type Props = {
+type PropsType = {
     id: number,
     name: string
 }
 
-const FriendIcon: React.FC<Props> = ({id, name}) => {
+const FriendIcon: React.FC<PropsType> = ({id, name}) => {
     let path = `/dialogs/${id}`;
 
     return (

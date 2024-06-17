@@ -7,12 +7,12 @@ import PostedForm from "../common/PostSmtForm/PostedForm.tsx";
 import {DialogsDataType, MessagesDataType} from "./DialogsContainer";
 import {useFormikContext} from "formik";
 
-type Props = {
+type PropsType = {
     dialogsData: Array<DialogsDataType>,
     messagesData: Array<MessagesDataType>
 }
 
-const Dialogs: React.FC<Props> = React.memo(({dialogsData, messagesData}) => {
+const Dialogs: React.FC<PropsType> = React.memo(({dialogsData, messagesData}) => {
 
     let id = 0;
     let dialogsElements = dialogsData.map(

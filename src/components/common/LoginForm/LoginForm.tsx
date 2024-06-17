@@ -14,10 +14,10 @@ type OwnPropsType = {
     captchaUrl: string | null
 }
 
-type Props = OwnPropsType & FormikProps<FormValues>;
+type PropsType = OwnPropsType & FormikProps<FormValues>;
 
 
-const LoginForm: React.FC<Props> = ({apiError, captchaUrl, ...props}) => {
+const LoginForm: React.FC<PropsType> = ({apiError, captchaUrl, ...props}) => {
 
     // const formik = useFormikContext();
 

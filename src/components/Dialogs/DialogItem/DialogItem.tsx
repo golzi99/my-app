@@ -2,12 +2,12 @@ import DialogsCss from "./../Dialogs.module.css"
 import {NavLink} from "react-router-dom";
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 
-type Props = {
+type PropsType = {
     id: number
     name: string,
 }
 
-const DialogItem: React.FC<Props> = ({id, name}) => {
+const DialogItem: React.FC<PropsType> = ({id, name}) => {
     let path = `/dialogs/${id}`;
 
     const SelectedLink = () => {

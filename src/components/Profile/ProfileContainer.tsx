@@ -18,9 +18,9 @@ type MapDispatchPropsType = {
 };
 
 
-type Props = MapStateToPropsType & MapDispatchPropsType;
+type PropsType = MapStateToPropsType & MapDispatchPropsType;
 
-const ProfileContainer: React.FC<Props> = ({
+const ProfileContainer: React.FC<PropsType> = ({
                                                profile,
                                                status,
                                                authorizedUserId,

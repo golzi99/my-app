@@ -1,11 +1,11 @@
 import MessagesCss from "./Messages.module.css"
 import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
 
-type Props = {
+type PropsType = {
     textMessage: string
 }
 
-const MyMessage: React.FC<Props> = ({textMessage}) => {
+const MyMessage: React.FC<PropsType> = ({textMessage}) => {
     return (
         <div className={MessagesCss.myMessage}>
             {textMessage}
