@@ -1,35 +1,52 @@
-import React, {FC} from "react";
+import React, {useEffect} from "react";
 import Paginator from "../common/Paginator/Paginator.tsx";
 import User from "./User.tsx";
-import {UserType} from "../../types/types";
 import Preloader from "../common/preLoader/preloader.tsx";
 import {UsersSearchForm} from "./UsersSearchForm.tsx";
-import {FilterType} from "../../redux/users-reducer";
+import {FilterType, requestUsers} from "../../redux/users-reducer.ts";
+import {useDispatch, useSelector} from "react-redux";
+import {
+    getCurrentPage, getIsFetching,
+    getPageSize,
+    getTotalUsersCount,
+    getUsersBase,
+    getUsersFilter
+} from "../../redux/users-selectors.ts";
+import {AppDispatch} from "../../redux/redux-store";
 
-type PropsType = {
-    pagesCount: () => number,
-    currentPage: number,
-    onPageChanged: (pageNumber: number) => void,
-    users: Array<UserType>,
-    followingInProgress: Array<number>,
-    unFollow: (userId: number) => void,
-    follow: (userId: number) => void,
-    isFetching: boolean,
-    onFilterChanged: (filter: FilterType) => void
-}
+export const Users: React.FC = () => {
 
-const Users: FC<PropsType> = ({pagesCount, currentPage, onPageChanged, users, followingInProgress, unFollow, follow, isFetching, onFilterChanged}) => {
+    const users = useSelector(getUsersBase);
+    const currentPage = useSelector(getCurrentPage);
+    const totalUsersCount = useSelector(getTotalUsersCount);
+    const pageSize = useSelector(getPageSize);
+    const filter = useSelector(getUsersFilter);
+    const isFetching = useSelector(getIsFetching);
+
+    const dispatch: AppDispatch = useDispatch()
+
+    const onPageChanged = (pageNumber) => {
+        dispatch(requestUsers(pageNumber, pageSize, filter));
+    }
+
+    const onFilterChanged = (filter: FilterType) => {
+        dispatch(requestUsers(1, pageSize, filter));
+    }
+
+    useEffect(() => {
+        dispatch(requestUsers(currentPage, pageSize, filter));
+    }, []);
+
 
     return (
         <div>
-            <Paginator pagesCount={pagesCount} currentPage={currentPage}
-                       onPageChanged={onPageChanged}></Paginator>
+            <Paginator currentPage={currentPage} totalUsersCount={totalUsersCount}
+                       pageSize={pageSize} onPageChanged={onPageChanged}></Paginator>
             <UsersSearchForm onFilterChanged={onFilterChanged}></UsersSearchForm>
             {isFetching ? <Preloader></Preloader> :
                 <div>
                     {users.map(u => {
-                        return (<User key={u.id} user={u} followingInProgress={followingInProgress} unFollow={unFollow}
-                                      follow={follow}></User>);
+                        return (<User key={u.id} user={u}></User>);
                     })
                     }
                 </div>}
@@ -37,5 +54,3 @@ const Users: FC<PropsType> = ({pagesCount, currentPage, onPageChanged, users, fo
         </div>
     );
 }
-
-export default Users;

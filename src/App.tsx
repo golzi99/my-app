@@ -1,17 +1,18 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.tsx';
 import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
-import UsersContainer from "./components/Users/UsersContainer.tsx";
+import {UsersPage} from "./components/Users/UsersContainer.tsx";
 import HeaderContainer from "./components/Header/HeaderContainer.tsx";
 import React, {useEffect} from "react";
 import {connect, Provider} from "react-redux";
 import {initializeApp} from "./redux/app-reducer.ts";
 import Preloader from "./components/common/preLoader/preloader.tsx";
 import store, {AppStateType} from "./redux/redux-store.ts";
+import {LoginPage} from "./components/Login/LoginPage.tsx";
+
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.tsx'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.tsx'));
-const LoginContainer = React.lazy(() => import('./components/Login/LoginContainer.tsx'));
 
 const App: React.FC<Props> = (props) => {
 
@@ -40,9 +41,9 @@ const App: React.FC<Props> = (props) => {
                             <React.Suspense fallback={<div><Preloader/></div>}>
                                 <Routes>
                                     <Route path="/profile/:userId?" element={<ProfileContainer/>} />
-                                    <Route path="/login" element={<LoginContainer/>} />
+                                    <Route path="/login" element={<LoginPage/>} />
                                     <Route path="/dialogs/*" element={<DialogsContainer/>} />
-                                    <Route path="/users" element={<UsersContainer pageTitle={"Samurai"}/>} />
+                                    <Route path="/users" element={<UsersPage pageTitle={"Samurai"}/>} />
                                     <Route path="/" element={<Navigate to="/profile" />} />
                                 </Routes>
                             </React.Suspense>

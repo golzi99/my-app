@@ -3,15 +3,18 @@ import React from "react";
 import cn from 'classnames';
 
 type PropsType = {
-    pagesCount: () => number,
+    totalUsersCount: number,
+    pageSize: number,
     currentPage: number,
     onPageChanged: (pageNumber: number) => void
 }
 
-const Paginator: React.FC<PropsType> = ({pagesCount, currentPage, onPageChanged}) => {
+const Paginator: React.FC<PropsType> = ({totalUsersCount, pageSize,currentPage, onPageChanged}) => {
+
+    const pagesCount = Math.ceil(totalUsersCount / pageSize);
 
     let pages: Array<number> = [];
-    for (let i = 1; i <= pagesCount(); i++) {
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
 
@@ -36,7 +39,7 @@ const Paginator: React.FC<PropsType> = ({pagesCount, currentPage, onPageChanged}
                           }}>{p}</span>);
         })}
 
-        {currentPage < pagesCount() && <button onClick={() => {
+        {currentPage < pagesCount && <button onClick={() => {
             onPageChanged(curPage + 1);
         }}>NEXT</button>}
     </div>);
