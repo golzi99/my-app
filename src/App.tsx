@@ -1,6 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar.tsx';
-import {HashRouter, Navigate, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import {UsersPage} from "./components/Users/UsersContainer.tsx";
 import HeaderContainer from "./components/Header/HeaderContainer.tsx";
 import React, {useEffect} from "react";
@@ -30,10 +30,10 @@ const App: React.FC<Props> = (props) => {
         //     window.removeEventListener("unhandledrejection", catchAllUnhandledErrors);
         // };
     },);
-//basename={process.env.PUBLIC_URL}
+
     return (<>
             {!props.initialized ? <Preloader></Preloader> :
-                <HashRouter>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
                     <div className="App">
                         <HeaderContainer></HeaderContainer>
                         <NavBar></NavBar>
@@ -49,7 +49,7 @@ const App: React.FC<Props> = (props) => {
                             </React.Suspense>
                         </div>
                     </div>
-                </HashRouter>}
+                </BrowserRouter>}
         </>
     );
 }

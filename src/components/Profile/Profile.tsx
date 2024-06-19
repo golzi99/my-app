@@ -3,19 +3,17 @@ import {MyPostsContainer} from "./MyPosts/MyPostsContainer.tsx";
 import {Navigate} from "react-router-dom";
 import React from "react";
 import Preloader from "../common/preLoader/preloader.tsx";
-import {ProfileType} from "../../types/types";
+import {useSelector} from "react-redux";
+import {AppStateType} from "../../redux/redux-store";
 
 type PropsType = {
-    isAuth: boolean,
-    profile: ProfileType,
-    status: string,
     isOwner: boolean,
-    updateStatus: (status: string) => void,
-    savePhoto: (photo: any) => void,
-    saveProfile: (profileData: ProfileType, setStatus: any) => Promise<any>
 }
 
-const Profile: React.FC<PropsType> = ({isAuth, profile, status, isOwner, updateStatus, savePhoto, saveProfile}) => {
+const Profile: React.FC<PropsType> = ({isOwner}) => {
+
+    const profile = useSelector((state: AppStateType) => state.profilePage.profile)
+    const isAuth = useSelector((state: AppStateType) => state.auth.isAuth)
 
     if (isOwner && !isAuth) {
         return (<Navigate to={"/login"}></Navigate>);
@@ -25,9 +23,7 @@ const Profile: React.FC<PropsType> = ({isAuth, profile, status, isOwner, updateS
         <div>
             {!profile ? <Preloader></Preloader> :
                 <>
-                    <ProfileInfo profile={profile} status={status} isOwner={isOwner}
-                                 updateStatus={updateStatus} savePhoto={savePhoto}
-                                 saveProfile={saveProfile}></ProfileInfo>
+                    <ProfileInfo profile={profile} isOwner={isOwner}></ProfileInfo>
                     <MyPostsContainer profile={profile}></MyPostsContainer>
                 </>}
         </div>);

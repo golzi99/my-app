@@ -8,19 +8,28 @@ import ProfileDataForm from "./ProfileData/ProfileDataForm.tsx";
 import {FormikProvider, useFormik} from "formik";
 import {WebSiteSchema} from "../../Utils/Validators/validators.js";
 import {ProfileType} from "../../../types/types";
+import {savePhoto, saveProfile} from "../../../redux/profile-reducer.ts";
+import {AppDispatch} from "../../../redux/redux-store";
+import {useDispatch} from "react-redux";
 
 type PropsType = {
     profile: ProfileType,
-    status: string,
-    updateStatus: (status: string) => void,
-    isOwner: boolean,
-    savePhoto: (photo: File) => void,
-    saveProfile: (profileData: ProfileType, setStatus: any) => Promise<any>
+    isOwner: boolean
 }
 
-const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
+const ProfileInfo: React.FC<PropsType> = ({profile, isOwner}) => {
 
     let [editMode, setEditMode] = useState(false);
+
+    const dispatch: AppDispatch = useDispatch();
+
+    const _savePhoto = (photo: File) => {
+        dispatch(savePhoto(photo))
+    }
+
+    const _saveProfile = (profileData: ProfileType, setStatus: any) => {
+        dispatch(saveProfile(profileData, setStatus))
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -40,12 +49,7 @@ const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwne
                     aboutMe: values.aboutMe,
                     contacts: values.contacts
                 };
-                 // saveProfile(profileData, submitProps.setStatus).then(()=> {
-                 //     setEditMode(false);
-                 // }).catch(() => {
-                 //
-                 // });
-                await saveProfile(profileData, submitProps.setStatus);
+                await _saveProfile(profileData, submitProps.setStatus);
                 setEditMode(false);
             }
     });
@@ -54,9 +58,9 @@ const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwne
         return (<Preloader></Preloader>);
     }
 
-    const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
+    const _onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files?.length) {
-            savePhoto(e.target.files[0]);
+            _savePhoto(e.target.files[0]);
         }
     };
 
@@ -67,7 +71,7 @@ const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwne
                     {isOwner ?
                         <label role={"button"} title={"Edit your profile photo"}>
                             <input type={"file"} accept={"image/png, image/jpeg"} style={{display: "none"}}
-                                   onChange={onMainPhotoSelected}/>
+                                   onChange={_onMainPhotoSelected}/>
                             <img className={ProfileInfoCss.profileImg} alt="avatarProfile"
                                  src={profile.photos.large || nonProfileImg}/>
                         </label>
@@ -82,8 +86,7 @@ const ProfileInfo: React.FC<PropsType> = ({profile, status, updateStatus, isOwne
                     :
                     <ProfileData profile={profile}></ProfileData>
                 }
-                <ProfileStatus status={status} isOwner={isOwner}
-                               updateStatus={updateStatus}></ProfileStatus>
+                <ProfileStatus isOwner={isOwner}></ProfileStatus>
                 {(isOwner && !editMode) && <button onClick={() => {
                     setEditMode(true);
                 }}>Edit</button>}

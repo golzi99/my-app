@@ -13,6 +13,8 @@ import {
     getUsersFilter
 } from "../../redux/users-selectors.ts";
 import {AppDispatch} from "../../redux/redux-store";
+import {useLocation, useSearchParams} from "react-router-dom";
+
 
 export const Users: React.FC = () => {
 
@@ -36,6 +38,13 @@ export const Users: React.FC = () => {
     useEffect(() => {
         dispatch(requestUsers(currentPage, pageSize, filter));
     }, []);
+
+    const location = useLocation()
+    const [searchParams] = useSearchParams(location.search)
+
+    useEffect(() => {
+
+    }, [filter])
 
 
     return (

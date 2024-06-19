@@ -4,12 +4,11 @@
     <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="18.06.2024 add useSelector and useDispatch in programme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/LoginContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,14 +237,8 @@
       <workItem from="1718256840049" duration="12544000" />
       <workItem from="1718343008275" duration="1208000" />
       <workItem from="1718602471498" duration="12926000" />
-      <workItem from="1718690592428" duration="10417000" />
-    </task>
-    <task id="LOCAL-00001" summary="28.03.2024 Refactor Struct">
-      <created>1711609068715</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1711609068715</updated>
+      <workItem from="1718690592428" duration="11032000" />
+      <workItem from="1718775702870" duration="10606000" />
     </task>
     <task id="LOCAL-00002" summary="28.03.2024 Rebuild NavBar and add Dialog">
       <created>1711629603627</created>
@@ -583,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718631580332</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="18.06.2024 add useSelector and useDispatch in programme">
+      <created>1718718781892</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1718718781892</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
