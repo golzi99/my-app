@@ -1,6 +1,6 @@
 import FriendIconCss from "./FriendIcon.module.css";
 import {NavLink} from "react-router-dom";
-import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
+import nonProfileImg from "../../../../assets/img/noProfilePictureIcon.png"
 
 type PropsType = {
     id: number,

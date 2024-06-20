@@ -1,6 +1,6 @@
 import HeaderClass from "./Header.module.css"
 import {NavLink} from "react-router-dom";
-import logo from "@assets/img/logo2.png"
+import logo from "../../assets/img/logo2.png"
 
 type PropsType = {
     isAuth: boolean,

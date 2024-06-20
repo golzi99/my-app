@@ -1,5 +1,5 @@
 import React from "react";
-import nonProfileImg from "@assets/svg/loading.svg"
+import nonProfileImg from "../../../assets/svg/loading.svg"
 
 
 const Preloader: React.FC = () => {

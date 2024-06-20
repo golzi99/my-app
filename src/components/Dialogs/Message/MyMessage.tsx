@@ -1,5 +1,5 @@
 import MessagesCss from "./Messages.module.css"
-import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
+import nonProfileImg from "../../../assets/img/noProfilePictureIcon.png"
 
 type PropsType = {
     textMessage: string

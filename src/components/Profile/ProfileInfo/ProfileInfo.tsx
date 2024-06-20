@@ -2,7 +2,7 @@ import ProfileInfoCss from "./ProfileInfo.module.css";
 import Preloader from "../../common/preLoader/preloader.tsx";
 import React, {ChangeEvent, useState} from "react";
 import ProfileStatus from "./ProfileStatus/ProfileStatus.tsx";
-import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
+import nonProfileImg from "../../../assets/img/noProfilePictureIcon.png"
 import ProfileData from "./ProfileData/ProfileData.tsx";
 import ProfileDataForm from "./ProfileData/ProfileDataForm.tsx";
 import {FormikProvider, useFormik} from "formik";

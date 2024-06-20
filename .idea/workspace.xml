@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="18.06.2024 add useSelector and useDispatch in programme">
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="20.06.2024 add url search users">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogItem/DialogItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/MyMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Message/OtherMessage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavBar/SideBar/FriendIcon/FriendIcon.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus/ProfileStatus.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/User.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/User.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersSearchForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersSearchForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/preLoader/preloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/preLoader/preloader.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,14 +243,8 @@
       <workItem from="1718343008275" duration="1208000" />
       <workItem from="1718602471498" duration="12926000" />
       <workItem from="1718690592428" duration="11032000" />
-      <workItem from="1718775702870" duration="10606000" />
-    </task>
-    <task id="LOCAL-00002" summary="28.03.2024 Rebuild NavBar and add Dialog">
-      <created>1711629603627</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1711629603627</updated>
+      <workItem from="1718775702870" duration="10671000" />
+      <workItem from="1718863966381" duration="6995000" />
     </task>
     <task id="LOCAL-00003" summary="01.04.2024 Refactor project, make first outer res, add new img">
       <created>1712061235514</created>
@@ -583,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718718781892</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="19.06.2024 update ProfilePage and try to add useLocation in users">
+      <created>1718802290743</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1718802290743</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,8 +652,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="21.05.2024 first deploy 3" />
-    <MESSAGE value="22.05.2024 change img res in dialogs" />
     <MESSAGE value="23.05.2024 fix bugs and add craco" />
     <MESSAGE value="23.05.2024 add loading profilePhoto" />
     <MESSAGE value="24.05.2024 Add ProfileData into Profile, need to finish API and thunks to send data" />
@@ -671,7 +675,9 @@
     <MESSAGE value="13.06.2024 add some test user-reducer thunks" />
     <MESSAGE value="17.06.2024 use Formik in UsersSearchForm and add search and selector" />
     <MESSAGE value="18.06.2024 add useSelector and useDispatch in programme" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.06.2024 add useSelector and useDispatch in programme" />
+    <MESSAGE value="19.06.2024 update ProfilePage and try to add useLocation in users" />
+    <MESSAGE value="20.06.2024 add url search users" />
+    <option name="LAST_COMMIT_MESSAGE" value="20.06.2024 add url search users" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

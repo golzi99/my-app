@@ -1,7 +1,7 @@
 import UsersCss from "./UsersCss.module.css"
 import React from "react";
 import {NavLink} from "react-router-dom";
-import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
+import nonProfileImg from "../../assets/img/noProfilePictureIcon.png"
 import {UserType} from "../../types/types";
 import {AppDispatch} from "../../redux/redux-store";
 import {useDispatch, useSelector} from "react-redux";

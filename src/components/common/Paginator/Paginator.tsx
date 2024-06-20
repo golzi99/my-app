@@ -1,6 +1,6 @@
 import PaginatorCss from "./PaginatorCss.module.css";
 import React from "react";
-import cn from 'classnames';
+import cn from 'classnames'
 
 type PropsType = {
     totalUsersCount: number,

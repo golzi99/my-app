@@ -13,10 +13,13 @@ import {
     getUsersFilter
 } from "../../redux/users-selectors.ts";
 import {AppDispatch} from "../../redux/redux-store";
-import {useLocation, useSearchParams} from "react-router-dom";
+import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 
 
 export const Users: React.FC = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [searchParams] = useSearchParams(location.search)
 
     const users = useSelector(getUsersBase);
     const currentPage = useSelector(getCurrentPage);
@@ -36,15 +39,33 @@ export const Users: React.FC = () => {
     }
 
     useEffect(() => {
-        dispatch(requestUsers(currentPage, pageSize, filter));
+        const parsed: { term: string; page: string; friend: string } = Object.fromEntries([...searchParams]);
+
+        let actualPage = currentPage;
+        let actualFilter = filter;
+
+        if (!!parsed.page) actualPage = Number(parsed.page);
+        if (!!parsed.term) actualFilter = {...actualFilter, term: parsed.term};
+
+        switch (parsed.friend){
+            case "null":
+                actualFilter = {...actualFilter, friend: null}
+                break;
+            case "true":
+                actualFilter = {...actualFilter, friend: true}
+                break;
+            case "false":
+                actualFilter = {...actualFilter, friend: false}
+                break;
+        }
+
+        dispatch(requestUsers(actualPage, pageSize, actualFilter));
     }, []);
 
-    const location = useLocation()
-    const [searchParams] = useSearchParams(location.search)
 
     useEffect(() => {
-
-    }, [filter])
+        navigate(`/users/?term=${filter.term}&friend=${filter.friend}&page=${currentPage}`)
+    }, [currentPage, filter])
 
 
     return (
