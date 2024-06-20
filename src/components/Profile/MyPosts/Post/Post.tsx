@@ -1,5 +1,5 @@
 import PostModule from "./Post.module.css"
-import nonProfileImg from "@assets/img/noProfilePictureIcon.png"
+import nonProfileImg from "../../../../assets/img/noProfilePictureIcon.png"
 
 type PropsType = {
     message: string,

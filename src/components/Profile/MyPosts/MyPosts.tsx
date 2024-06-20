@@ -2,7 +2,7 @@ import Posts from "./MyPosts.module.css"
 import Post from "./Post/Post.tsx";
 import React from 'react';
 import PostedForm from "../../common/PostSmtForm/PostedForm.tsx";
-import {PostDataType, ProfileType} from "../../../types/types";
+import {PostDataType, ProfileType} from "../../../types/types.ts";
 import {useFormikContext} from "formik";
 
 type PropsType = {

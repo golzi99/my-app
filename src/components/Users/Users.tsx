@@ -12,7 +12,7 @@ import {
     getUsersBase,
     getUsersFilter
 } from "../../redux/users-selectors.ts";
-import {AppDispatch} from "../../redux/redux-store";
+import {AppDispatch} from "../../redux/redux-store.ts";
 import {useLocation, useNavigate, useSearchParams} from "react-router-dom";
 
 
