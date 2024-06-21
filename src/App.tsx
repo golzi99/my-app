@@ -15,10 +15,11 @@ const {Content, Sider, Footer} = Layout;
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer.tsx'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer.tsx'));
+const ChatPage = React.lazy(() => import('./pages/Chat/ChatPage.tsx'));
 
 const App: React.FC<Props> = (props) => {
 
-    const items1: MenuProps['items'] = ['Profile', 'Dialogs', 'Users'].map((key) => ({
+    const items1: MenuProps['items'] = ['Profile', 'Dialogs', 'Users', 'Chat'].map((key) => ({
         key,
         label: <Link to={`${key.toLowerCase()}`}>{key}</Link>,
     }));
@@ -61,6 +62,7 @@ const App: React.FC<Props> = (props) => {
                                             <Route path="/dialogs/*" element={<DialogsContainer/>}/>
                                             <Route path="/users" element={<UsersPage pageTitle={"Samurai"}/>}/>
                                             <Route path="/" element={<Navigate to="/profile"/>}/>
+                                            <Route path="/chat" element={<ChatPage/>}/>
                                         </Routes>
                                     </React.Suspense>
                                 </Content>
