@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="21.06.2024 add chat with double setMessage and not load in route">
-      <change afterPath="$PROJECT_DIR$/src/redux/chat-reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/chat-selectors.ts" afterDir="false" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="24.06.2024 rebuild with logic chat-reducer and add chat api">
+      <change afterPath="$PROJECT_DIR$/src/API/chat-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/chat-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,14 +241,8 @@
       <workItem from="1718863966381" duration="10588000" />
       <workItem from="1718875282035" duration="8073000" />
       <workItem from="1718887515019" duration="4340000" />
-      <workItem from="1718949599804" duration="17470000" />
-    </task>
-    <task id="LOCAL-00006" summary="17.04.2024 add preloader and optimize usersContainer">
-      <created>1713359196692</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1713359196692</updated>
+      <workItem from="1718949599804" duration="17863000" />
+      <workItem from="1719206679916" duration="19803000" />
     </task>
     <task id="LOCAL-00007" summary="18.04.2024 Try to rebuild all components withRouter to insert right img">
       <created>1713447039017</created>
@@ -587,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718968820199</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="21.06.2024 make chatReducer but need to fix double messages">
+      <created>1718974775615</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1718974775615</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,8 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="24.05.2024 Add ProfileData into Profile, need to finish API and thunks to send data" />
-    <MESSAGE value="27.05.2024 update simpleForm, update profile-update, need to finish things with validation and errors." />
     <MESSAGE value="28.05.2024 add captcha" />
     <MESSAGE value="29.05.2024 update links and state" />
     <MESSAGE value="30.05.2024 transform some reducer into ts" />
@@ -675,7 +673,9 @@
     <MESSAGE value="20.06.2024 add url search users" />
     <MESSAGE value="20.06.2024 add design for layout" />
     <MESSAGE value="21.06.2024 add chat with double setMessage and not load in route" />
-    <option name="LAST_COMMIT_MESSAGE" value="21.06.2024 add chat with double setMessage and not load in route" />
+    <MESSAGE value="21.06.2024 make chatReducer but need to fix double messages" />
+    <MESSAGE value="24.06.2024 rebuild with logic chat-reducer and add chat api" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.06.2024 rebuild with logic chat-reducer and add chat api" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
