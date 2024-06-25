@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="24.06.2024 rebuild with logic chat-reducer and add chat api">
-      <change afterPath="$PROJECT_DIR$/src/API/chat-api.ts" afterDir="false" />
+    <list default="true" id="7c94e029-4f35-4863-8a35-ef13c89a2c95" name="Changes" comment="25.06.2024 add autoscroll">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/chat-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/chat-api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Chat/ChatPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/chat-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/chat-selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/chat-selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,14 +245,8 @@
       <workItem from="1718875282035" duration="8073000" />
       <workItem from="1718887515019" duration="4340000" />
       <workItem from="1718949599804" duration="17863000" />
-      <workItem from="1719206679916" duration="19803000" />
-    </task>
-    <task id="LOCAL-00007" summary="18.04.2024 Try to rebuild all components withRouter to insert right img">
-      <created>1713447039017</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1713447039017</updated>
+      <workItem from="1719206679916" duration="20461000" />
+      <workItem from="1719300807527" duration="13541000" />
     </task>
     <task id="LOCAL-00008" summary="18.04.2024 Try to rebuild all components withRouter to insert right img 2">
       <created>1713447468095</created>
@@ -587,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718974775615</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="24.06.2024 rebuild with logic chat-reducer and add chat api">
+      <created>1719235972628</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1719235972630</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,7 +654,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="28.05.2024 add captcha" />
     <MESSAGE value="29.05.2024 update links and state" />
     <MESSAGE value="30.05.2024 transform some reducer into ts" />
     <MESSAGE value="30.05.2024 update some components into TS" />
@@ -675,7 +678,8 @@
     <MESSAGE value="21.06.2024 add chat with double setMessage and not load in route" />
     <MESSAGE value="21.06.2024 make chatReducer but need to fix double messages" />
     <MESSAGE value="24.06.2024 rebuild with logic chat-reducer and add chat api" />
-    <option name="LAST_COMMIT_MESSAGE" value="24.06.2024 rebuild with logic chat-reducer and add chat api" />
+    <MESSAGE value="25.06.2024 add autoscroll" />
+    <option name="LAST_COMMIT_MESSAGE" value="25.06.2024 add autoscroll" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
